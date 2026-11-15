@@ -483,7 +483,7 @@
     /* Now Playing Card */
     .now-playing-card {
       position: fixed;
-      bottom: 18px;
+      bottom: 78px;
       left: 18px;
       z-index: 75;
       display: flex;
@@ -931,10 +931,24 @@
 
       <!-- TOAST PROMPT (Đã bỏ gif cá heo xấu, thay bằng đĩa nhạc xoay tinh tế) -->
       <div id="toast-prompt">
-        <i class="ri-disc-line icon-spin text-sky-400 text-2xl mr-1"></i>
-        <span>Có muốn nghe nhạc chill vừa lướt web không bro?</span>
-        <button class="close-btn">Bỏ qua 10 phút</button>
-        <button class="confirm-btn">Bắt đầu nghe</button>
+        <div class="flex items-center gap-2.5 w-full">
+          <div class="w-9 h-9 rounded-full bg-sky-500/15 border border-sky-400/40 flex items-center justify-center text-sky-400 text-xl flex-shrink-0 animate-pulse">
+            <i class="ri-music-2-fill"></i>
+          </div>
+          <div class="flex flex-col flex-1">
+            <span class="font-bold text-foreground text-xs flex items-center gap-1.5">
+              <span>Chờ Chút... — CONGB</span>
+              <span class="text-[9px] px-1.5 py-0.2 rounded bg-sky-500/20 text-sky-400 border border-sky-500/30 font-semibold">HIT</span>
+            </span>
+            <span class="text-[11px] text-muted-foreground">Có muốn vừa nghe vừa lướt web cùng BR-34 không sếp?</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-end gap-2 w-full pt-1 border-t border-border/40">
+          <button class="close-btn text-xs px-3 py-1.5 rounded-xl border border-border text-muted-foreground hover:bg-muted transition">Bỏ qua</button>
+          <button class="confirm-btn text-xs font-bold px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-sky-500 to-sky-400 text-slate-950 shadow-md shadow-sky-500/30 hover:scale-105 transition flex items-center gap-1">
+            <i class="ri-play-fill text-sm"></i> Bật nghe ngay
+          </button>
+        </div>
       </div>
     <!-- Mascot Cute Floating Whale Widget (Độc quyền BR-34 phong cách LAMDev) -->
     <div id="whale-mascot-fab" class="fixed bottom-5 left-5 z-40 flex items-center gap-2 group cursor-pointer" onclick="tapWhaleMascot()" title="Bấm vào chú cá voi để nhận lời chúc &amp; bọt biển!">
@@ -1568,10 +1582,14 @@
         applyTheme(isDark ? 'light' : 'dark');
       });
 
-      // Toast prompt
-      if (getCookie('toast') === 'close') {
-        $('#toast-prompt').hide();
-      }
+      // Thanh thông báo hỏi khách nghe nhạc (Luôn hiện nổi bật khi vừa vào web)
+      $(document).ready(() => {
+        setTimeout(() => {
+          if (!isPlayingAudio) {
+            $('#toast-prompt').fadeIn('fast');
+          }
+        }, 800);
+      });
 
       $('body').on('click', '.close-btn', () => {
         $('#toast-prompt').slideUp('fast', () => {
