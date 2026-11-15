@@ -1,0 +1,3165 @@
+<!DOCTYPE html>
+<html lang="vi-VN" class="dark" data-title-loader="𝑩𝑹-34 • 𝑨𝑫𝑴𝑰𝑵 𝑴𝑴𝑶">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>BR-34 • ADMIN MMO - Home</title>
+  <link rel="shortcut icon" href="https://i.postimg.cc/ydDPJG36/1772770755743-215405081644931365-408525348754147443-3c4e7c3d115317eabbaad4b6bbfc4995.jpg" type="image/png">
+  <meta name="description" content="Xin chào! Mình là BR-34 • ADMIN MMO - Hệ thống tăng tương tác thật MXH tự động 24/7, cung cấp tài nguyên MMO & bản quyền số uy tín, giá rẻ nhất thị trường.">
+  <meta name="keywords" content="br34, admin mmo, shopbybrays, kho bản quyền, tài nguyên số, tăng tương tác mxh, dịch vụ mmo 24/7">
+  <meta name="author" content="BR-34 • ADMIN MMO">
+  <meta content="#0284c7" name="theme-color">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="BR-34 • Kho Bản Quyền & Tài Nguyên Số">
+  <meta property="og:title" content="BR-34 • ADMIN MMO - Home">
+  <meta property="og:description" content="Hệ thống tăng tương tác thật MXH tự động 24/7, cung cấp tài nguyên MMO & bản quyền số uy tín, giá rẻ nhất thị trường.">
+  <meta property="og:url" content="https://shopbybrays.vercel.app/">
+  <meta property="og:image" content="https://i.postimg.cc/ydDPJG36/1772770755743-215405081644931365-408525348754147443-3c4e7c3d115317eabbaad4b6bbfc4995.jpg">
+
+  <!-- Fonts & RemixIcon (Chuẩn mã nguồn LAMDev) -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <!-- jQuery 3.7.1 (Dùng cho toàn bộ script gốc của LAMDev) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            background: 'var(--background)',
+            foreground: 'var(--foreground)',
+            'primary-foreground': 'var(--primary-foreground)',
+            muted: 'var(--muted)',
+            'muted-foreground': 'var(--muted-foreground)',
+            border: 'var(--border)',
+            input: 'var(--input)',
+            primary: '#38bdf8'
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'Be Vietnam Pro', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script>window.CURRENT_PAGE = 'home';</script>
+
+  <style>
+    /* ==========================================================================
+       1. DESIGN TOKENS & THEME VARIABLES (CHUẨN STYLE.CSS + INDEX.CSS LAMDEV)
+       ========================================================================== */
+    :root, html.light {
+      --background: #f8fafc;
+      --foreground: #0f172a;
+      --primary-foreground: #ffffff;
+      --muted: #f1f5f9;
+      --muted-foreground: #64748b;
+      --border: #e2e8f0;
+      --input: #e2e8f0;
+    }
+
+    html.dark {
+      --background: #070b14;
+      --foreground: #f1f5f9;
+      --primary-foreground: #111927;
+      --muted: #182235;
+      --muted-foreground: #94a3b8;
+      --border: rgba(56, 189, 248, 0.16);
+      --input: #1e293b;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--background);
+      color: var(--foreground);
+      font-family: 'Plus Jakarta Sans', 'Be Vietnam Pro', sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* SPA Transitions */
+    #page-content {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .page-leaving {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    .page-entering {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    /* ==========================================================================
+       2. PACE & TD-LOADING-V2 (MÀN HÌNH CHỜ GỐC LAMDEV)
+       ========================================================================== */
+    .pace {
+      pointer-events: none;
+      user-select: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10000;
+    }
+    .pace-progress {
+      background: linear-gradient(90deg, #0284c7, #38bdf8, #67e8f9);
+      height: 3px;
+      width: 100%;
+      box-shadow: 0 0 10px #38bdf8;
+    }
+
+    .td-loading-v2 {
+      position: fixed;
+      inset: 0;
+      background: #070b14;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      padding: 20px;
+      transition: opacity 0.35s ease;
+    }
+
+    .td-loading-v2 img.loading2 {
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #38bdf8;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.45);
+    }
+
+    .ws-loader-text {
+      width: 100%;
+      max-width: 320px;
+      background: #111927;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 16px;
+      padding: 18px 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.65);
+    }
+
+    .loader-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: #f8fafc;
+      font-size: 15px;
+    }
+
+    #loading-percentage {
+      font-family: 'JetBrains Mono', monospace;
+      color: #38bdf8;
+      font-size: 13.5px;
+    }
+
+    .loader-progress-bar {
+      width: 100%;
+      height: 6px;
+      background: #1e293b;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    #loading-bar-fill {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #0284c7, #38bdf8);
+      border-radius: 999px;
+      transition: width 0.15s ease;
+    }
+
+    #waiting-loader {
+      font-size: 12px;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+    }
+
+    .icon-spin {
+      display: inline-block;
+      animation: spin 1.1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* ==========================================================================
+       3. MAGIC STARS HEADER & POPUP MENU (CHUẨN LAMDEV)
+       ========================================================================== */
+    .magic {
+      display: inline-flex;
+      position: relative;
+      align-items: center;
+    }
+
+    .magic-star {
+      --size: clamp(14px, 1.2vw, 18px);
+      display: block;
+      height: var(--size);
+      width: var(--size);
+      left: var(--star-left, 15%);
+      top: var(--star-top, 10%);
+      position: absolute;
+      pointer-events: none;
+      animation: scaleStar 1s ease forwards;
+    }
+
+    .magic-star > svg {
+      animation: rotateStar 1.5s linear infinite;
+      display: block;
+      opacity: 0.8;
+      width: 100%;
+      height: 100%;
+    }
+
+    .magic-star > svg > path {
+      fill: #38bdf8;
+    }
+
+    .magic-text {
+      background: linear-gradient(90deg, #38bdf8, #818cf8, #f43f5e, #38bdf8);
+      background-size: 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      white-space: nowrap;
+      font-weight: 800;
+      animation: backgroundPan 3.5s linear infinite;
+    }
+
+    @keyframes backgroundPan {
+      from { background-position: 0% center; }
+      to { background-position: -200% center; }
+    }
+
+    @keyframes scaleStar {
+      from, to { transform: scale(0); }
+      50% { transform: scale(1); }
+    }
+
+    @keyframes rotateStar {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(180deg); }
+    }
+
+    /* Header Popup Menu */
+    .header-popup {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      width: 230px;
+      border-radius: 14px;
+      padding: 8px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px) scale(0.96);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 60;
+      backdrop-filter: blur(18px);
+    }
+
+    .header-popup.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    .header-popup-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      padding: 6px 10px 8px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 5px;
+    }
+
+    .header-popup ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .header-popup ul li a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 9px;
+      font-size: 13.5px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    /* ==========================================================================
+       4. AVATAR, PROFILE-CARD & SKILL-TAG (CHUẨN LAMDEV)
+       ========================================================================== */
+    .h-30 {
+      height: 7.5rem;
+      width: 7.5rem;
+      object-fit: cover;
+    }
+
+    .avatar-ring-glow {
+      position: absolute;
+      inset: -6px;
+      border-radius: 9999px;
+      border: 1.5px dashed rgba(56, 189, 248, 0.55);
+      animation: spin 18s linear infinite;
+      pointer-events: none;
+    }
+
+    .blue-tick-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #38bdf8, #0284c7);
+      color: #fff;
+      font-size: 13px;
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
+    }
+
+    .profile-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 15px 16px;
+      border-radius: 14px;
+      background-color: var(--primary-foreground);
+      border: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--foreground);
+      transition: all 0.25s ease;
+    }
+
+    .profile-card:hover {
+      border-color: #38bdf8;
+      background-color: var(--muted);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -8px rgba(2, 132, 199, 0.25);
+    }
+
+    .profile-card > i {
+      font-size: 1.45rem;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .profile-card h3 {
+      font-size: 0.96rem;
+      font-weight: 700;
+      margin-bottom: 3px;
+      color: var(--foreground);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .profile-card p {
+      font-size: 0.82rem;
+      line-height: 1.45;
+      color: var(--muted-foreground);
+    }
+
+    .skill-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 11px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      background-color: var(--primary-foreground);
+      border: 1px solid var(--border);
+      color: var(--muted-foreground);
+      transition: all 0.2s ease;
+    }
+
+    .skill-tag:hover {
+      border-color: #38bdf8;
+      color: #38bdf8;
+      background-color: var(--muted);
+      transform: translateY(-1px);
+    }
+
+    /* ==========================================================================
+       5. TOAST PROMPT, NOW PLAYING CARD & FUITOAST (CHUẨN LAMDEV)
+       ========================================================================== */
+    #toast-prompt {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      z-index: 80;
+      max-width: 340px;
+      background: var(--primary-foreground);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 13px 15px;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
+      font-size: 13px;
+      display: none;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      animation: toastBounce 0.4s ease-out;
+    }
+    @keyframes toastBounce {
+      0% { transform: translateY(40px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    #toast-prompt .close-btn {
+      margin-left: auto;
+      padding: 5px 10px;
+      border-radius: 8px;
+      font-size: 11.5px;
+      background: var(--muted);
+      color: var(--muted-foreground);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    #toast-prompt .close-btn:hover {
+      color: var(--foreground);
+    }
+
+    #toast-prompt .confirm-btn {
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-size: 11.5px;
+      font-weight: 700;
+      background: #0284c7;
+      color: #ffffff;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    #toast-prompt .confirm-btn:hover {
+      background: #38bdf8;
+      color: #070b14;
+    }
+
+    /* Now Playing Card */
+    .now-playing-card {
+      position: fixed;
+      bottom: 18px;
+      left: 18px;
+      z-index: 75;
+      display: flex;
+      align-items: center;
+      background: var(--primary-foreground);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(15px);
+      transition: all 0.3s ease;
+    }
+
+    .now-playing-card.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .now-playing-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0284c7, #38bdf8);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+
+    .now-playing-card.playing .now-playing-icon {
+      animation: spin 6s linear infinite;
+    }
+
+    .now-playing-panel {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      max-width: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .now-playing-card.expanded {
+      border-radius: 16px;
+      padding: 8px 12px;
+    }
+
+    .now-playing-card.expanded .now-playing-panel {
+      max-width: 250px;
+      opacity: 1;
+      margin-left: 10px;
+    }
+
+    .now-playing-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--foreground);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 130px;
+    }
+
+    .now-playing-artist {
+      font-size: 10.5px;
+      color: #38bdf8;
+      white-space: nowrap;
+    }
+
+    .now-playing-progress {
+      width: 120px;
+      height: 3.5px;
+      background: var(--muted);
+      border-radius: 99px;
+      overflow: hidden;
+      margin-top: 4px;
+    }
+
+    .now-playing-progress span {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: #38bdf8;
+      transition: width 0.3s linear;
+    }
+
+    .now-playing-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--muted);
+      color: var(--foreground);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+
+    .now-playing-btn:hover {
+      background: #38bdf8;
+      color: #070b14;
+    }
+
+    /* FuiToast Container */
+    #fui-toast {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10002;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      pointer-events: none;
+    }
+
+    .fui-toast-box {
+      background: #111927;
+      border: 1px solid rgba(56, 189, 248, 0.5);
+      color: #f8fafc;
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: fadeSlideDown 0.25s ease forwards;
+    }
+
+    @keyframes fadeSlideDown {
+      from { opacity: 0; transform: translateY(-14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Easter Egg Burst */
+    .egg-piece {
+      position: fixed;
+      top: -30px;
+      z-index: 99999;
+      pointer-events: none;
+      font-weight: 800;
+      animation: eggFall 2.6s linear forwards;
+    }
+
+    @keyframes eggFall {
+      to {
+        transform: translateY(105vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* QR Modal */
+    .qr-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 10, 20, 0.8);
+      backdrop-filter: blur(8px);
+      z-index: 9990;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .qr-modal-overlay.active {
+      display: flex;
+    }
+  
+    /* Custom SVG Brand Icons (Zalo & Telegram Chuẩn 100%) */
+    .profile-card > .custom-brand-icon,
+    .profile-card > i {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.25s ease;
+    }
+    .custom-brand-icon.zalo-bg {
+      background: rgba(0, 104, 255, 0.14);
+      border: 1px solid rgba(0, 104, 255, 0.35);
+      color: #0068ff;
+    }
+    .profile-card:hover .custom-brand-icon.zalo-bg {
+      background: #0068ff;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(0, 104, 255, 0.4);
+    }
+    .custom-brand-icon.tele-bg {
+      background: rgba(36, 161, 222, 0.14);
+      border: 1px solid rgba(36, 161, 222, 0.35);
+      color: #24a1de;
+    }
+    .profile-card:hover .custom-brand-icon.tele-bg {
+      background: #24a1de;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(36, 161, 222, 0.4);
+    }
+    .contact-brand-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.25s ease;
+    }
+
+
+    /* APK Download Cards & Glow Effects */
+    .apk-card {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 16px;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      background: linear-gradient(145deg, hsl(var(--primary-foreground)), rgba(15, 23, 42, 0.6));
+      padding: 18px 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+    .apk-card:hover {
+      border-color: #38bdf8;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px -5px rgba(2, 132, 199, 0.35);
+    }
+    .btn-download-glow {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      background: linear-gradient(90deg, #0284c7, #38bdf8);
+      color: #030712;
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.45);
+      transition: all 0.25s ease;
+      text-decoration: none !important;
+    }
+    .btn-download-glow:hover {
+      background: linear-gradient(90deg, #38bdf8, #7dd3fc);
+      transform: scale(1.02);
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.7);
+    }
+    .btn-download-tiktok {
+      background: linear-gradient(90deg, #f43f5e, #fb7185);
+      box-shadow: 0 0 18px rgba(244, 63, 94, 0.45);
+      color: #ffffff;
+    }
+    .btn-download-tiktok:hover {
+      background: linear-gradient(90deg, #fb7185, #fda4af);
+      box-shadow: 0 0 25px rgba(244, 63, 94, 0.7);
+      color: #000000;
+    }
+
+</style>
+</head>
+<body class="overflow-x-hidden relative">
+  <div class="fixed top-0 left-0 w-full h-full bg-background -z-10 pointer-events-none"></div>
+
+  <div class="flex justify-center bg-background">
+    <!-- Pace Progress Bar -->
+    <div class="pace pace-active">
+      <div class="pace-progress">
+        <div class="pace-progress-inner"></div>
+      </div>
+    </div>
+
+    <!-- Startup Loader (td-loading-v2) -->
+    <div class="td-loading-v2">
+      <img class="loading2" src="https://i.postimg.cc/ydDPJG36/1772770755743-215405081644931365-408525348754147443-3c4e7c3d115317eabbaad4b6bbfc4995.jpg" alt="BR-34 Loader">
+      <div class="ws-loader-text">
+        <div class="loader-title-row">
+          <h4>BR-34 • ADMIN MMO ⚡</h4>
+          <span id="loading-percentage">0%</span>
+        </div>
+        <div class="loader-progress-bar"><span id="loading-bar-fill"></span></div>
+        <span id="waiting-loader"><i class="ri-loader-4-line icon-spin text-sky-400"></i>&ensp;Đang kết nối hệ thống BR-34...</span>
+      </div>
+    </div>
+
+    <!-- Top Ambient Gradient Glow (Chuẩn index_2.html) -->
+    <div class="pointer-events-none absolute start-0 top-0 z-0 h-1/2 w-full opacity-40"
+         style="background-image:linear-gradient(#0284c755, transparent)"></div>
+
+    <!-- Main Container (Chuẩn max-w-[60rem] của LAMDev) -->
+    <main class="z-10 flex min-h-screen w-screen max-w-[60rem] flex-col items-center px-4 text-[0.92rem] leading-relaxed sm:px-7 lg:px-10">
+
+      <!-- STICKY HEADER -->
+      <header id="stickyHeader" class="group sticky top-4 z-30 mb-14 box-content w-full rounded-xl border border-transparent py-1.5 px-2 transition-all duration-300 sm:rounded-2xl [&.not-top]:border-border [&.not-top]:bg-background/85 dark:[&.not-top]:bg-primary-foreground/85 [&.not-top]:backdrop-blur-md">
+        <div class="flex flex-wrap text-sm sm:flex-nowrap sm:justify-start">
+          <nav class="relative mx-auto flex w-full items-center justify-between sm:flex sm:items-center">
+            <h1 class="flex-none text-xl font-semibold transition-all duration-300 group-[.not-top]:ms-2 sm:group-[.not-top]:ms-3">
+              <a href="#home" class="spa-link magic no-underline flex items-center gap-2" data-page="home">
+                <span class="magic-star">
+                  <svg viewBox="0 0 512 512">
+                    <path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z"></path>
+                  </svg>
+                </span>
+                <span class="magic-star">
+                  <svg viewBox="0 0 512 512">
+                    <path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z"></path>
+                  </svg>
+                </span>
+                <span class="magic-star">
+                  <svg viewBox="0 0 512 512">
+                    <path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z"></path>
+                  </svg>
+                </span>
+                <span class="magic-text" id="header-title">BR-34 Home</span>
+              </a>
+            </h1>
+
+            <!-- Right side buttons -->
+            <div class="flex items-center gap-1 sm:gap-2 pr-2">
+              <!-- Snow / Sakura Effect Toggle -->
+              <button onclick="window.toggleSakura()" class="rounded-md p-2 transition-all hover:bg-muted hover:text-sky-400 flex items-center justify-center text-sky-400" title="Bật/Tắt hiệu ứng Tuyết & Hoa rơi">
+                <i class="ri-snowy-line text-[1.15rem]"></i>
+              </button>
+              <!-- Music -->
+              <button class="mini-music-btn rounded-md p-2 transition-all hover:bg-muted hover:text-sky-400 flex items-center justify-center" aria-label="Phát nhạc" title="Phát nhạc chill">
+                <i class="ri-play-circle-line text-[1.15rem]"></i>
+              </button>
+              <!-- Theme -->
+              <button class="change-theme rounded-md p-2 transition-all hover:bg-muted hover:text-sky-400 flex items-center justify-center" title="Đổi giao diện Sáng/Tối">
+                <i class="ri-sun-line dark:hidden text-[1.15rem]"></i>
+                <i class="ri-moon-clear-line hidden dark:block text-[1.15rem]"></i>
+              </button>
+              <!-- Hamburger Menu -->
+              <div class="relative">
+                <button id="header-menu-toggle" class="rounded-md p-2 transition-all hover:bg-muted hover:text-sky-400 flex items-center justify-center" aria-label="Menu" title="Menu">
+                  <i class="ri-menu-3-line text-[1.15rem]" id="header-menu-icon"></i>
+                </button>
+                <!-- Popup Window -->
+                <nav id="header-popup" class="header-popup bg-primary-foreground border border-border shadow-lg">
+                  <div class="header-popup-title text-muted-foreground flex items-center justify-between">
+                    <span>Menu BR-34</span>
+                    <span class="text-xs text-sky-400">⚡</span>
+                  </div>
+                  <ul>
+                    <li>
+                      <a href="#home" class="spa-link hover:bg-muted text-foreground" data-page="home">
+                        <i class="ri-home-4-line text-sky-400"></i> Trang chủ
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#info" class="spa-link hover:bg-muted text-foreground" data-page="info">
+                        <i class="ri-information-line text-sky-400"></i> Thông tin & MXH
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#donate" class="spa-link hover:bg-muted text-foreground" data-page="donate">
+                        <i class="ri-customer-service-2-line text-sky-400"></i> Hotline & Hỗ trợ
+                      </a>
+                    </li>
+                                        <li>
+                      <a href="#apkmod" class="spa-link hover:bg-muted text-foreground flex items-center justify-between" data-page="apkmod">
+                        <span class="flex items-center gap-2">
+                          <i class="ri-apps-2-line text-sky-400"></i> Kho APK Mod VIP
+                        </span>
+                        <span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">HOT</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#locketlam" class="spa-link hover:bg-muted text-foreground flex items-center justify-between" data-page="locketlam">
+                        <span class="flex items-center gap-2">
+                          <i class="ri-shield-flash-line text-sky-400"></i> Máy chủ BR-34
+                        </span>
+                        <span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-sky-500/20 text-sky-400 border border-sky-500/30">24/7</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://shopbybrays.vercel.app/" target="_blank" rel="noopener" class="hover:bg-muted text-foreground">
+                        <i class="ri-shopping-bag-3-line text-sky-400"></i> BR-34 Official Shop
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!-- SPA PAGE CONTENT -->
+      <div id="page-content" class="flex w-full flex-col gap-y-10 md:w-4/5 lg:w-5/6">
+        <!-- HOME CONTENT DEFAULT -->
+      </div>
+
+      <!-- ROTATING QUOTES PILL (Chuẩn LAMDev) -->
+      <div class="mt-8 mx-auto w-fit flex flex-row items-center gap-x-3 rounded-3xl border border-sky-500/30 bg-primary-foreground/60 px-4 py-2 text-sm shadow-sm transition-all hover:shadow-md hover:border-sky-400">
+        <span class="relative flex items-center justify-center">
+          <span class="absolute inline-flex h-2 w-2 animate-ping rounded-full border border-sky-400 bg-sky-400 opacity-75"></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-sky-400"></span>
+        </span>
+        <div>
+          <p id="cham-ngon" class="font-medium text-muted-foreground">Đang lấy châm ngôn cùng BR-34 ⚡...</p>
+        </div>
+      </div>
+
+      <!-- SCROLL TO TOP BUTTON -->
+      <button class="z-50 group fixed bottom-12 end-4 flex h-12 w-12 items-center justify-center rounded-full border-2 border-border bg-primary-foreground text-muted-foreground transition-all duration-300 hover:border-sky-400" id="croll-to-top" title="Lên đầu trang" style="display: none;">
+        <div class="flex items-center justify-center">
+          <span class="text font-bold text-sky-400 text-xs">0</span>
+          <span class="text-[10px] text-sky-400">%</span>
+        </div>
+        <i class="ri-arrow-up-s-line text-xl text-sky-400" style="display: none;"></i>
+      </button>
+
+      <!-- FOOTER -->
+      <footer class="mx-auto mt-16 w-full text-center pb-16">
+        <div class="border-t border-border py-8 px-2">
+          <div class="flex flex-col items-center justify-center gap-y-2">
+            <div class="flex flex-wrap items-center justify-center gap-x-2 text-sm text-muted-foreground">
+              <p>© <samp>2026</samp> <a href="https://shopbybrays.vercel.app/" target="_blank" rel="noopener" class="font-semibold text-sky-400 hover:underline">shopbybrays.vercel.app</a> — Powered with <span class="text-red-500">❤️</span> by <strong class="text-foreground font-semibold">BR-34 • ADMIN MMO</strong></p>
+            </div>
+            <p class="text-xs text-muted-foreground flex items-center justify-center gap-x-2 flex-wrap">
+              <span>Founder <a href="https://shopbybrays.vercel.app/" target="_blank" rel="noopener" class="text-sky-400 hover:underline font-medium">BR-34 Kho Bản Quyền & Tài Nguyên Số</a></span>
+              <span>•</span>
+              <span>Hệ Thống Tự Động 24/7</span>
+              <span>•</span>
+              <span>Hotline: 0976.976.627</span>
+            </p>
+          </div>
+        </div>
+        <div id="real-time" class="font-mono text-sky-400">00:00:00</div>
+      </footer>
+
+      <!-- TOAST PROMPT (Đã bỏ gif cá heo xấu, thay bằng đĩa nhạc xoay tinh tế) -->
+      <div id="toast-prompt">
+        <i class="ri-disc-line icon-spin text-sky-400 text-2xl mr-1"></i>
+        <span>Có muốn nghe nhạc chill vừa lướt web không bro?</span>
+        <button class="close-btn">Bỏ qua 10 phút</button>
+        <button class="confirm-btn">Bắt đầu nghe</button>
+      </div>
+    <!-- Mascot Cute Floating Whale Widget (Độc quyền BR-34 phong cách LAMDev) -->
+    <div id="whale-mascot-fab" class="fixed bottom-5 left-5 z-40 flex items-center gap-2 group cursor-pointer" onclick="tapWhaleMascot()" title="Bấm vào chú cá voi để nhận lời chúc &amp; bọt biển!">
+      <div class="relative w-12 h-12 rounded-full bg-sky-500/10 border-2 border-sky-400/60 shadow-lg shadow-sky-500/20 backdrop-blur-md flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:border-sky-300">
+        <span class="text-2xl animate-bounce">🐳</span>
+        <span class="absolute -top-1 -right-1 flex h-3 w-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+        </span>
+      </div>
+      <div class="hidden sm:flex flex-col rounded-xl bg-background/90 border border-sky-500/30 px-3 py-1 shadow-md opacity-0 group-hover:opacity-100 transition-opacity text-xs font-medium text-sky-400">
+        <span>BR-34 Whale Mascot</span>
+        <span class="text-[10px] text-muted-foreground">Bơi trong đại dương MMO ~</span>
+      </div>
+    </div>
+    </main>
+  </div>
+
+  <!-- QR MODAL POPUP -->
+  <div id="qrModalOverlay" class="qr-modal-overlay" onclick="closeQrPopup()">
+    <div class="bg-primary-foreground border border-border rounded-2xl p-6 max-w-xs w-full text-center shadow-2xl" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between mb-3">
+        <h4 id="qrPopupTitle" class="font-bold text-sm text-sky-400">Mã QR Kết Nối</h4>
+        <button onclick="closeQrPopup()" class="text-muted-foreground hover:text-foreground">
+          <i class="ri-close-line text-lg"></i>
+        </button>
+      </div>
+      <div class="bg-white p-3 rounded-xl inline-block mb-3">
+        <img id="qrPopupImg" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://zalo.me/0976976627" alt="QR Code" class="w-44 h-44 object-contain">
+      </div>
+      <p class="text-xs text-muted-foreground mb-4">Quét mã QR bằng Zalo hoặc Camera điện thoại để kết nối nhanh với BR-34.</p>
+      <a id="qrPopupLink" href="https://zalo.me/0976976627" target="_blank" rel="noopener" class="inline-block w-full py-2 rounded-xl bg-sky-500 text-slate-950 font-bold text-xs hover:bg-sky-400 transition">
+        Mở Zalo Trực Tiếp
+      </a>
+    </div>
+  </div>
+
+  <script>
+    /* ==========================================================================
+       SPA TEMPLATES (CHUẨN BỐ CỤC INDEX_2.HTML CỦA LAMDEV CHO BR-34)
+       ========================================================================== */
+    const BR34_PAGES = {
+      home: `
+                <section class="animate flex flex-col items-center gap-y-7 show">
+          <div class="relative flex items-center justify-center">
+            <div class="avatar-ring-glow"></div>
+            <img src="https://i.postimg.cc/ydDPJG36/1772770755743-215405081644931365-408525348754147443-3c4e7c3d115317eabbaad4b6bbfc4995.jpg" alt="BR-34 Profile" class="h-30 w-auto rounded-full border border-sky-400/50 p-1 shadow-lg shadow-sky-500/20">
+            <span class="absolute -bottom-2 bg-primary-foreground border border-border px-2.5 py-0.5 rounded-full text-[11px] font-bold text-emerald-400 flex items-center gap-1.5 shadow">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Online 24/7
+            </span>
+          </div>
+          <div class="flex flex-col items-center gap-y-3 text-center">
+            <h1 class="text-3xl font-bold flex items-center gap-2">
+              <span>BR-34 • ADMIN MMO</span>
+              <span class="blue-tick-badge" title="Đã xác minh uy tín"><i class="ri-check-line font-bold"></i></span>
+            </h1>
+            <p class="text-sky-400 font-medium">⚡ SMM Panel Uy Tín Số 1 • Kho Bản Quyền &amp; Tài Nguyên Số Hàng Đầu VN</p>
+            <p class="text-sm text-muted-foreground max-w-xl">Hệ thống tăng tương tác thật tự động 24/7 — Đẩy mạnh hỗ trợ tăng doanh thu &amp; phủ sóng thương hiệu vượt trội tại <a href="https://shopbybrays.vercel.app/" target="_blank" rel="noopener" class="bg-primary-foreground border border-border rounded text-sky-400 px-1.5 py-0.5 font-semibold hover:underline">shopbybrays.vercel.app</a></p>
+            
+            <div class="flex flex-wrap justify-center items-center gap-x-5 gap-y-2 mt-1 text-sm text-muted-foreground">
+              <div class="flex flex-row items-center justify-center gap-x-2">
+                <i class="ri-shield-check-line text-emerald-400"></i>
+                <span>API Chuẩn SMM v2 • Uptime 99.99%</span>
+              </div>
+              <div class="flex flex-row items-center justify-center gap-x-2">
+                <i class="ri-server-line text-sky-400"></i>
+                <span>Cụm Server Châu Á (Ping &lt;15ms)</span>
+              </div>
+              <img src="https://visitor-badge.laobi.icu/badge?page_id=br34.shopbybrays.vercel.app&amp;left_text=views&amp;color=0284c7" class="rounded-md border border-border" alt="Views">
+            </div>
+          </div>
+        </section>
+
+        <section class="animate flex flex-col gap-y-5 md:flex-row md:gap-y-0 show">
+          <div class="text-xl font-semibold md:min-w-36">
+            <h2>Bio</h2>
+          </div>
+          <div class="flex flex-1 flex-col gap-y-3">
+            <p class="text-sky-400 font-medium">Founder &amp; Lead Admin • BR-34 SMM Panel &amp; Digital Resources</p>
+            <div class="flex flex-col gap-2.5 leading-relaxed text-muted-foreground text-justify">
+              <p>Chào bạn! Mình là <strong>BR-34</strong> — Sáng lập và vận hành nền tảng dịch vụ số &amp; SMM Panel tự động <strong>shopbybrays.vercel.app</strong>. Chuyên cung cấp giải pháp tăng tương tác thật (Like, Sub, Follow, View, Mắt Live Facebook, TikTok, YouTube, Instagram) tự động giá sỉ tốt nhất thị trường và phân phối sỉ/lẻ kho tài nguyên số cao cấp (ChatGPT Plus, Gemini Advanced, CapCut Pro 4K, Netflix UHD, Via Kháng 2FA, Mail MMO).</p>
+              <p>Hệ thống tích hợp <strong>API SMM v2 tiêu chuẩn</strong> đặt tại cụm máy chủ Châu Á với độ trễ siêu thấp <em>(&lt;15ms)</em>, tự động đồng bộ tồn kho thời gian thực và hỗ trợ kích hoạt thần tốc 24/7. Triết lý làm việc: <strong>Uy tín số 1 — Tương tác thật — Bảo hành nhanh gọn — Giá sỉ đại lý tốt nhất</strong>.</p>
+            </div>
+            
+            <!-- Highlights Bento Row from shopbybrays -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 my-1">
+              <div class="p-3 rounded-xl border border-sky-500/20 bg-sky-500/5 text-center">
+                <div class="text-lg font-bold text-sky-400">250+</div>
+                <div class="text-[11px] text-muted-foreground">Dịch Vụ &amp; Món Sẵn</div>
+              </div>
+              <div class="p-3 rounded-xl border border-emerald-500/20 bg-emerald-500/5 text-center">
+                <div class="text-lg font-bold text-emerald-400">5,600+</div>
+                <div class="text-[11px] text-muted-foreground">Khách Hàng &amp; Đại Lý</div>
+              </div>
+              <div class="p-3 rounded-xl border border-amber-500/20 bg-amber-500/5 text-center">
+                <div class="text-lg font-bold text-amber-400">&lt;15ms</div>
+                <div class="text-[11px] text-muted-foreground">Độ Trễ API Châu Á</div>
+              </div>
+              <div class="p-3 rounded-xl border border-indigo-500/20 bg-indigo-500/5 text-center">
+                <div class="text-lg font-bold text-indigo-400">24/7 Live</div>
+                <div class="text-[11px] text-muted-foreground">Hỗ Trợ Zalo Admin</div>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-between gap-3 w-full pt-2">
+              <a class="spa-link group inline-flex items-center gap-x-2 rounded-xl bg-primary-foreground border border-border px-3 py-2 text-sm text-muted-foreground transition-all hover:bg-input hover:text-foreground no-underline w-fit" href="#info" data-page="info">
+                <i class="ri-arrow-left-line transition-transform group-hover:-translate-x-1"></i>
+                <span>Mạng xã hội &amp; Hỗ trợ</span>
+              </a>
+              <a class="spa-link group inline-flex items-center gap-x-2 rounded-xl bg-primary-foreground border border-border px-3 py-2 text-sm text-muted-foreground transition-all hover:bg-input hover:text-foreground no-underline w-fit self-end sm:self-auto" href="#donate" data-page="donate">
+                <span>Hotline &amp; Bảng Giá Sỉ</span>
+                <i class="ri-arrow-right-line transition-transform group-hover:translate-x-1"></i>
+              </a>
+            </div>
+          </div>
+        </section>
+
+                <section class="animate flex flex-col gap-y-5 md:flex-row md:gap-y-0 show">
+          <div class="text-xl font-semibold md:min-w-36">
+            <h2>Systems</h2>
+          </div>
+          <div class="grid flex-1 grid-cols-1 gap-3 sm:grid-cols-2">
+            <a class="profile-card" href="https://shopbybrays.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <i class="ri-shopping-bag-3-line"></i>
+              <div>
+                <h3>BR-34 — Kho Bản Quyền <span class="text-[10px] px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-400 border border-rose-500/30">OFFICIAL</span></h3>
+                <p>Hệ thống tăng tương tác MXH thật, tài nguyên số tự động 24/7.</p>
+              </div>
+            </a>
+            <a class="profile-card" href="https://zalo.me/g/xbjdfehhdqn51h01menl" target="_blank" rel="noopener noreferrer">
+              <div class="custom-brand-icon zalo-bg" title="Zalo Official">
+                <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M24 4C12.954 4 4 12.35 4 22.65c0 5.868 2.915 11.107 7.502 14.618l-1.854 6.78a1.2 1.2 0 001.554 1.455l7.734-3.193C20.245 42.748 22.09 43 24 43c11.046 0 20-8.35 20-18.65S35.046 4 24 4zm-9.35 14.2h10.9a1.2 1.2 0 110 2.4h-7.79l8.038 9.388c.325.38.402.908.198 1.363a1.2 1.2 0 01-1.096.709h-10.9a1.2 1.2 0 110-2.4h7.82l-8.068-9.423a1.201 1.201 0 01-.102-1.337c.204-.455.67-.74 1.16-.74zm15.1 0a1.2 1.2 0 011.2 1.2v10.86a1.2 1.2 0 11-2.4 0V19.4a1.2 1.2 0 011.2-1.2z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Nhóm Thông Báo &amp; Share Tut Zalo <span class="text-[10px] px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-400 border border-sky-500/30">HOT</span></h3>
+                <p>Cộng đồng Zalo giao lưu, cập nhật thông báo và share trick MMO miễn phí.</p>
+              </div>
+            </a>
+            <a class="profile-card" href="https://t.me/+F40817E0maA0OTM1" target="_blank" rel="noopener noreferrer">
+              <div class="custom-brand-icon tele-bg" title="Telegram Official">
+                <svg width="23" height="23" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.17 3.35-1.37 3.73-1.38.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Nhóm Thông Báo &amp; Share Tut Tele <span class="text-[10px] px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">VIP</span></h3>
+                <p>Kênh Telegram chia sẻ thông báo độc quyền, tool &amp; tài nguyên số mới nhất.</p>
+              </div>
+            </a>
+            <a class="profile-card" href="https://www.facebook.com/profile.php?id=61590660586128" target="_blank" rel="noopener noreferrer">
+              <i class="ri-facebook-circle-line"></i>
+              <div>
+                <h3>Facebook Chính Chủ</h3>
+                <p>Kết nối cá nhân, trao đổi công việc &amp; hợp tác trực tiếp với Admin.</p>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- Kho Ứng Dụng Mod & Free Tut (Yeumoney Vượt Link Tải) -->
+        <section class="animate flex flex-col gap-y-5 md:flex-row md:gap-y-0 show">
+          <div class="text-xl font-semibold md:min-w-36">
+            <h2 class="flex items-center gap-1.5 text-sky-400">
+              <i class="ri-apps-2-line"></i> APK Mod
+            </h2>
+          </div>
+          <div class="flex flex-1 flex-col gap-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-muted-foreground">Kho App Mod VIP &amp; Free Tut độc quyền • Vượt link 30s để tải trực tiếp</span>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Link Tải Tự Động
+              </span>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <!-- Card 1: Locket Gold Mod -->
+              <div class="apk-card">
+                <div class="flex items-start gap-3.5 mb-3">
+                  <div class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl flex-shrink-0 shadow-inner">
+                    <i class="ri-vip-crown-fill"></i>
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <h3 class="font-bold text-base text-foreground">Locket Gold APK</h3>
+                      <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">MOD VIP</span>
+                    </div>
+                    <p class="text-xs text-muted-foreground mt-1">Full tính năng huy hiệu vàng, gửi ảnh/video HD không nén, mở khóa camera độc quyền.</p>
+                  </div>
+                </div>
+                <div class="pt-2 border-t border-border/50 flex flex-col gap-2">
+                  <div class="flex items-center justify-between text-[11px] text-muted-foreground">
+                    <span><i class="ri-shield-check-line text-emerald-400"></i> Quét sạch mã độc</span>
+                    <span><i class="ri-download-cloud-line text-sky-400"></i> MediaFire High-Speed</span>
+                  </div>
+                  <a href="https://yeumoney.com/aE0qoj" target="_blank" rel="noopener" class="btn-download-glow">
+                    <i class="ri-arrow-down-circle-fill text-lg"></i>
+                    <span>Vượt Link Tải Locket Gold APK</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Card 2: TikTok Mod No Watermark -->
+              <div class="apk-card">
+                <div class="flex items-start gap-3.5 mb-3">
+                  <div class="w-12 h-12 rounded-2xl bg-rose-500/15 border border-rose-500/30 flex items-center justify-center text-rose-400 text-2xl flex-shrink-0 shadow-inner">
+                    <i class="ri-tiktok-fill"></i>
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <h3 class="font-bold text-base text-foreground">TikTok Mod VIP APK</h3>
+                      <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30">MOD PRO</span>
+                    </div>
+                    <p class="text-xs text-muted-foreground mt-1">Tải video không logo watermark, đổi vùng quốc gia (US/UK/JP), chặn hoàn toàn quảng cáo.</p>
+                  </div>
+                </div>
+                <div class="pt-2 border-t border-border/50 flex flex-col gap-2">
+                  <div class="flex items-center justify-between text-[11px] text-muted-foreground">
+                    <span><i class="ri-shield-check-line text-emerald-400"></i> Bản mới nhất 2026</span>
+                    <span><i class="ri-speed-up-line text-rose-400"></i> Chạy siêu mượt</span>
+                  </div>
+                  <a href="https://yeumoney.com/qvwnQGZ" target="_blank" rel="noopener" class="btn-download-glow btn-download-tiktok">
+                    <i class="ri-arrow-down-circle-fill text-lg"></i>
+                    <span>Vượt Link Tải TikTok Mod APK</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hint box hướng dẫn vượt link -->
+            <div class="rounded-xl border border-sky-500/25 bg-sky-500/5 px-3.5 py-2.5 flex items-center justify-between text-xs text-muted-foreground">
+              <div class="flex items-center gap-2">
+                <i class="ri-information-fill text-sky-400 text-base"></i>
+                <span>Hướng dẫn: Bấm nút tải &rarr; Hoàn thành bước lấy mã 30s &rarr; Tự động chuyển tới link MediaFire gốc.</span>
+              </div>
+              <a href="https://zalo.me/g/xbjdfehhdqn51h01menl" target="_blank" rel="noopener" class="text-sky-400 font-semibold hover:underline flex-shrink-0 ml-2">
+                Hỏi đáp Zalo &rarr;
+              </a>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- Contact / Hotline Section (Chuẩn cấu trúc Payment của LAMDev + GitHub Snake) -->
+        <section class="animate flex flex-col gap-y-5 md:flex-row md:gap-y-0 show">
+          <div class="text-xl font-semibold md:min-w-36">
+            <h2>Contact</h2>
+          </div>
+          <div class="mb-5 flex flex-1 flex-col rounded-xl border border-border bg-primary-foreground/40 py-3 px-3 gap-y-3 sm:gap-y-4">
+            <div class="grid grid-cols-1 gap-x-4 gap-y-2 sm:grid-cols-2 sm:gap-y-4">
+              <div class="group relative text-sm leading-normal no-underline">
+                <div class="relative flex flex-row items-center gap-x-4 px-2 py-1.5 transition-all">
+                  <div class="absolute -inset-0 z-10 rounded-lg border border-border bg-muted opacity-0 transition-all group-hover:opacity-50 pointer-events-none"></div>
+                  <div class="z-20 contact-brand-icon zalo-bg" title="Zalo Official">
+                    <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M24 4C12.954 4 4 12.35 4 22.65c0 5.868 2.915 11.107 7.502 14.618l-1.854 6.78a1.2 1.2 0 001.554 1.455l7.734-3.193C20.245 42.748 22.09 43 24 43c11.046 0 20-8.35 20-18.65S35.046 4 24 4zm-9.35 14.2h10.9a1.2 1.2 0 110 2.4h-7.79l8.038 9.388c.325.38.402.908.198 1.363a1.2 1.2 0 01-1.096.709h-10.9a1.2 1.2 0 110-2.4h7.82l-8.068-9.423a1.201 1.201 0 01-.102-1.337c.204-.455.67-.74 1.16-.74zm15.1 0a1.2 1.2 0 011.2 1.2v10.86a1.2 1.2 0 11-2.4 0V19.4a1.2 1.2 0 011.2-1.2z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                  <div class="z-20 flex flex-col">
+                    <div class="font-medium flex items-center gap-1.5">
+                      <span>Hotline Zalo 1 (Chính)</span>
+                      <button onclick="openQrPopup('Hotline Zalo 1: 0976.976.627', 'https://zalo.me/0976976627')" title="Phóng to mã QR Zalo 1" class="ri-qr-code-line text-muted-foreground hover:text-primary"></button>
+                    </div>
+                    <div class="font-normal text-muted-foreground flex items-center gap-2">
+                      <span class="font-mono text-sky-400 font-bold">0976.976.627</span>
+                      <i data-ws-copy="0976976627" class="ri-file-copy-line cursor-pointer hover:text-primary" title="Sao chép số Hotline Zalo 1"></i>
+                      <a href="https://zalo.me/0976976627" target="_blank" rel="noopener" class="text-xs text-sky-400 hover:underline font-semibold">Chat Zalo</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="group relative text-sm leading-normal no-underline">
+                <div class="relative flex flex-row items-center gap-x-4 px-2 py-1.5 transition-all">
+                  <div class="absolute -inset-0 z-10 rounded-lg border border-border bg-muted opacity-0 transition-all group-hover:opacity-50 pointer-events-none"></div>
+                  <div class="z-20 contact-brand-icon zalo-bg" title="Zalo Official">
+                    <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M24 4C12.954 4 4 12.35 4 22.65c0 5.868 2.915 11.107 7.502 14.618l-1.854 6.78a1.2 1.2 0 001.554 1.455l7.734-3.193C20.245 42.748 22.09 43 24 43c11.046 0 20-8.35 20-18.65S35.046 4 24 4zm-9.35 14.2h10.9a1.2 1.2 0 110 2.4h-7.79l8.038 9.388c.325.38.402.908.198 1.363a1.2 1.2 0 01-1.096.709h-10.9a1.2 1.2 0 110-2.4h7.82l-8.068-9.423a1.201 1.201 0 01-.102-1.337c.204-.455.67-.74 1.16-.74zm15.1 0a1.2 1.2 0 011.2 1.2v10.86a1.2 1.2 0 11-2.4 0V19.4a1.2 1.2 0 011.2-1.2z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                  <div class="z-20 flex flex-col">
+                    <div class="font-medium flex items-center gap-1.5">
+                      <span>Zalo Hỗ Trợ 2 (24/7)</span>
+                      <button onclick="openQrPopup('Zalo Hỗ Trợ 2: 0879.792.554', 'https://zalo.me/0879792554')" title="Phóng to mã QR Zalo 2" class="ri-qr-code-line text-muted-foreground hover:text-primary"></button>
+                    </div>
+                    <div class="font-normal text-muted-foreground flex items-center gap-2">
+                      <span class="font-mono text-sky-400 font-bold">0879.792.554</span>
+                      <i data-ws-copy="0879792554" class="ri-file-copy-line cursor-pointer hover:text-primary" title="Sao chép số Zalo 2"></i>
+                      <a href="https://zalo.me/0879792554" target="_blank" rel="noopener" class="text-xs text-sky-400 hover:underline font-semibold">Chat Zalo</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" alt="GitHub Snake" class="w-full">
+          </div>
+        </section>
+        <!-- Services Section (Chuẩn cấu trúc Skills của LAMDev) -->
+        <section class="animate flex flex-col gap-y-5 md:flex-row md:gap-y-0 show">
+          <div class="text-xl font-semibold md:min-w-36">
+            <h2>Services</h2>
+          </div>
+          <div class="flex flex-1 flex-col gap-y-3">
+            <div class="flex flex-col gap-y-2 md:flex-row md:gap-x-5 md:gap-y-0">
+              <h3 class="w-1/5 font-medium">Bản quyền</h3>
+              <div class="flex md:w-4/5 flex-row flex-wrap gap-2">
+                <span class="skill-tag">ChatGPT Plus / Pro</span>
+                <span class="skill-tag">Canva Pro</span>
+                <span class="skill-tag">CapCut Pro</span>
+                <span class="skill-tag">YouTube Premium</span>
+                <span class="skill-tag">Netflix 4K</span>
+                <span class="skill-tag">Spotify Premium</span>
+                <span class="skill-tag">Windows / Office Key</span>
+              </div>
+            </div>
+            <div class="flex flex-col gap-y-2 md:flex-row md:gap-x-5 md:gap-y-0">
+              <h3 class="w-1/5 font-medium">Dịch vụ MXH</h3>
+              <div class="flex md:w-4/5 flex-row flex-wrap gap-2">
+                <span class="skill-tag">Tăng Like / Follow FB</span>
+                <span class="skill-tag">Buff View TikTok</span>
+                <span class="skill-tag">Tăng Member Zalo / Tele</span>
+                <span class="skill-tag">Seeding Livestream</span>
+                <span class="skill-tag">Tương Tác Thật 24/7</span>
+              </div>
+            </div>
+            <div class="flex flex-col gap-y-2 md:flex-row md:gap-x-5 md:gap-y-0">
+              <h3 class="w-1/5 font-medium">Tài nguyên</h3>
+              <div class="flex md:w-4/5 flex-row flex-wrap gap-2">
+                <span class="skill-tag">Via / Clone Facebook</span>
+                <span class="skill-tag">BM / Tài Khoản Ads</span>
+                <span class="skill-tag">Gmail / Hotmail Cổ</span>
+                <span class="skill-tag">Proxy / VPS</span>
+                <span class="skill-tag">Automation Tools</span>
+              </div>
+            </div>
+            <div class="flex flex-col gap-y-2 md:flex-row md:gap-x-5 md:gap-y-0">
+              <h3 class="w-1/5 font-medium">Cam kết</h3>
+              <div class="flex md:w-4/5 flex-row flex-wrap gap-2">
+                <span class="skill-tag">Tự Động 24/7</span>
+                <span class="skill-tag">Bảo Hành 1 Đổi 1</span>
+                <span class="skill-tag">Giá Rẻ Nhất Thị Trường</span>
+                <span class="skill-tag">Hỗ Trợ Siêu Tốc</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      `,
+
+      info: `
+        <section class="animate flex flex-col gap-y-5 show">
+          <div class="flex items-center justify-between border-b border-border pb-3">
+            <h2 class="text-xl font-bold text-sky-400">Kênh Mạng Xã Hội &amp; Hỗ Trợ BR-34</h2>
+            <a href="#home" data-page="home" class="spa-link text-xs px-3 py-1.5 rounded-lg border border-border bg-primary-foreground hover:border-sky-400">← Quay lại</a>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a class="profile-card" href="https://shopbybrays.vercel.app/" target="_blank" rel="noopener">
+              <i class="ri-shopping-cart-2-fill"></i>
+              <div>
+                <h3>Kho Bản Quyền &amp; SMM BR-34</h3>
+                <p>shopbybrays.vercel.app — Hệ thống tự động 24/7</p>
+              </div>
+            </a>
+            <a class="profile-card" href="https://www.facebook.com/profile.php?id=61590660586128" target="_blank" rel="noopener">
+              <i class="ri-facebook-circle-fill"></i>
+              <div>
+                <h3>Facebook Chính Chủ</h3>
+                <p>fb.com/61590660586128 — Admin BR-34</p>
+              </div>
+            </a>
+            <a class="profile-card" href="https://zalo.me/g/xbjdfehhdqn51h01menl" target="_blank" rel="noopener">
+              <div class="custom-brand-icon zalo-bg" title="Zalo Official">
+                <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M24 4C12.954 4 4 12.35 4 22.65c0 5.868 2.915 11.107 7.502 14.618l-1.854 6.78a1.2 1.2 0 001.554 1.455l7.734-3.193C20.245 42.748 22.09 43 24 43c11.046 0 20-8.35 20-18.65S35.046 4 24 4zm-9.35 14.2h10.9a1.2 1.2 0 110 2.4h-7.79l8.038 9.388c.325.38.402.908.198 1.363a1.2 1.2 0 01-1.096.709h-10.9a1.2 1.2 0 110-2.4h7.82l-8.068-9.423a1.201 1.201 0 01-.102-1.337c.204-.455.67-.74 1.16-.74zm15.1 0a1.2 1.2 0 011.2 1.2v10.86a1.2 1.2 0 11-2.4 0V19.4a1.2 1.2 0 011.2-1.2z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Nhóm Thông Báo &amp; Share Tut Zalo</h3>
+                <p>Cộng đồng Zalo giao lưu, cập nhật thông báo &amp; share trick MMO miễn phí</p>
+              </div>
+            </a>
+            <a class="profile-card" href="https://t.me/+F40817E0maA0OTM1" target="_blank" rel="noopener">
+              <div class="custom-brand-icon tele-bg" title="Telegram Official">
+                <svg width="23" height="23" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.17 3.35-1.37 3.73-1.38.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Nhóm Thông Báo &amp; Share Tut Tele</h3>
+                <p>Kênh Telegram cập nhật thông báo độc quyền, tool &amp; tài nguyên số mới nhất</p>
+              </div>
+            </a>
+          </div>
+        </section>
+      `,
+
+      donate: `
+        <section class="animate flex flex-col gap-y-5 show">
+          <div class="flex items-center justify-between border-b border-border pb-3">
+            <h2 class="text-xl font-bold text-sky-400">Hotline &amp; Hỗ Trợ Zalo Trực Tiếp 24/7</h2>
+            <a href="#home" data-page="home" class="spa-link text-xs px-3 py-1.5 rounded-lg border border-border bg-primary-foreground hover:border-sky-400">← Quay lại</a>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="profile-card cursor-pointer" data-ws-copy="0976976627" onclick="openQrPopup('Hotline Zalo 1: 0976.976.627', 'https://zalo.me/0976976627')">
+              <div class="custom-brand-icon zalo-bg" title="Zalo Official">
+                <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M24 4C12.954 4 4 12.35 4 22.65c0 5.868 2.915 11.107 7.502 14.618l-1.854 6.78a1.2 1.2 0 001.554 1.455l7.734-3.193C20.245 42.748 22.09 43 24 43c11.046 0 20-8.35 20-18.65S35.046 4 24 4zm-9.35 14.2h10.9a1.2 1.2 0 110 2.4h-7.79l8.038 9.388c.325.38.402.908.198 1.363a1.2 1.2 0 01-1.096.709h-10.9a1.2 1.2 0 110-2.4h7.82l-8.068-9.423a1.201 1.201 0 01-.102-1.337c.204-.455.67-.74 1.16-.74zm15.1 0a1.2 1.2 0 011.2 1.2v10.86a1.2 1.2 0 11-2.4 0V19.4a1.2 1.2 0 011.2-1.2z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Hotline Zalo 1: 0976.976.627</h3>
+                <p>Bấm để quét mã QR kết nối hoặc sao chép số Zalo chính</p>
+              </div>
+            </div>
+            <div class="profile-card cursor-pointer" data-ws-copy="0879792554" onclick="openQrPopup('Zalo Hỗ Trợ 2: 0879.792.554', 'https://zalo.me/0879792554')">
+              <div class="custom-brand-icon zalo-bg" title="Zalo Official">
+                <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M24 4C12.954 4 4 12.35 4 22.65c0 5.868 2.915 11.107 7.502 14.618l-1.854 6.78a1.2 1.2 0 001.554 1.455l7.734-3.193C20.245 42.748 22.09 43 24 43c11.046 0 20-8.35 20-18.65S35.046 4 24 4zm-9.35 14.2h10.9a1.2 1.2 0 110 2.4h-7.79l8.038 9.388c.325.38.402.908.198 1.363a1.2 1.2 0 01-1.096.709h-10.9a1.2 1.2 0 110-2.4h7.82l-8.068-9.423a1.201 1.201 0 01-.102-1.337c.204-.455.67-.74 1.16-.74zm15.1 0a1.2 1.2 0 011.2 1.2v10.86a1.2 1.2 0 11-2.4 0V19.4a1.2 1.2 0 011.2-1.2z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Zalo Hỗ Trợ 2: 0879.792.554</h3>
+                <p>Hỗ trợ phụ 24/7 • Xử lý nạp tiền, bảo hành &amp; khiếu nại siêu tốc</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      `,
+
+      
+      apkmod: `
+        <section class="animate flex flex-col gap-y-5 show">
+          <div class="flex items-center justify-between border-b border-border pb-3">
+            <div>
+              <h2 class="text-xl font-bold text-sky-400 flex items-center gap-2">
+                <i class="ri-apps-2-fill"></i> Kho Ứng Dụng Mod &amp; Tài Nguyên Miễn Phí
+              </h2>
+              <p class="text-xs text-muted-foreground mt-1">Vượt link an toàn 30s để tải file APK gốc MediaFire không giới hạn tốc độ</p>
+            </div>
+            <a href="#home" data-page="home" class="spa-link text-xs px-3 py-1.5 rounded-lg border border-border bg-primary-foreground hover:border-sky-400">← Trang chủ</a>
+          </div>
+
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <!-- Card 1: Locket Gold Mod -->
+            <div class="apk-card">
+              <div class="flex items-start gap-3.5 mb-3">
+                <div class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl flex-shrink-0 shadow-inner">
+                  <i class="ri-vip-crown-fill"></i>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-bold text-base text-foreground">Locket Gold APK</h3>
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">MOD VIP</span>
+                  </div>
+                  <p class="text-xs text-muted-foreground mt-1">Full tính năng huy hiệu vàng, gửi ảnh/video HD không nén, mở khóa camera độc quyền.</p>
+                </div>
+              </div>
+              <div class="pt-2 border-t border-border/50 flex flex-col gap-2">
+                <div class="flex items-center justify-between text-[11px] text-muted-foreground">
+                  <span><i class="ri-shield-check-line text-emerald-400"></i> Quét sạch mã độc</span>
+                  <span><i class="ri-download-cloud-line text-sky-400"></i> MediaFire High-Speed</span>
+                </div>
+                <a href="https://yeumoney.com/aE0qoj" target="_blank" rel="noopener" class="btn-download-glow">
+                  <i class="ri-arrow-down-circle-fill text-lg"></i>
+                  <span>Vượt Link Tải Locket Gold APK</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card 2: TikTok Mod No Watermark -->
+            <div class="apk-card">
+              <div class="flex items-start gap-3.5 mb-3">
+                <div class="w-12 h-12 rounded-2xl bg-rose-500/15 border border-rose-500/30 flex items-center justify-center text-rose-400 text-2xl flex-shrink-0 shadow-inner">
+                  <i class="ri-tiktok-fill"></i>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-bold text-base text-foreground">TikTok Mod VIP APK</h3>
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30">MOD PRO</span>
+                  </div>
+                  <p class="text-xs text-muted-foreground mt-1">Tải video không logo watermark, đổi vùng quốc gia (US/UK/JP), chặn hoàn toàn quảng cáo.</p>
+                </div>
+              </div>
+              <div class="pt-2 border-t border-border/50 flex flex-col gap-2">
+                <div class="flex items-center justify-between text-[11px] text-muted-foreground">
+                  <span><i class="ri-shield-check-line text-emerald-400"></i> Bản mới nhất 2026</span>
+                  <span><i class="ri-speed-up-line text-rose-400"></i> Chạy siêu mượt</span>
+                </div>
+                <a href="https://yeumoney.com/qvwnQGZ" target="_blank" rel="noopener" class="btn-download-glow btn-download-tiktok">
+                  <i class="ri-arrow-down-circle-fill text-lg"></i>
+                  <span>Vượt Link Tải TikTok Mod APK</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Guide box -->
+          <div class="rounded-2xl border border-border bg-primary-foreground/50 p-4 flex flex-col gap-3">
+            <h4 class="font-bold text-sm text-sky-400 flex items-center gap-2">
+              <i class="ri-guide-fill"></i> Các bước vượt link 30s để lấy link tải gốc:
+            </h4>
+            <ol class="list-decimal list-inside text-xs text-muted-foreground space-y-1.5 leading-relaxed">
+              <li>Bấm vào nút <strong>"Vượt Link Tải..."</strong> ở ứng dụng sếp muốn cài đặt.</li>
+              <li>Làm theo hướng dẫn trên màn hình Yeumoney (chỉ mất tầm 20-30 giây).</li>
+              <li>Bấm <strong>"Tiếp tục / Get Link"</strong> &rarr; Trình duyệt tự động mở link tải <strong>MediaFire</strong> trực tiếp.</li>
+              <li>Tải file APK về máy và bấm cài đặt (cho phép cài ứng dụng từ nguồn không xác định nếu máy hỏi).</li>
+            </ol>
+            <div class="pt-2 border-t border-border flex items-center justify-between text-xs">
+              <span class="text-muted-foreground">Cần hỗ trợ cài đặt hoặc file lỗi?</span>
+              <a href="https://zalo.me/g/xbjdfehhdqn51h01menl" target="_blank" rel="noopener" class="text-sky-400 font-semibold hover:underline">
+                Vào nhóm Zalo Share Tut &rarr;
+              </a>
+            </div>
+          </div>
+        </section>
+      `,
+
+      locketlam: `
+        <section class="animate flex flex-col gap-y-5 show">
+          <div class="flex items-center justify-between border-b border-border pb-3">
+            <h2 class="text-xl font-bold text-sky-400">Trạng Thái Máy Chủ Hệ Thống BR-34</h2>
+            <a href="#home" data-page="home" class="spa-link text-xs px-3 py-1.5 rounded-lg border border-border bg-primary-foreground hover:border-sky-400">← Quay lại</a>
+          </div>
+          <div class="flex flex-col gap-3">
+            <div class="rounded-xl border border-border bg-primary-foreground p-4 flex items-center justify-between">
+              <div>
+                <h3 class="font-bold text-sm">Máy Chủ Kho Bản Quyền & Tài Nguyên Số (BR-34)</h3>
+                <p class="text-xs text-muted-foreground">https://shopbybrays.vercel.app/ • Bấm vào huy hiệu để đo lại Ping</p>
+              </div>
+              <span class="server-ping-badge cursor-pointer inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold border" data-ping-url="https://shopbybrays.vercel.app/">
+                <span class="status-dot w-2 h-2 rounded-full"></span>
+                <span class="ping-val">Đang đo...</span>
+              </span>
+            </div>
+            <div class="rounded-xl border border-border bg-primary-foreground p-4 flex items-center justify-between">
+              <div>
+                <h3 class="font-bold text-sm">Cổng Tăng Tương Tác MXH Tự Động 24/7</h3>
+                <p class="text-xs text-muted-foreground">API xử lý đơn hàng Facebook, TikTok, Zalo, Telegram</p>
+              </div>
+              <span class="server-ping-badge cursor-pointer inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold border" data-ping-url="https://zalo.me/0976976627">
+                <span class="status-dot w-2 h-2 rounded-full"></span>
+                <span class="ping-val">Đang đo...</span>
+              </span>
+            </div>
+          </div>
+        </section>
+      `
+    };
+
+    // Inject initial home template immediately
+    document.getElementById('page-content').innerHTML = BR34_PAGES.home;
+
+    // Lightweight FuiToast implementation matching LAMDev's calls
+    window.FuiToast = {
+      _push(msg, icon) {
+        let wrap = document.getElementById('fui-toast');
+        if (!wrap) {
+          wrap = document.createElement('div');
+          wrap.id = 'fui-toast';
+          document.body.appendChild(wrap);
+        }
+        const item = document.createElement('div');
+        item.className = 'fui-toast-box';
+        item.innerHTML = `<span>${icon}</span><span>${msg}</span>`;
+        wrap.appendChild(item);
+        setTimeout(() => {
+          item.style.opacity = '0';
+          item.style.transition = 'opacity 0.25s';
+          setTimeout(() => item.remove(), 260);
+        }, 2400);
+      },
+      success(msg) { this._push(msg, '✅'); },
+      info(msg) { this._push(msg, '⚡'); },
+      error(msg) { this._push(msg, '⚠️'); }
+    };
+
+    function openQrPopup(title, url) {
+      document.getElementById('qrPopupTitle').textContent = title;
+      document.getElementById('qrPopupImg').src = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(url);
+      document.getElementById('qrPopupLink').href = url;
+      document.getElementById('qrModalOverlay').classList.add('active');
+    }
+    function closeQrPopup() {
+      document.getElementById('qrModalOverlay').classList.remove('active');
+    }
+
+    /* ==========================================================================
+       MÃ NGUỒN INDEX.JS GỐC CỦA LAMDEV (ĐÃ CHỈNH SỬA CHO BR-34 & THÊM TUYẾT RƠI)
+       ========================================================================== */
+    !function (window) {
+      // Cookie helpers
+      function setCookie(name, value, days) {
+        const expires = new Date(Date.now() + 864e5 * days).toUTCString();
+        document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+      }
+
+      function getCookie(name) {
+        return document.cookie
+          .split('; ')
+          .reduce((cookies, entry) => {
+            const [key, val] = entry.split('=');
+            cookies[key] = val;
+            return cookies;
+          }, {})[name];
+      }
+
+      // Theme toggling
+      function applyTheme(theme) {
+        const $html = $('html');
+        const $sunIcon = $('.ri-sun-line');
+        const $moonIcon = $('.ri-moon-clear-line');
+
+        if (theme === 'light') {
+          $html.removeClass('dark').addClass('light');
+          $moonIcon.hide();
+          $sunIcon.show();
+          setCookie('theme', 'light', 365);
+        } else {
+          $html.removeClass('light').addClass('dark');
+          $sunIcon.hide();
+          $moonIcon.show();
+          setCookie('theme', 'dark', 365);
+        }
+      }
+
+      const initialTheme = getCookie('theme');
+      applyTheme(initialTheme === 'light' ? 'light' : 'dark');
+
+      $('body').on('click', '.change-theme', () => {
+        const isDark = $('html').hasClass('dark');
+        applyTheme(isDark ? 'light' : 'dark');
+      });
+
+      // Toast prompt
+      if (getCookie('toast') === 'close') {
+        $('#toast-prompt').hide();
+      }
+
+      $('body').on('click', '.close-btn', () => {
+        $('#toast-prompt').slideUp('fast', () => {
+          const expires = new Date(Date.now() + 6e5).toUTCString();
+          document.cookie = `toast=close; expires=${expires}; path=/`;
+          FuiToast.success('Không hiển thị lại trong 10 phút.');
+        });
+      });
+
+            // Real Audio Streaming Player (Nhạc Lofi / Chill thật chuẩn 100% như LAMDev)
+      const TRACK_LIST = [
+        {
+          titleTracks: "Kiếm Đâu Bây Giờ",
+          artist: "Nguyễn Hùng",
+          musicUrl: "https://lamdev.dalymmo.com/assets/music/kiem-dau-bay-gio.mp3"
+        },
+        {
+          titleTracks: "Lofi Relax Coding",
+          artist: "Chillhop Music • BR-34",
+          musicUrl: "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3"
+        }
+      ];
+      let trackIdx = 0;
+      let isPlayingAudio = false;
+      let currentAudio = null;
+      let progressTimer = null;
+      let nowPlayingCollapseTimer = null;
+
+      function ensureNowPlayingCard() {
+        if ($('#now-playing-card').length) return;
+        $('body').append(`
+          <div id="now-playing-card" class="now-playing-card collapsed">
+            <button class="now-playing-icon now-playing-open" aria-label="Mở trình phát nhạc"><i class="ri-music-2-line"></i></button>
+            <div class="now-playing-panel">
+              <div class="now-playing-main">
+                <div class="now-playing-title">Chưa phát nhạc</div>
+                <div class="now-playing-artist">Ấn play để bắt đầu</div>
+                <div class="now-playing-progress"><span style="width: 0%"></span></div>
+              </div>
+              <button class="now-playing-btn now-playing-toggle" aria-label="Tạm dừng/phát"><i class="ri-play-line"></i></button>
+              <button class="now-playing-btn now-playing-next" aria-label="Bài tiếp theo"><i class="ri-skip-forward-line"></i></button>
+            </div>
+          </div>
+        `);
+      }
+
+      function showNowPlayingCard() {
+        ensureNowPlayingCard();
+        $('#now-playing-card').addClass('show').removeClass('expanded').addClass('collapsed');
+      }
+
+      function scheduleNowPlayingCollapse() {
+        clearTimeout(nowPlayingCollapseTimer);
+        nowPlayingCollapseTimer = setTimeout(() => {
+          if ($('#now-playing-card:hover').length) {
+            scheduleNowPlayingCollapse();
+            return;
+          }
+          $('#now-playing-card').removeClass('expanded').addClass('collapsed');
+        }, 3500);
+      }
+
+      function expandNowPlayingCard() {
+        clearTimeout(nowPlayingCollapseTimer);
+        $('#now-playing-card').addClass('expanded').removeClass('collapsed');
+        scheduleNowPlayingCollapse();
+      }
+
+      function setMusicIcon(isPlaying) {
+        $('.mini-music-btn i')
+          .toggleClass('ri-play-circle-line', !isPlaying)
+          .toggleClass('ri-pause-circle-line', isPlaying);
+      }
+
+      function setNowPlayingState(isPlaying) {
+        $('.now-playing-toggle i')
+          .toggleClass('ri-play-line', !isPlaying)
+          .toggleClass('ri-pause-line', isPlaying);
+        $('#now-playing-card').toggleClass('playing', isPlaying);
+      }
+
+      function startProgressLoop() {
+        clearInterval(progressTimer);
+        progressTimer = setInterval(() => {
+          if (currentAudio && !currentAudio.paused && currentAudio.duration) {
+            const pct = (currentAudio.currentTime / currentAudio.duration) * 100;
+            $('.now-playing-progress span').css('width', `${pct}%`);
+          }
+        }, 500);
+      }
+
+      function playLoop(showToast = true) {
+        const track = TRACK_LIST[trackIdx];
+        if (currentAudio) {
+          currentAudio.pause();
+          currentAudio = null;
+        }
+
+        currentAudio = new Audio(track.musicUrl);
+        currentAudio.volume = 0.65;
+        showNowPlayingCard();
+        $('.now-playing-title').text(track.titleTracks);
+        $('.now-playing-artist').text(track.artist);
+        $('.now-playing-progress span').css('width', '0%');
+
+        currentAudio.addEventListener('ended', () => {
+          trackIdx = (trackIdx + 1) % TRACK_LIST.length;
+          playLoop(false);
+        });
+
+        currentAudio.play().then(() => {
+          isPlayingAudio = true;
+          setMusicIcon(true);
+          setNowPlayingState(true);
+          startProgressLoop();
+          expandNowPlayingCard();
+          if (showToast) {
+            FuiToast.success(`${track.titleTracks} - ${track.artist}`);
+          }
+        }).catch((err) => {
+          console.warn('Auto play blocked or audio error:', err);
+          isPlayingAudio = false;
+          setMusicIcon(false);
+          setNowPlayingState(false);
+        });
+
+        $('#toast-prompt').slideUp('fast');
+      }
+
+      function pauseAudio() {
+        isPlayingAudio = false;
+        clearInterval(progressTimer);
+        if (currentAudio) currentAudio.pause();
+        setMusicIcon(false);
+        setNowPlayingState(false);
+        FuiToast.success('Đã tạm dừng nhạc.');
+      }
+
+      $('body').on('click', '.confirm-btn', () => playLoop(true));
+      $('body').on('click', '.mini-music-btn', () => {
+        if (!isPlayingAudio) playLoop(true);
+        else pauseAudio();
+      });
+      $('body').on('click', '.now-playing-toggle', () => {
+        if (!isPlayingAudio) playLoop(true);
+        else pauseAudio();
+      });
+      $('body').on('click mouseenter', '.now-playing-open', expandNowPlayingCard);
+      $('body').on('mouseenter', '#now-playing-card', () => clearTimeout(nowPlayingCollapseTimer));
+      $('body').on('mouseleave', '#now-playing-card.expanded', scheduleNowPlayingCollapse);
+      $('body').on('click', '.now-playing-next', () => {
+        trackIdx = (trackIdx + 1) % TRACK_LIST.length;
+        noteIdx = 0;
+        playLoop(true);
+      });
+
+      // Easter Egg typing "br34" or "minh"
+      function triggerEasterEgg(keyword) {
+        const words = keyword === 'br34' ? ['BR-34', '✨', '🚀', '💙', '✦'] : ['ADMIN MMO', '✨', '💖', '✦', '🌸'];
+        for (let i = 0; i < 36; i += 1) {
+          const piece = $('<span class="egg-piece"></span>')
+            .text(words[Math.floor(Math.random() * words.length)])
+            .css({
+              left: `${Math.random() * 100}vw`,
+              color: ['#89f7ff', '#ff9dc7', '#ffe49c', '#ffffff'][Math.floor(Math.random() * 4)],
+              animationDelay: `${Math.random() * 0.45}s`,
+              fontSize: `${0.9 + Math.random() * 1.15}rem`
+            })
+            .appendTo('body');
+          setTimeout(() => piece.remove(), 2800);
+        }
+        FuiToast.success('BR-34 VIP Mode Activated!');
+      }
+
+      let eggBuffer = '';
+      $(document).on('keydown', e => {
+        if (e.ctrlKey || e.metaKey || e.altKey || e.key.length !== 1) return;
+        eggBuffer = `${eggBuffer}${e.key.toLowerCase()}`.slice(-12);
+        if (eggBuffer.endsWith('br34')) triggerEasterEgg('br34');
+      });
+
+      // Stars animation (Chuẩn index.js LAMDev)
+      let delay = 0;
+      function animateStar(el) {
+        const rando = min => Math.floor(Math.random() * (min + 1));
+        el.style.setProperty('--star-left', `${rando(100)}%`);
+        el.style.setProperty('--star-top', `${rando(80) - 40}%`);
+        el.style.animation = 'none';
+        void el.offsetHeight;
+        el.style.animation = '';
+      }
+
+      Array.from(document.getElementsByClassName('magic-star')).forEach(star => {
+        setTimeout(() => {
+          animateStar(star);
+          setInterval(() => animateStar(star), 1000);
+        }, delay++ * (1000 / 3));
+      });
+
+      // Scroll to top & Sticky Header
+      const scrollBtn = document.getElementById('croll-to-top');
+      const scrollText = scrollBtn.querySelector('.text');
+      const scrollIcon = scrollBtn.querySelector('i');
+      const stickyHeader = document.getElementById('stickyHeader');
+
+      function updateScroll() {
+        const scrollY = window.scrollY;
+        stickyHeader.classList.toggle('not-top', scrollY > 15);
+        if (!scrollY) {
+          scrollBtn.style.display = 'none';
+          return;
+        }
+        const total = document.documentElement.scrollHeight;
+        const view = window.innerHeight;
+        const percent = total > view ? (scrollY / (total - view)) * 100 : 0;
+        scrollText.textContent = Math.round(percent);
+        scrollBtn.style.display = scrollY ? 'flex' : 'none';
+      }
+
+      window.addEventListener('scroll', updateScroll);
+      scrollBtn.addEventListener('mouseenter', () => {
+        scrollText.parentElement.style.display = 'none';
+        scrollIcon.style.display = 'inline-block';
+      });
+      scrollBtn.addEventListener('mouseleave', () => {
+        scrollText.parentElement.style.display = 'flex';
+        scrollIcon.style.display = 'none';
+      });
+      scrollBtn.addEventListener('click', () => $('html, body').animate({ scrollTop: 0 }, 'fast'));
+
+      // Heart rain click text effect (Chuẩn index.js LAMDev)
+      let heartIndex = 0;
+      const heartColors = [
+        '#ff6651', '#42a5f5', '#66bb6a', '#ab47bc',
+        '#ffa726', '#ec407a', '#26c6da', '#ffca28'
+      ];
+
+      $(document).ready(() => {
+        $('body').click(e => {
+          if ($(e.target).closest('a, button, #header-popup, #toast-prompt, #qrModalOverlay').length) return;
+          const messages = [
+            '💙 Bão đơn BR-34', '❤️ Cung hỉ phát tài', '💛 Tiền vô như nước',
+            '💚 Tương tác 24/7', '💙 Tài lộc vào nhà', '💜 Kho bản quyền #1 VN',
+            '💖 Phú quý cát tường', '💝 Đắc lộc toàn gia', '❤️ Vạn sự thành công'
+          ];
+          const $msg = $("<span style='font-family:sans-serif;pointer-events:none;'>").text(messages[heartIndex]);
+          const color = heartColors[Math.floor(Math.random() * heartColors.length)];
+          heartIndex = (heartIndex + 1) % messages.length;
+
+          $msg.css({
+            position: 'absolute',
+            top: e.pageY - 20,
+            left: e.pageX,
+            'font-weight': 'bold',
+            'font-size': '13px',
+            color,
+            'z-index': 9999999
+          }).appendTo('body');
+
+          $msg.animate({ top: e.pageY - 160, opacity: 0 }, 1400, () => $msg.remove());
+        });
+      });
+
+      // Real-time clock
+      class RealTime {
+        constructor(selector) {
+          this.$el = $(selector);
+          this.update();
+          setInterval(() => this.update(), 1000);
+        }
+        update() {
+          const now = new Date();
+          const hh = String(now.getHours()).padStart(2, '0');
+          const mm = String(now.getMinutes()).padStart(2, '0');
+          const ss = String(now.getSeconds()).padStart(2, '0');
+          this.$el.text(`${hh}:${mm}:${ss}`);
+        }
+      }
+      new RealTime('#real-time');
+
+      // Local quotes (Chuẩn index.js LAMDev)
+      const quotes = [
+        "Niềm tin là ngọn hải đăng soi sáng trong đêm tối.",
+        "Bình tĩnh tạo nên sự quý sờ tộc",
+        "Uy tín tạo nên thương hiệu — BR-34 đồng hành cùng anh em MMO 24/7.",
+        "Kiên trì theo đuổi mục tiêu là chìa khóa thành công.",
+        "Khi bạn tin vào bản thân, cả thế giới sẽ tin theo.",
+        "Tiền là giấy, thấy là lấy — Bão đơn cùng BR-34!",
+        "Không có áp lực thì không có kim cương.",
+        "Thành công là tổng của những nỗ lực nhỏ được lặp lại mỗi ngày.",
+        "Cứ đi rồi sẽ đến, cứ làm rồi sẽ giỏi."
+      ];
+
+      let quoteIndex = Math.floor(Math.random() * quotes.length);
+      function showQuote() {
+        $('#cham-ngon').fadeOut(300, function () {
+          $(this).text(quotes[quoteIndex]).fadeIn(300);
+        });
+        quoteIndex = (quoteIndex + 1) % quotes.length;
+      }
+      showQuote();
+      setInterval(showQuote, 5321);
+
+      // Startup Loader progress
+      let pct = 0;
+      const loadTimer = setInterval(() => {
+        pct += Math.floor(Math.random() * 25) + 18;
+        if (pct >= 100) {
+          pct = 100;
+          clearInterval(loadTimer);
+          $('#loading-percentage').text('100%');
+          $('#loading-bar-fill').css('width', '100%');
+          $('#waiting-loader').html('<i class="ri-check-line text-emerald-400"></i>&ensp;Tải xong, đang mở trang...');
+          setTimeout(() => {
+            $('.pace-active').fadeOut(200);
+            $('.td-loading-v2').fadeOut(300);
+          }, 220);
+        } else {
+          $('#loading-percentage').text(`${pct}%`);
+          $('#loading-bar-fill').css('width', `${pct}%`);
+        }
+      }, 90);
+
+      // Copy handler [data-ws-copy]
+      $('body').on('click', '[data-ws-copy]', function (e) {
+        e.preventDefault();
+        const text = $(this).data('ws-copy');
+        const $textarea = $('<textarea>')
+          .val(text)
+          .css({ position: 'fixed', left: '-9999px', top: '-9999px' })
+          .appendTo('body');
+        $textarea[0].select();
+        try {
+          document.execCommand('copy');
+          FuiToast.success(`Đã sao chép: ${text}`);
+        } catch (err) {
+          FuiToast.error('Không thể sao chép');
+        }
+        $textarea.remove();
+      });
+
+      /* ========================================================================
+         HIỆU ỨNG TUYẾT RƠI & HOA ANH ĐÀO RƠI (CANVAS_SAKURA CHUẨN INDEX.JS LAMDEV)
+         ======================================================================== */
+      const sakuraImage = new Image();
+      let sakuraAnimationId;
+      let sakuraActive = false;
+
+      class SnowAndSakuraParticle {
+        constructor(index) {
+          this.isSnowflake = index % 3 !== 0; // Kết hợp bông tuyết trắng xanh & cánh hoa
+          this.reset(true);
+        }
+
+        reset(initial = false) {
+          this.x = Math.random() * window.innerWidth;
+          this.y = initial ? Math.random() * window.innerHeight : -20;
+          this.size = 0.45 + Math.random() * 0.65;
+          this.rotate = Math.random() * Math.PI * 2;
+          this.speedX = -1.1 + Math.random() * 0.85;
+          this.speedY = 1.1 + Math.random() * 0.85;
+          this.speedRotate = (Math.random() - 0.5) * 0.028;
+          this.sway = Math.random() * Math.PI * 2;
+          this.alpha = 0.55 + Math.random() * 0.4;
+        }
+
+        update() {
+          this.sway += 0.02;
+          this.x += this.speedX + Math.sin(this.sway) * 0.35;
+          this.y += this.speedY;
+          this.rotate += this.speedRotate;
+
+          if (this.x < -30) this.x = window.innerWidth + 20;
+          if (this.x > window.innerWidth + 30) this.x = -20;
+          if (this.y > window.innerHeight + 30) {
+            this.reset(false);
+          }
+        }
+
+        draw(ctx) {
+          ctx.save();
+          ctx.translate(this.x, this.y);
+          ctx.rotate(this.rotate);
+          ctx.globalAlpha = this.alpha;
+
+          if (!this.isSnowflake && sakuraImage.complete && sakuraImage.naturalWidth > 0) {
+            ctx.drawImage(sakuraImage, 0, 0, 24 * this.size, 24 * this.size);
+          } else {
+            // Vẽ bông tuyết 6 cánh tinh xảo kết hợp hạt tuyết phát sáng
+            const r = 8 * this.size;
+            ctx.strokeStyle = '#e0f2fe';
+            ctx.fillStyle = '#ffffff';
+            ctx.shadowColor = '#38bdf8';
+            ctx.shadowBlur = 6;
+            ctx.lineWidth = 1.3;
+
+            for (let i = 0; i < 6; i++) {
+              ctx.beginPath();
+              ctx.moveTo(0, 0);
+              ctx.lineTo(0, -r);
+              // Nhánh bông tuyết
+              ctx.moveTo(0, -r * 0.55);
+              ctx.lineTo(-r * 0.28, -r * 0.78);
+              ctx.moveTo(0, -r * 0.55);
+              ctx.lineTo(r * 0.28, -r * 0.78);
+              ctx.stroke();
+              ctx.rotate(Math.PI / 3);
+            }
+          }
+          ctx.restore();
+        }
+      }
+
+      function startSakura() {
+        if (sakuraActive) return;
+        sakuraActive = true;
+
+        const canvas = document.createElement('canvas');
+        canvas.id = 'canvas_sakura';
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        Object.assign(canvas.style, {
+          position: 'fixed',
+          left: 0,
+          top: 0,
+          pointerEvents: 'none',
+          zIndex: 8888
+        });
+        document.body.appendChild(canvas);
+
+        window.addEventListener('resize', () => {
+          const c = document.getElementById('canvas_sakura');
+          if (c) {
+            c.width = window.innerWidth;
+            c.height = window.innerHeight;
+          }
+        });
+
+        const ctx = canvas.getContext('2d');
+        const petals = Array.from({ length: 32 }, (_, idx) => new SnowAndSakuraParticle(idx));
+
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          petals.forEach(petal => {
+            petal.update();
+            petal.draw(ctx);
+          });
+          sakuraAnimationId = requestAnimationFrame(animate);
+        }
+
+        animate();
+      }
+
+      function toggleSakura() {
+        if (sakuraActive) {
+          const canvas = document.getElementById('canvas_sakura');
+          if (canvas) canvas.remove();
+          cancelAnimationFrame(sakuraAnimationId);
+          sakuraActive = false;
+          FuiToast.info('Đã tắt hiệu ứng Tuyết rơi.');
+          return;
+        }
+        startSakura();
+        FuiToast.success('Đã bật hiệu ứng Tuyết & Hoa rơi!');
+      }
+
+      window.toggleSakura = toggleSakura;
+      sakuraImage.onload = startSakura;
+      sakuraImage.onerror = startSakura;
+      sakuraImage.src = 'https://file.hstatic.net/200000259653/file/pages_17a8568517e94dcd9c8aec5587_570924d1fa4b4da1aa011044c9d7cc1c.png';
+      // Khởi chạy ngay lập tức
+      setTimeout(startSakura, 100);
+    }(window);
+
+    /* ==========================================================================
+       HEADER MENU, PING CHECKER & SPA ROUTER (CHUẨN SPA.JS + INDEX.JS LAMDEV)
+       ========================================================================== */
+    (function() {
+      function initHeaderMenu() {
+        var btn = document.getElementById('header-menu-toggle');
+        var popup = document.getElementById('header-popup');
+        var icon = document.getElementById('header-menu-icon');
+        if (!btn || !popup) return;
+
+        function closePopup() {
+          popup.classList.remove('open');
+          if (icon) icon.className = 'ri-menu-3-line text-[1.15rem]';
+        }
+        function openPopup() {
+          popup.classList.add('open');
+          if (icon) icon.className = 'ri-close-line text-[1.15rem]';
+        }
+
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (popup.classList.contains('open')) closePopup();
+          else openPopup();
+        });
+
+        document.addEventListener('click', function(e) {
+          if (!popup.contains(e.target) && e.target !== btn) closePopup();
+        });
+
+        popup.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', closePopup);
+        });
+      }
+
+      // Auto Ping Checker (Chuẩn index.js LAMDev)
+      window.checkLocketServersPing = function() {
+        var badges = document.querySelectorAll('.server-ping-badge[data-ping-url]');
+        if (!badges || !badges.length) return;
+
+        badges.forEach(function(badge) {
+          var dot = badge.querySelector('.status-dot');
+          var val = badge.querySelector('.ping-val');
+          if (!val) return;
+
+          val.textContent = 'Đang đo...';
+          badge.style.background = 'rgba(56, 189, 248, 0.1)';
+          badge.style.borderColor = 'rgba(56, 189, 248, 0.3)';
+          badge.style.color = '#38bdf8';
+          if (dot) dot.style.backgroundColor = '#38bdf8';
+
+          setTimeout(function() {
+            var ms = Math.floor(Math.random() * 25) + 19;
+            val.textContent = ms + 'ms';
+            badge.style.background = 'rgba(16, 185, 129, 0.08)';
+            badge.style.borderColor = 'rgba(16, 185, 129, 0.25)';
+            badge.style.color = '#34d399';
+            if (dot) dot.style.backgroundColor = '#34d399';
+          }, 280);
+        });
+      };
+
+      document.addEventListener('click', function(e) {
+        var badge = e.target.closest('.server-ping-badge');
+        if (badge && window.checkLocketServersPing) {
+          window.checkLocketServersPing();
+        }
+      });
+
+      // SPA Navigation (Chuẩn spa.js LAMDev)
+      const pageContent = document.getElementById('page-content');
+      const headerTitle = document.getElementById('header-title');
+
+      function updateHeaderUI(page) {
+        if (page === 'info') {
+          if (headerTitle) headerTitle.textContent = 'BR-34 Info';
+          document.title = 'BR-34 • ADMIN MMO - Info';
+        } else if (page === 'donate') {
+          if (headerTitle) headerTitle.textContent = 'BR-34 Contact';
+          document.title = 'BR-34 • ADMIN MMO - Contact';
+                } else if (page === 'apkmod') {
+          if (headerTitle) headerTitle.textContent = 'BR-34 APK Mod';
+          document.title = 'BR-34 • ADMIN MMO - APK Mod VIP';
+        } else if (page === 'locketlam') {
+          if (headerTitle) headerTitle.textContent = 'BR-34 Server';
+          document.title = 'BR-34 • ADMIN MMO - Server';
+        } else {
+          if (headerTitle) headerTitle.textContent = 'BR-34 Home';
+          document.title = 'BR-34 • ADMIN MMO - Home';
+        }
+      }
+
+      function loadPage(page) {
+        if (!pageContent) return;
+        pageContent.classList.add('page-leaving');
+        setTimeout(() => {
+          pageContent.innerHTML = BR34_PAGES[page] || BR34_PAGES.home;
+          updateHeaderUI(page);
+          pageContent.classList.remove('page-leaving');
+          pageContent.classList.add('page-entering');
+          if (typeof window.checkLocketServersPing === 'function') {
+            setTimeout(window.checkLocketServersPing, 100);
+          }
+          setTimeout(() => {
+            pageContent.classList.remove('page-entering');
+          }, 50);
+        }, 220);
+      }
+
+      document.body.addEventListener('click', (e) => {
+        const link = e.target.closest('a.spa-link');
+        if (link) {
+          e.preventDefault();
+          const page = link.getAttribute('data-page') || 'home';
+          loadPage(page);
+        }
+      });
+
+      initHeaderMenu();
+    })();
+  </script>
+
+  <!-- ==========================================================================
+       ADDONS: WHALE MASCOT PHYSICS, CURSOR MAGIC SPARKLES, NEKO PIXEL PET
+       ========================================================================== -->
+  <script>
+    // Whale Mascot Interactive Logic
+    let whaleTapCount = 0;
+    const whalePhrases = [
+      "🐳 Chào sếp! Em là cá voi hộ mệnh của BR-34 • ADMIN MMO ~",
+      "⚡ Hệ thống SMM shopbybrays.vercel.app chúc sếp bão đơn ngày mới!",
+      "💙 Cần tăng tương tác MXH hay mua tài nguyên số cứ ới Admin Zalo: 0976.976.627 nha!",
+      "🌊 Tương tác thật chạy vèo vèo thì không phải ảo mà là đẳng cấp BR-34!",
+      "🚀 Kết nối chuẩn API SMM v2 - Server Châu Á ping <15ms luôn sẵn sàng!",
+      "✨ Đừng quên tham gia nhóm Zalo & Tele MMO để hóng tut mới nhất sếp nhé!"
+    ];
+
+    function tapWhaleMascot() {
+      whaleTapCount++;
+      const msg = whalePhrases[whaleTapCount % whalePhrases.length];
+      if (typeof window.FuiToast !== 'undefined') {
+        window.FuiToast.info(msg);
+      } else if (typeof window.fuiToast !== 'undefined') {
+        window.fuiToast.info(msg);
+      }
+      spawnWhaleBubbles();
+    }
+
+    function spawnWhaleBubbles() {
+      for (let i = 0; i < 7; i++) {
+        const bubble = document.createElement('div');
+        bubble.textContent = ['🐳', '🫧', '💙', '🌊', '✨', '⚡'][Math.floor(Math.random() * 6)];
+        bubble.style.position = 'fixed';
+        bubble.style.left = (25 + Math.random() * 45) + 'px';
+        bubble.style.bottom = (60 + Math.random() * 35) + 'px';
+        bubble.style.fontSize = (16 + Math.random() * 16) + 'px';
+        bubble.style.zIndex = '9999';
+        bubble.style.pointerEvents = 'none';
+        bubble.style.transition = 'all 1.2s ease-out';
+        bubble.style.opacity = '1';
+        document.body.appendChild(bubble);
+        setTimeout(() => {
+          bubble.style.transform = `translate(${(Math.random() - 0.3) * 90}px, -${100 + Math.random() * 140}px) scale(1.4)`;
+          bubble.style.opacity = '0';
+        }, 30);
+        setTimeout(() => bubble.remove(), 1300);
+      }
+    }
+  </script>
+
+  <!-- Cursor Magic Sparkle Trail -->
+  <script>
+!function () {
+  const style = document.createElement('style');
+  style.textContent = `
+    :root{--glow-rgb:239 42 201}
+    .glow-point{position:absolute;width:6px;height:6px;border-radius:999px;background:rgb(var(--glow-rgb));box-shadow:0 0 10px 3px rgb(var(--glow-rgb)/.75);pointer-events:none;z-index:999999;will-change:transform,opacity;animation:glow-point-out 400ms ease-out forwards}
+    .star{position:absolute;z-index:999999;color:white;font-size:1rem;line-height:1;animation-duration:1500ms;animation-fill-mode:forwards;pointer-events:none;text-shadow:0 0 8px currentColor;will-change:transform,opacity}
+    @keyframes glow-point-out{0%{opacity:.9;transform:translate3d(-50%,-50%,0) scale(1)}100%{opacity:0;transform:translate3d(-50%,-50%,0) scale(.2)}}
+    @keyframes fall-1{0%{transform:translate3d(0,0,0) rotateX(45deg) rotateY(30deg) scale(.25);opacity:0}5%{transform:translate3d(10px,-10px,0) rotateX(45deg) rotateY(30deg) scale(1);opacity:1}100%{transform:translate3d(25px,200px,0) rotateX(180deg) rotateY(270deg) scale(1);opacity:0}}
+    @keyframes fall-2{0%{transform:translate3d(0,0,0) rotateX(-20deg) rotateY(10deg) scale(.25);opacity:0}10%{transform:translate3d(-10px,-5px,0) rotateX(-20deg) rotateY(10deg) scale(1);opacity:1}100%{transform:translate3d(-10px,160px,0) rotateX(-90deg) rotateY(45deg) scale(.25);opacity:0}}
+    @keyframes fall-3{0%{transform:translate3d(0,0,0) rotateX(0) rotateY(45deg) scale(.5);opacity:0}15%{transform:translate3d(7px,5px,0) rotateX(0) rotateY(45deg) scale(1);opacity:1}100%{transform:translate3d(20px,120px,0) rotateX(-180deg) rotateY(-90deg) scale(.5);opacity:0}}
+  `;
+  document.head.appendChild(style);
+
+  const start = Date.now();
+  const originPosition = { x: 0, y: 0 };
+  const last = {
+    starTimestamp: start,
+    starPosition: originPosition,
+    mousePosition: originPosition
+  };
+  const config = {
+    starAnimationDuration: 1500,
+    minimumTimeBetweenStars: 160,
+    minimumDistanceBetweenStars: 48,
+    glowDuration: 400,
+    maximumGlowPointSpacing: 22,
+    maxGlowElements: 35,
+    colors: ['249 146 253', '137 247 255', '255 157 199', '255 228 156', '252 254 255'],
+    sizes: ['1.35rem', '1rem', '.75rem'],
+    animations: ['fall-1', 'fall-2', 'fall-3'],
+    symbols: ['✦', '✧', '✩', '✶']
+  };
+  let count = 0;
+  const activeGlows = [];
+
+  const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+  const selectRandom = list => list[rand(0, list.length - 1)];
+  const px = value => `${value}px`;
+  const ms = value => `${value}ms`;
+  const calcDistance = (a, b) => Math.hypot(b.x - a.x, b.y - a.y);
+
+  function createStar(position) {
+    const star = document.createElement('span');
+    const color = selectRandom(config.colors);
+    star.className = 'star';
+    star.textContent = selectRandom(config.symbols);
+    star.style.left = px(position.x);
+    star.style.top = px(position.y);
+    star.style.fontSize = selectRandom(config.sizes);
+    star.style.color = `rgb(${color})`;
+    star.style.animationName = config.animations[count++ % config.animations.length];
+    star.style.animationDuration = ms(config.starAnimationDuration);
+    document.body.appendChild(star);
+    setTimeout(() => star.remove(), config.starAnimationDuration);
+  }
+
+  function createGlowPoint(position) {
+    // Limit DOM elements pool to prevent lag
+    if (activeGlows.length >= config.maxGlowElements) {
+      const oldest = activeGlows.shift();
+      if (oldest && oldest.parentNode) oldest.remove();
+    }
+
+    const glow = document.createElement('div');
+    const color = selectRandom(config.colors);
+    glow.className = 'glow-point';
+    glow.style.left = px(position.x);
+    glow.style.top = px(position.y);
+    glow.style.setProperty('--glow-rgb', color);
+    document.body.appendChild(glow);
+    activeGlows.push(glow);
+
+    setTimeout(() => {
+      const idx = activeGlows.indexOf(glow);
+      if (idx !== -1) activeGlows.splice(idx, 1);
+      if (glow.parentNode) glow.remove();
+    }, config.glowDuration);
+  }
+
+  function createGlow(from, to) {
+    const distance = calcDistance(from, to);
+    if (distance < 4) return;
+    const quantity = Math.min(Math.max(Math.floor(distance / config.maximumGlowPointSpacing), 1), 6);
+    const stepX = (to.x - from.x) / quantity;
+    const stepY = (to.y - from.y) / quantity;
+
+    for (let index = 0; index < quantity; index++) {
+      createGlowPoint({ x: from.x + stepX * index, y: from.y + stepY * index });
+    }
+  }
+
+  let rafScheduled = false;
+  let pendingPosition = null;
+
+  function processMove() {
+    rafScheduled = false;
+    if (!pendingPosition) return;
+    const position = pendingPosition;
+
+    if (last.mousePosition.x === 0 && last.mousePosition.y === 0) {
+      last.mousePosition = position;
+    }
+
+    const now = Date.now();
+    const farEnough = calcDistance(last.starPosition, position) >= config.minimumDistanceBetweenStars;
+    const waitedEnough = now - last.starTimestamp > config.minimumTimeBetweenStars;
+
+    if (farEnough || waitedEnough) {
+      createStar(position);
+      last.starTimestamp = now;
+      last.starPosition = position;
+    }
+
+    createGlow(last.mousePosition, position);
+    last.mousePosition = position;
+  }
+
+  function handleMove(event) {
+    const point = event.touches ? event.touches[0] : event;
+    pendingPosition = { x: point.pageX, y: point.pageY };
+    if (!rafScheduled) {
+      rafScheduled = true;
+      requestAnimationFrame(processMove);
+    }
+  }
+
+  window.addEventListener('mousemove', handleMove, { passive: true });
+  window.addEventListener('touchmove', handleMove, { passive: true });
+  document.body.addEventListener('mouseleave', () => {
+    last.mousePosition = originPosition;
+    pendingPosition = null;
+  });
+}();
+
+  </script>
+
+  <!-- Neko Pixel Desktop Pet -->
+  <script>
+/**
+ * Neko.js - Bundled version
+ * Copyright (C) 2025 Louis Abraham
+ *
+ * Based on Neko98 by David Harvey (1998)
+ * Original Neko by Masayuki Koba
+ *
+ * Licensed under GPL v3 (see LICENSE.md)
+ */
+
+(function() {
+    "use strict";
+
+    // Embedded sprite data (base64-encoded)
+    const NEKO_SPRITES = [
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABIklEQVR4nO1WSQ7EMAiDUf//ZeYwoguYLdVIPdSnqklsB0gI0QsMeQJntKAiQuPLG7ILRUQkIUTjqfinMMCI4KcBzUUcpYFsV0oQCTgEBi9TdFwNMB27bakYka455Vc9l4LISCYAB6xBK6zYAtI0b0akg5CvKkLMxpgv+p9hIx/COUsfTmv7s6CF01pKQZT7QU3siIoQ4pxjFWPmy/fUzCT87YvoZKbkn6SAu1XeFW9PMtjDcI6IMWd5BfwjorUidLdZMSZZb1g6BQTqYdghbxkISaMGldXEtAZaJwEczVu9oN2ikZEKlQERkfSBkTWmam1l4BJudNtlhsDa+6dg+CRrIe0FaDdTVBGLIiAqnIkreSZiOBxZtHKyZfh0L+a/eA6+YR662bT+YjsAAAAASUVORK5CYII=",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA40lEQVR4nO1XyxLDIAiUTv7/l+mhsfUBsogZM233ZkZ2F2SIUpoHN2uaIUGDWrHEXH8iEqlMfq9rboU7wpcRmPeBCpfiUrb527mHk1C1iIGu5Kv2wgauAnJW5rmr5EA/QAYERyNBl8b2CiA9QG1m1hoVhzacqEogVeTqQcSasEj6MRM2oCqCo9jUGUVVWRORqwLC1BS1hk04I57jmtGsYvskNA14s88oqxAyMDuE0NiRgW4AzcAaSPfvgZ83EOqDVfeBlDb+C0Qj74V+SYV5D6eBknjJw+T2Tfj9BqKAX0B/aHgCdIBeOO78F8UAAAAASUVORK5CYII=",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDklEQVR4nO1Wyw4DIQiEpv//y/TQuEVXmBG3ySbtnFQQRuWhSh02zLViBG0anXwE1otUU1Oh8JE5907a2MxOzsf1yb7wIBmBzpiqduMRbc3MujECJDASuVqXJvAtQAL+6huiGBjnIDBFROQJNeT85tEVMw5LBNg3XUxNESGzYDSE5m2NIQ4L0YzAzPCMhNsb+qGfAJ3Iy9jT0wQ8iZnD5jSSXUIAGV5x6oGCUCup5TaLgDijK6GqUmnF6h36hM67nSWRD7Ji/wYiB60FRynIABGwanA5EqmB+3fDP4HbEph9WCtYKsUe7CcFYbcUqySF5tJSDAyXe8YygeRUJRJLBIgr3eqeGUxASd3U/2G8AFt7mTLOfRenAAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABF0lEQVR4nO2W3Q6DMAiFYdn7vzK70E5KDpTS6s1GYqJt5XzlR8tUM1H3XPSx9LKIHAzMKRfuomUABKHn1DzUehUBoKCIkIh8gZhZwwl6970DAAExM4EoCR2RaBO8JQIRhH5utycEE21KQQQBrKuFbQCO2NBmAERd2fYb2sjLlTiwQ1tooZDTilEXyMh5NezavAgMxdMCV6qgFhrcLR6m+dY2zJgF2Lb7CsDj4hagZOaH040/AmD/gJbjdoBOrfB17ABWP6+VGrqlDTP9DwGqXbASuQbQKWuHXpXbta0QZ3avAciecpuzKCpaXA9nxRsAOmIzcAzFveesMQBonqC6dy4wPqcAtFj6gIJgZvM/vTiC2eTzbz9oHxxQekFCimcpAAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABKUlEQVR4nOWX3Q7CMAiFD2bv/8p4sdGxFljpT7zwJMaoG+cDCpnAv4sWxOAZj1kABgBmBtEZivnJc33v+mQAmkxrs8q0XBNBpAAsQy9zB6jx+yQASGdWkYGIysu7H2cVH6RHAiCUVCAAEIiHMhW44sddi1qBuwKlElmAtBRwmRgNmQVgPXISsPNGs02ZM2BOgScPsp4Iq6HaRX5vzImoO3vPHHBaoMrFlrlcIwHr917z5sMd++5VNsvAPLUJl0BEG1BkHcL5lBFnreWeAb3j35bPqDnwrEBZFBbQDnN9YWrGV5kDiU2YbcNSgFXjOASw0xw4D6G5ZrMa6b8AvAXalz6qFoxmMXofMPBI5rRneEQKQE8WM5l6+uwK3KvjV8ai7Q+lq9T8oVilL9sKg2SESmbvAAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABGElEQVR4nO2W3Q6DMAiFwfj+r8xupBLKb+vijSfZkilwPmmlA/j0snAhhzbzlwEIAIDo9kcc6csglcTJeCqyAZIlUGTsgLQgjk5wpgu2TpwAtJ6+AUHyvgewZF7QVNcC2DY3ukBeXQ0wgsTOdlWIGcaq7kiUABNhZkBEZgwiAptm3WQAMgbM8nDpLOG0B7rmXheieFBvgV53vGOffRMYVEIc6ubfzD0dhvl1qdZW3nD6Gn8qAAj2mpchLCC5rKr1UrR8GMmiVheqsCkAm0hTQbdlDgB4dhP1vKh0yDMfX77X/eRWF4Li4yfYJ+MISjtgbcTIWAwmTgyXOeyAiqFo6nmHTab2n1Ijz5ukjwNICDSurdT79Ol9/QD98LQSLfZm6wAAAABJRU5ErkJggg==",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABBklEQVR4nO1V0Q6EMAiDi///y9yLLHUC66Ymd4lNTNQArQWcyIsfgMH1NM8JHxERMxMzS4OeIm8C2OBV8v3jUgGqqh55txMluQsQFOFCbhAxJEcBd4qwgvz0UqMgTAZRUWyZG2Gv12pFQ9hXRDeqdS2Zcc4wdhsJQCFQzB80i2HRO0ANTrAtVB4jYAozg4oCMY9uAVMYgRtVxV0WkIFtyaUWrAJXEX1aHiSS8PDKb6ZboKq0vcxPbJN9Gsk/2NKul3WlsD44G+YJBi4cBGSrwwrJXKpENAGYXAzN0AbPj4T2B1ET0CdHSglEdTI3QkvCA2YRp7YGR/zyl9IinK97fpr3xYs/wxfuy7Lj/kO2hgAAAABJRU5ErkJggg==",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABHElEQVR4nO2WwRLDIAhEof//z9tLSJUAATTTQ7uHzKSi+6JIIfrry+JCLDat4060DGQcgO3PPHmXQUKDY/Ezhj7BU4y8q/gSQGig40bDFfNoAgyICc4wfw6gCNI+gluA1IJFiFfLJdABLvSg+PruB5hZXO8T7DEAZT7tyDjmAbAqMGmNSalAAECDhTtQgmDmi7kBcdHdEaQgxDh7c8abkskBlq9bkQeXTUKmhbyIVL0FJkS3aHUATMkRabi7dyJCB+CyC5KAACq5AiLi5R2wYLJTz0dTZl+Qci5ew2AdFhIzBwzTa14sAIjc5kXgjLF+B5OBsEAERvcLu/4NvSLFYiaAql94tB+YQLz82AnQKtX7i/vcgun14fz+w3oDTA6XRee9YIQAAAAASUVORK5CYII=",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDklEQVR4nO2WSxLDIAxDUaf3v7K7aEKJI/8I7abRMjHWsw0Mrf27kIiRYvwSgG4q8vEHDuFLYFgSGU3pIlDvKaCwA6cfBtwGVYaIFtBRmMkmILxgyRpfgXBHUDVXEMxD9LeHleSqOVlPN7cJ4CWPlDUvA4iICwGgZF4G8CCYuYiEoywDMBmVp2QBIDvvq1rSASZdgDodvV1fA8jqWV2g571X5px/SzIFcMpiGLIToYTWfjgCa1N7AKeTYLU/o9mbMH0coxtS7ZUenHoT6qr321BXFcCivTfeISizCQEgfKYNtCzBCHHQ1Cmwqnc6Yramct/2Loxmuu3qe5i/BLAbkFm7r55VAGPymbW3blG9AHEphjo0CJF9AAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA80lEQVR4nO2WwRLDIAhEoZP//2V6qHZMdHGRNL24M7kosi+IjiI5WfmW9cqYm5mYWQV5HOAWbYC/AxzBeK/Z2jllE9KBUrqeSqpK52a3gDYvwSLk0WQAQuZRiBnAknkEInwKyv7S8zOIEICqiplBiNl8FACWf2RSzVG8gCrQFfAMGECk5ZuwNYnALQF4BuhP2SpEr+LOJCtUgXxmMi8C+FzmgePkqcnTJYQVqM+tEYR3D4zGvKeb24Q/qEAnCFAXZRutrkcQXg98V1y3ooXyxi/wp5zt4EynLExFBn8LfUIvom4AVCKSP9Nlo1Lc07VbW0/qDae6gB08t42YAAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA+0lEQVR4nO1Wyw7EIAiEzf7/L7MXadTKY6gemuwkPRSFGVFBojykfZHNs9/wyZKLXPGktzV7TyZtcLY/EqCMW+fBAk4gI6BPf5RaZG5aQBaCpF7xLTK5/whecQb+ApiZS8Gbn+sMZyASg4qF6gAzk4iYJPP4sTqwEqHkKNICEAIvS2UBHkl19UTBCVUuJbw5d6sMxk2eUin2SFFYW5B+0QBYxrQyoCnbJULI2IboEC6dvDqAxMkIOI5UL3jI4fpng7tXsXoFiYAtsKobImoFqA7MInqSqChtEdAHZ+ZbRiqFCTlgQ1s2fDNzBrziGg7Y/SJCkekRJ/rIOfwAzH6TFVfg/LAAAAAASUVORK5CYII=",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABA0lEQVR4nO2XzRKDMAiEwfH9X5kebDQSfhOcHurepDPuR8DVAvy78KH7UtSjEuA0Jbr8EW8Wg98KAA0FGkp3swPGJoqaa2as4+Fnt7BiroCU7kDIPAPCiyTUxeWqgth44WtCQs2bryoLfADwIDxlIUUAC8IyQMT0mFSAZshvqEHMmLsAFtjsPpQAZCUloARA2rZXdesB/EQbHJse3h5EPE+kP5nZvdjhmo2aeP31bBpqEkfw5MxDAJkuvTFYTwAHwH62XuIl4NKvY7d9fkItBXkaRgB2B2p4/1d2D+DnAHJDac4r0RwJohuEtScsSUNEGWzza6kBRL8FZwA8hf+MvHrV6wMLunpMS0n3sAAAAABJRU5ErkJggg==",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABHUlEQVR4nO2WyxbDIAhEh578/y/TRWpKEFCRnm4yS19zeWgCPPqzaHM/756dBbiMmW0GIpLnW4sIAI6MeTP9mGjTm4Fcr9YyAEpnQEIoILLWeYBbJQggIOcdOAAFJWBmMLNrPNJqBsx6Thk5GXhFZrh3b855oAagzc7BM9prLhv9DEBnJsd/YdwBCIgGAj2n7/2svPp3ABLCirpBrIBE5npiqcPl3c+aA7l3YCiRoWGqygFmopaK3oFQzgdmybwB3E4afOGuJszeCK0DJ/FU90WNl4ke+JZgaqM2r8hCyTXMRg+oJmwRRZG1+leYWxu7j46GmfnJWFH3DnhvvlP/7SaQJbD+dMkyqTLXAGV1TQPMqBrObMJgvNT8EQC8AQ4mj0+E62kZAAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABHElEQVR4nO2WwRLDIAhE2U7//5fppVjUFVHTaQ/ZmVwSw74gEEVu/Vi4KI7uxjwFUBER1Y8/UEKmYu8CdMZd4CTIDoBGxgOQoc/jm+YZeQCVupguMX+/M3yxysBs8a6iuN0WuMVa3z7jGkF4AFjlquoIpJOr9ukaBhEWoYGoKjUCELYiA2wh0l1wuAXwIB6i6oLV/l6EAsuiARTzzJ6uqEk52npYHUSXQogkagBAudqg2WyRcVwgntK0BduKkwIM/gUwAGqQaS+fhV1II9uadC2EiWRx+jekLWJBRs/M3A+sVbWRWQT4+8yE1YufE9GZoO0CkKu8bF/MUj4DG2l16kwHlquJUl+R19GRjKR2+XR8dCglMcKvvXXrL/UCkH+5C6s6Dz0AAAAASUVORK5CYII=",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABAklEQVR4nO2V2xKDMAhE2U7//5fpi1iCXBJL60zHfdKY5CwkINGti4VgnJNvHWJ5eMxM6oYzMzFzbmCb0G2CBSzKMtBtYoADICJCaqDRhAsn8jNwgCkTZ4yE8OHBm+zJbpCBtw3TtU8PDoAKI1GZ7ouqQDwDU2JmieQAnoVqlZcwMkHvaIe6Xlg3GBjOfiGS8s5UCo/AptmCPgWXBroAleQI4Fysn+jQB4aXL2VB94Mq7CVDE/1j3cBqFuQoJztqauB0c9GAbA8AYRW48Cq6qHSzknb7uQeQ8y2qZepS673Kv6GO2sDP1C3brMD7aMHqvaNZCMTdUIcPM3ZNp7p16+/1AoBksuBmmrTtAAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABCElEQVR4nO2XwRLDIAhEodP//2V6aDa1gBEUc+h0T5mUuk8UJUzrkuaZs39+Jgb3A+Qdwpz2HgIIBoe0if59Ro+eOQxhyswkIqdphTnRJwMYjfHcGsB8hwCA3N5qTmSXwOykneYeQEiVUKMyDKmpjvSZ0AsyJXhl7sWqku3CLANEdMC4XldpMhWxAyKyTmXZ8CCmqqBStwIcmfxK5+0Z0BAhAO+qbS+qFUUOovOCas2rNmZ6CSpmvQSwOnM9gSgAV888C2A0C6QzmAFg7PxII6qrxImVLADRcYxGIUTE9JV4D5UcRCMIhDkQMt2QRPoAB8yeKRPew++FwLhnFz4F0Hm/p07/+nm9AC/+b1UxIU8OAAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABJ0lEQVR4nOWW2xLDIAhEl0z//5fpQ6NFJCAa04cy0+klsnsELwX+PWhgDN+gMZ3MzK0/EZUH9fMKhJfIygQaRkMltMNB7BlKU2vM+WwI4GUZn8mdsq6GNfOMuQUQJnpVmYkCoFVNkMg8O3sAOKS4MGAhuDUqgFxUo2WW44iofE/1qACQhJDiRJSqRBZCK4fbzxT5zr75TejLh43ngTa6Slhm+t0CFpVgr63hSbgaEtDaJeFdcJJsMQf6FnQan9zbtmM3kwiggmQh9OyvqjgKkIaIFmYVTQAInXsWJwDKVCArPhRbAK6u6scAMhCz+2toHWgA67jeVgHpA+c8mQWYPZy6PP2XLCvW9SG7RVdbQPo1UJlmzBNrwIVYacEyBPC7CmyP5sLx4g2TyYdbcQVdwQAAAABJRU5ErkJggg==",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABH0lEQVR4nOVX0RLCIAwrnv//y/EFbgVaGjp2emdedFLSUCCrIhzgfI7j7fs47uLFBpIAAAEwinLxjgiTYzQKGTclq6u8iIpLtcxBCwAgpZQp8USoYqqoZQ76DBjE03hVuqpGSgAaMYsdEadvwTYYmdhZfUdOnIFIgJnZE5S5CZSAJysQnYHSiPTqxpVaz0xyKkCUB6gfZqJh/KgAL+mS+BJ0xgm7B/4QHqlAzZmqQMhPOWHmFrCv5EhA2oRYEV+34p8UsNXTbcDkHQXoPYfI0t9DqLlur2j2hPrgNVvNGlHYQdn5n9gB2xu8+l77MFSjC3JatMWcfauUfs90POA3n96cCdH/Ao8g2ib65GZ8AEaJ01fllhHdTX4HT5nVH+IDSk+VHrQ/yTUAAAAASUVORK5CYII=",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABHUlEQVR4nOVWWw7DMAiDqfe/MvvoQ4xAMHlok2ZpmloS7AIhEGGQ66efrd37T/FCyEWERKTkGMUxsTcTc9t5iQDmx88ZChFrt+HvEj/7gDVykzFzQ9wRCglAaqAhVyQNcbVeIAHIl48CjsAulGqg7PxMS5cjE+AyR4K82sh4UgEzuV8RASIVheg4es+of7gGdHi9qFg78vWwgIi06xiMAtStyBRjoQiXRODiHIpA6h++jqtA23EmYOoYIiK+3op/UoCd/1bB9WsF6JwLUbe/p9BTVDQnuCOZbasj84AeULrrfP49w4fXG6L4NheQckDWFr13bPVWSZ850+vFCGBgT4PxCjOpQluvxUwfYOeKLhfPbCPimWO6Erua1x/gDfHvngq4OJEYAAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA/ElEQVR4nO2WUQ/DIAiEj2X//y+zF2ksgmCL3UsvWbJM4nfisRbYL24fU5/dcGaXvd1ACAeA7x/hDABUDW70YYHoQBG6TFQaSLW8MwKgLgMpeCvcYiCUPvnjBrSkE48b0J3YNYYuXGfgioEhbcxsbi5QqTFNrYKzaY8kxrIG0mOWBTc2ZwxM4VGLDbDAz1+uwDXAvWcHDszHcKntEsSJSMMjA8tKmBjkjWFJ6FTg0gZuk2d3HhkoG7cILOozcBueabln4AQnojBMuuYKXIoHuLdmmUjsnypg4zfoNe9hYx2gG8mpCbkCgvNH0a9ZJ76dm8X6VVr1W/erV/X6AU6CeC0t3vKrAAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABCElEQVR4nO2WzRKDMAiE2Y7v/8r0kqSISVzS0F5kxoPK8G34U5F803J17ZUNVx2y0wXcwjMFUHARkWM3uNBpf+yEz8BAQ1nmNgF0youQytXsKfDgWp6m9mcCRvYXATYLqQIA+NRffRbiXiKpqgAYQ5wI04ihKYjO+NCsAHYR0WPWAdkgfgypElAL5k7g6iIKLRjG12cF8mkqLyacdlaE9T8KSQBoR0TIRtPgT21ftT3gVuRS012imz1gOTY2PIxtqhnUP3L3p5K3r9KOEzsBVDlrCTCpUxq853hKQ2T+V+CMM/uXsxqf24RGTVeEb2Kzcm8ZzOcY9eqd+NvmjXZelLbzp/exx3LsDfOJkxZk2B+5AAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA+UlEQVR4nO2VSw6AIAxEKfH+V64bwfIpTPm5cRKNgdB50FKd08XPs1W+NcnMAeQbgBMQXYDdEB4NLCCWgtATkKSXMKwvIgprlwNwy3gHhKyBaP4EPyKoCE8AwEe/CyCRTMXudMgiLGpAOxUicsyswZmIqwAzElAQSPUa5jsbAUOv6VAjEgbTDSsAvO7AbkMNIOpBmHNvMe9AsBysRsyNRswVgFhrXoxUDVf0gex3npz49XpRGC2OamEzKtJtiQzdDlQhLZafEYmFS8zjy6jkJAz9IBkqPhBTdXKiGSEASXuWZtq1zHbc9LhakwCZZg6ndkkKJuL++vW9bhYolBau0DkQAAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABA0lEQVR4nO2WSw7DIAxEPVHuf2V30TgyCP8SoJuOVKkthHkG24HIFl+fpTq8QWYWkN8A7IA4KLHVKyHQLXz/vkzbyYCetwRgaGyATIFociBjruZNOZJhEqqtXq6DKB/5MgDRzshFp3yRXdgNga+3XXLWGDNbsKUI3Lp/omqvEIBVICFEP+F2j0C8I6pAjAZDCMmBjCKIUSOC90DFnCjumuHr+I15Rh4AAEzpC94unKM/NQQR8cTmJBXXGFQefn0EfVKWcsDpfqU1SB1HBQCjFpzJk36OhsiGk7kzmuZkdFoAKQDWUfcLBHdHMW/W02NRFURklrkX2KMqqKb+/pvNX3891QdsP4ApjDDinQAAAABJRU5ErkJggg==",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABBElEQVR4nN2X2wrDQAhEx9L//+XpQ7PB7FVdE2gHCoVtnIOuxgJ/JB4fl15Z5iRBsoA8CsDDOKRdgIu5iACAPAmwZQ4A74DXLN/6zATjJTbX25oRTwlcl83aEVaA0E23QFgAttpsBbECaMyP2g61OvcCNMFJDk1W516AYdp6JsXcG68HQKjZXowMBl3A8py6C5cgNYB+qZzBrCaj3+nv9aWsizVNey1dhtV5RwK0o3j0RBfMWJIpRdrLKKrfBJjNgUcAMnUbgDUbVgAZtdyqFbMAGrOZqWdqelcyEZEzckYmIjsh8B0u7GRE4PxfEAXQhkWhreWWLsjaBzYZ8rdi/5j7BX0ADfCTHKrbEI8AAAAASUVORK5CYII=",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABCklEQVR4nNWX4Q7DIAiEYdn7vzL7MW3QgnLIlvSSJUus3KcopUQPlrTfkV5ZcxEhEekgaTFq3NzHIMyZWCmAC6QKIpsCbobHeoPP7/Ktx0OEyDJu274MHExJNAWQeZtAFLghEQDYHIHYAaTNoxDwLdidfvR2QADMTCLimuzGUQB32yyTbo7GswCEVK3vRgEDE7DPU2dhCDID6JfMFSxq4j2n/8+Hck7Wcttn6TTsxg0x0b0UezNMsGBKlhTZl1GZngmwqgN/AahUGKCqAUkDaOnT713F6n7ArfGJ+z8IaslmCG8n6LvyUJFAe8LBwFhp2PgUQBt2pToXuB+oVhSAsx8eVQAZ/aZwVOsDqwuPItm/Ur4AAAAASUVORK5CYII=",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABCklEQVR4nO2WSw7DMAhEcdX7X9ldJFQO5jfYirLISFmkJcOTwcZEr3D189miT4mg920gJQCGGEDuBxhBViAsgE7AEq+UpNmeh1drl5DGSfj/yfCIt3xxAMXcTF6B8IJUCC2ZAxtCbGlCUSZIywAMwUJhIIDI3CpHFaDJhNpyj+9ocqK4SVKNKEGS3ukg9UyQdVf6YBvABcI0KkIgLTsRJLo/9P8CANKsAjSpeg70lb0/ClkBNfn5QxkARU81I+KdKUFqzhuTMvw2KsF4BqhGzoiW38LbZFpuLVn2/LfOBWgXrDQbW5Aoi1uC7A2IY71blPThsphXMivxmAiZhNawcgGS+l9UgfhXz9EPsSqlDRy22m8AAAAASUVORK5CYII=",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABCUlEQVR4nO2W0a7EIAhEnZv9/1/2vpRdtB0YXLtPnaRJExEPKGhrjx5p6se3XX8yQe+3gMgABrEbpARAQH4P4EHal9mA9xeNHYtxR4DNMUNw64+GDFhqp8ik6PyWVLbn5f4B4B1pFvEuLZ2BI923ACBzDqCSndTwKgMUorK4WqrLZQhA2ooMgnkYJsxRs0wYUDB2Wo8CVKvAoKoQdAssxeZQPfll8MgXc8ii9JBqBpSwTp6iKKNKKW2Bn+e+NMX+HChSAG57DSkAPWsoarTMLgIYStH+lVYdDVcAroiW7FgTam28jk+KmoqiKRtXTsAAaA+4WmAuvawfOLsu3QWJ/DOsqn0Pi0er+gdkMKQLf5051AAAAABJRU5ErkJggg==",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA9klEQVR4nO2VzRLDIAiEs528/yvTS5NRyvKjTHsJx6jwueDmOJ54Yi2kK9FrpbiItEEwgDB5F4QFkL5hBwRtAUl+wbVBuDPwCyXCIRySf92+A+LMbPIK74alAAAsJVtRYcUH7lgFHSPVAla4ozVlAAC08AesJAvbPFUICt7rQUvMRaqAJ2/UAus7ALEg0gpo6dltE+DTQU8zYQnH4pVBrAJMINMH1XOtTGVIqw/ZtGOtCIOwADLP8MpEYXf8IHJCERHXYnfd0AOY5E6+dbrOTKr0L8hKXWmJOwO7nm+ooROBAVAPsAp4JhUYk6ScMAgU9+uzT/w33t2WoP+qWuSTAAAAAElFTkSuQmCC",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA70lEQVR4nO1Wyw7DMAgr0/7/l73LmAglBJNKU6X6VDUBm0dCjuPBDYHN9QEvlhxARrJa3xagLBGJklNgBJQJmCy0MhCQtKJnBGQE4UI1C++igJi5GbVFqwQiQv2/XMCVuKeAWe07PUE1oa2xkonI8M2KYbqGOutfMUv/TAmk2uVV8vImh18abEacuLLfzkWkzqN60AF1j+GpH9gxvCNg2owdEd0HSbaBElERAMYha7sSAABpVMnRXNquBAzpjm67TFBgG4qgeoB8kpWQ3gNRNCxcxrwjmQlAhVid24F0chQMLWOPWUGZkIXc720f/BcfQ6ib3RoDepoAAAAASUVORK5CYII=",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABBElEQVR4nO2W0Q7DIAhFYdmH98/ZEwkiIhebLE16X5bVyj0iRYlePVByOD7og5qLSGayGz8GUJfIRM0hIQBlAyQLrQwEJq3VIwCZQThQzcK3CEBERMw8GHgoP14RBGCDMjOJyPSLCq4BXaWaejj7rKJyBqyx/r/MmD73YLcBIOlFstH+DO8SsmEyFaEJsvgitvGxigkg6MC8A0BkmksEg8aF+oALHlUlvKBuEU6tGT2GTwCW50IHonshyV6AICoAggRE5+4AxJx6YaCk223n7gCGdFfba9QbMgioBsArWUlpH1h1OkQuYz4QrwCkYqzBs8uI3bqgZctqQ5ElM/i+n/vqv/oBKoa/WI/BrT0AAAAASUVORK5CYII=",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA1ElEQVR4nO1USQ7EIAxzRvP/L6eXgUlTstDCpYqlqmyJTTAAhUKhUCjsB3uTn93kzOyKWCHASt7IXTwVYO0wRQ4A3wXkvR+tB0B6cLYC3D5J3tr6fwo0vJAV0Emt0jIziC4bPM2NRIwjLvH/GJFoGkJgb+y+hiEiAWk3T6In9QQsJW/l1zmnj0CajYhM40lizzdP3oGeVIqYMCwDcOW7R2Alj8blHwDdvgXWvddVkUcwWh+9A6ERIw9oQaofRP9yeIkjQZJw4JmUgLQoqSOx7i73y3AA4giQ7eL+8PYAAAAASUVORK5CYII=",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA10lEQVR4nO2UUQ7EIAhEYbP3vzL7wxo6IqKpadIwSWNKlXmClahUKpVKpbMSfYb6nDQXCb1vARg5zJ1vABAYrx919zoOgb6bpi05M4cGsJYxmK2AkPYUdnYZMYawHmhH5JljQmbuTLQSrrldo/Oa7wwgZZ7VH9L6nvwNU3oKoJUwAkhdJBmZ0nftW66AOUjEzO2JzKONrN4DHYw18mKBuRARb50BWwUbw7gHg1Dbh9CDsKbYptH85XugSxD03wOC98lqzRElngFZQ4TJAqShLEdi3q73y/QDzYaO9US4bAEAAAAASUVORK5CYII="
+    ];
+
+
+  // Animation states (matching original Neko.h enum)
+  const NekoState = {
+    STOP: 0,
+    WASH: 1,
+    SCRATCH: 2,
+    YAWN: 3,
+    SLEEP: 4,
+    AWAKE: 5,
+    U_MOVE: 6, // Up
+    D_MOVE: 7, // Down
+    L_MOVE: 8, // Left
+    R_MOVE: 9, // Right
+    UL_MOVE: 10, // Up-Left
+    UR_MOVE: 11, // Up-Right
+    DL_MOVE: 12, // Down-Left
+    DR_MOVE: 13, // Down-Right
+    U_CLAW: 14, // Clawing upward (at top boundary)
+    D_CLAW: 15, // Clawing downward (at bottom boundary)
+    L_CLAW: 16, // Clawing left (at left boundary)
+    R_CLAW: 17, // Clawing right (at right boundary)
+  };
+
+  // Behavior modes (matching original Action enum)
+  const BehaviorMode = {
+    CHASE_MOUSE: 0,
+    RUN_AWAY_FROM_MOUSE: 1,
+    RUN_AROUND_RANDOMLY: 2,
+    PACE_AROUND_SCREEN: 3,
+    RUN_AROUND: 4,
+  };
+
+  // Animation timing constants (in frames)
+  const STOP_TIME = 4;
+  const WASH_TIME = 10;
+  const SCRATCH_TIME = 4;
+  const YAWN_TIME = 3;
+  const AWAKE_TIME = 3;
+  const CLAW_TIME = 10;
+
+  // Sprite size
+  const SPRITE_SIZE = 32;
+
+  class Neko {
+    constructor(options = {}) {
+      // Configuration
+      this.fps = options.fps || 120; // Target FPS (default 120 for smooth movement)
+      // Original used 16 pixels/tick for 640x480 screens (~2.5% of width)
+      // Modern screens are ~3x larger, so default to 24 for similar feel
+      this.speed = options.speed || 24;
+      this.behaviorMode = options.behaviorMode || BehaviorMode.CHASE_MOUSE;
+      this.idleThreshold = options.idleThreshold || 6; // Original m_dwIdleSpace = 6
+
+      // State
+      this.state = NekoState.STOP;
+      this.tickCount = 0; // Increments every frame (like m_uTickCount)
+      this.stateCount = 0; // Increments every 2 original ticks (like m_uStateCount)
+
+      // Position (display position for smooth rendering)
+      this.x = options.startX || 0;
+      this.y = options.startY || 0;
+      // Logic position (updated at original 5 FPS tick rate)
+      this.logicX = this.x;
+      this.logicY = this.y;
+      // Previous logic position (for interpolation)
+      this.prevLogicX = this.x;
+      this.prevLogicY = this.y;
+      // Target tracking
+      this.targetX = this.x;
+      this.targetY = this.y;
+      this.oldTargetX = this.x;
+      this.oldTargetY = this.y;
+      // Movement deltas (preserved like m_nDX, m_nDY in original)
+      this.moveDX = 0;
+      this.moveDY = 0;
+
+      // Bounds - clientWidth excludes scrollbar, innerHeight is viewport height
+      this.boundsWidth = document.documentElement.clientWidth - SPRITE_SIZE;
+      this.boundsHeight = window.innerHeight - SPRITE_SIZE;
+
+      // Mouse tracking - null until first mouse event
+      // This prevents neko from running somewhere before user moves mouse
+      this.mouseX = null;
+      this.mouseY = null;
+      this.hasMouseMoved = false;
+
+      // DOM element
+      this.element = null;
+      this.spriteImages = [];
+      this.allowBehaviorChange = options.allowBehaviorChange !== false; // Default true
+
+      // Animation lookup table (maps state to sprite indices)
+      // Format: [frame1_index, frame2_index]
+      // These MUST match the original C++ m_nAnimation table EXACTLY
+      // From Neko.cpp lines 40-57:
+      this.animationTable = [
+        [28, 28], // STOP: m_nAnimation[STOP][0]=28, [1]=28
+        [25, 28], // WASH: m_nAnimation[WASH][0]=25, [1]=28
+        [26, 27], // SCRATCH: m_nAnimation[SCRATCH][0]=26, [1]=27
+        [29, 29], // YAWN: m_nAnimation[YAWN][0]=29, [1]=29
+        [30, 31], // SLEEP: m_nAnimation[SLEEP][0]=30, [1]=31
+        [0, 0], // AWAKE: m_nAnimation[AWAKE][0]=0, [1]=0
+        [1, 2], // U_MOVE: m_nAnimation[U_MOVE][0]=1, [1]=2
+        [9, 10], // D_MOVE: m_nAnimation[D_MOVE][0]=9, [1]=10
+        [13, 14], // L_MOVE: m_nAnimation[L_MOVE][0]=13, [1]=14
+        [5, 6], // R_MOVE: m_nAnimation[R_MOVE][0]=5, [1]=6
+        [15, 16], // UL_MOVE: m_nAnimation[UL_MOVE][0]=15, [1]=16
+        [3, 4], // UR_MOVE: m_nAnimation[UR_MOVE][0]=3, [1]=4
+        [11, 12], // DL_MOVE: m_nAnimation[DL_MOVE][0]=11, [1]=12
+        [7, 8], // DR_MOVE: m_nAnimation[DR_MOVE][0]=7, [1]=8
+        [17, 18], // U_CLAW: m_nAnimation[U_CLAW][0]=17, [1]=18
+        [23, 24], // D_CLAW: m_nAnimation[D_CLAW][0]=23, [1]=24
+        [21, 22], // L_CLAW: m_nAnimation[L_CLAW][0]=21, [1]=22
+        [19, 20], // R_CLAW: m_nAnimation[R_CLAW][0]=19, [1]=20
+      ];
+
+      // Additional state for behaviors
+      this.cornerIndex = 0;
+      this.ballX = 0;
+      this.ballY = 0;
+      this.ballVX = 0;
+      this.ballVY = 0;
+
+      this.init();
+    }
+
+    init() {
+      // Create the neko element with defensive styles to prevent global CSS interference
+      this.element = document.createElement("div");
+      this.element.className = "neko";
+      this.element.style.cssText = `
+        position: fixed;
+        width: ${SPRITE_SIZE}px;
+        height: ${SPRITE_SIZE}px;
+        image-rendering: pixelated;
+        pointer-events: ${this.allowBehaviorChange ? "auto" : "none"};
+        cursor: ${this.allowBehaviorChange ? "pointer" : "default"};
+        z-index: 999999;
+        left: ${this.x}px;
+        top: ${this.y}px;
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: transparent;
+        overflow: visible;
+        box-sizing: border-box;
+        user-select: none;
+        -webkit-user-select: none;
+      `;
+
+      // Create image element with defensive styles to prevent global CSS interference
+      const img = document.createElement("img");
+      img.style.cssText = `
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: none;
+        margin: 0;
+        padding: 0;
+        max-width: none;
+        max-height: none;
+        display: block;
+        box-sizing: border-box;
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-user-drag: none;
+        pointer-events: none;
+      `;
+      this.element.appendChild(img);
+
+      document.body.appendChild(this.element);
+
+      // Click to cycle through behaviors
+      // Use mousedown instead of click - click requires mouseup on same element,
+      // which fails if the cat moves between mousedown and mouseup
+      if (this.allowBehaviorChange) {
+        this.element.addEventListener("mousedown", (e) => {
+          e.stopPropagation();
+          e.preventDefault(); // Prevent text selection
+          // Make cat appear surprised/awake
+          this.setState(NekoState.AWAKE);
+          this.cycleBehavior();
+        });
+      }
+
+      // Track mouse position - set flag on first move
+      document.addEventListener("mousemove", (e) => {
+        this.mouseX = e.clientX;
+        this.mouseY = e.clientY;
+        this.hasMouseMoved = true;
+      });
+
+      // Update bounds on resize
+      window.addEventListener("resize", () => {
+        this.boundsWidth = document.documentElement.clientWidth - SPRITE_SIZE;
+        this.boundsHeight = window.innerHeight - SPRITE_SIZE;
+      });
+
+      // Random starting position within viewport
+      this.x = Math.random() * this.boundsWidth;
+      this.y = Math.random() * this.boundsHeight;
+      this.logicX = this.x;
+      this.logicY = this.y;
+      this.prevLogicX = this.x;
+      this.prevLogicY = this.y;
+      // Initialize target to current position (so no initial movement)
+      this.targetX = this.x + SPRITE_SIZE / 2;
+      this.targetY = this.y + SPRITE_SIZE - 1;
+      this.oldTargetX = this.targetX;
+      this.oldTargetY = this.targetY;
+      this.updatePosition();
+
+      // Animation loop
+      this.running = false;
+      this.intervalId = null;
+    }
+
+    start() {
+      if (this.running) return;
+      this.running = true;
+
+      // Calculate interval from FPS
+      // Higher FPS = smoother movement while maintaining same speed
+      const interval = 1000 / this.fps;
+      this.intervalId = setInterval(() => {
+        this.update();
+      }, interval);
+    }
+
+    stop() {
+      this.running = false;
+      if (this.intervalId) {
+        clearInterval(this.intervalId);
+        this.intervalId = null;
+      }
+    }
+
+    setSprites(sprites) {
+      this.spriteImages = sprites;
+      this.updateSprite();
+    }
+
+    updateSprite() {
+      if (this.spriteImages.length === 0) return;
+
+      // Get the current animation frame index
+      // Uses tickCount which is scaled to match original 5 FPS timing
+      let frameIndex;
+      if (this.state === NekoState.SLEEP) {
+        // Slower animation for sleep (toggles every 4 ticks in original = 800ms)
+        frameIndex =
+          this.animationTable[this.state][(this.tickCount >> 2) & 0x1];
+      } else {
+        // Normal animation speed (toggles every tick in original = 200ms)
+        frameIndex = this.animationTable[this.state][this.tickCount & 0x1];
+      }
+
+      // Update the image
+      const img = this.element.querySelector("img");
+      if (img && this.spriteImages[frameIndex]) {
+        img.src = this.spriteImages[frameIndex];
+      }
+    }
+
+    updatePosition() {
+      this.element.style.left = Math.round(this.x) + "px";
+      this.element.style.top = Math.round(this.y) + "px";
+    }
+
+    update() {
+      // Track time accumulator for original tick timing
+      // Original runs at 5 FPS (200ms per tick), we run at this.fps
+      // We need to accumulate fractional ticks and process when we hit a full tick
+      if (this.tickAccumulator === undefined) this.tickAccumulator = 0;
+
+      const originalFPS = 5;
+      this.tickAccumulator += originalFPS / this.fps;
+
+      // Process as many original ticks as have accumulated
+      while (this.tickAccumulator >= 1) {
+        this.tickAccumulator -= 1;
+        // Save previous position before processing tick
+        this.prevLogicX = this.logicX;
+        this.prevLogicY = this.logicY;
+        this.processOriginalTick();
+      }
+
+      // Smooth interpolation between logic positions
+      // tickAccumulator represents progress (0-1) towards next tick
+      const t = this.tickAccumulator;
+      this.x = this.prevLogicX + (this.logicX - this.prevLogicX) * t;
+      this.y = this.prevLogicY + (this.logicY - this.prevLogicY) * t;
+
+      // Update display position every frame
+      this.updatePosition();
+    }
+
+    processOriginalTick() {
+      // This runs at the original 5 FPS equivalent timing
+      // Increment tick counter (like m_uTickCount)
+      this.tickCount++;
+      if (this.tickCount >= 9999) this.tickCount = 0;
+
+      // Increment state counter every 2 ticks (like original)
+      if (this.tickCount % 2 === 0) {
+        this.stateCount++;
+      }
+
+      // Update behavior based on mode
+      switch (this.behaviorMode) {
+        case BehaviorMode.CHASE_MOUSE:
+          this.chaseMouse();
+          break;
+        case BehaviorMode.RUN_AWAY_FROM_MOUSE:
+          this.runAwayFromMouse();
+          break;
+        case BehaviorMode.RUN_AROUND_RANDOMLY:
+          this.runRandomly();
+          break;
+        case BehaviorMode.PACE_AROUND_SCREEN:
+          this.paceAroundScreen();
+          break;
+        case BehaviorMode.RUN_AROUND:
+          this.runAround();
+          break;
+      }
+
+      // Update animation frame
+      this.updateSprite();
+    }
+
+    chaseMouse() {
+      // Don't chase until mouse has moved at least once
+      if (!this.hasMouseMoved) {
+        // Just idle in place - pass target that results in zero movement
+        this.runTowards(
+          this.logicX + SPRITE_SIZE / 2,
+          this.logicY + SPRITE_SIZE - 1
+        );
+        return;
+      }
+      this.runTowards(this.mouseX, this.mouseY);
+    }
+
+    runAwayFromMouse() {
+      // Don't run away until mouse has moved
+      if (!this.hasMouseMoved) {
+        this.runTowards(
+          this.logicX + SPRITE_SIZE / 2,
+          this.logicY + SPRITE_SIZE - 1
+        );
+        return;
+      }
+
+      // Original uses m_dwIdleSpace * 16 as the trigger distance
+      const dwLimit = this.idleThreshold * 16;
+      const xdiff = this.logicX + SPRITE_SIZE / 2 - this.mouseX;
+      const ydiff = this.logicY + SPRITE_SIZE / 2 - this.mouseY;
+
+      if (Math.abs(xdiff) < dwLimit && Math.abs(ydiff) < dwLimit) {
+        // Mouse cursor is too close - run away
+        const dLength = Math.sqrt(xdiff * xdiff + ydiff * ydiff);
+        let targetX, targetY;
+        if (dLength !== 0) {
+          targetX = this.logicX + (xdiff / dLength) * dwLimit;
+          targetY = this.logicY + (ydiff / dLength) * dwLimit;
+        } else {
+          targetX = targetY = 32;
+        }
+        this.runTowards(targetX, targetY);
+        // Skip awake animation like original
+        if (this.state === NekoState.AWAKE) {
+          this.calcDirection(targetX - this.logicX, targetY - this.logicY);
+        }
+      } else {
+        // Keep running to current target (idle in place)
+        this.runTowards(this.targetX, this.targetY);
+      }
+    }
+
+    runRandomly() {
+      // Original: increments actionCount while sleeping, picks new target after idleSpace*10
+      if (this.state === NekoState.SLEEP) {
+        this.actionCount = (this.actionCount || 0) + 1;
+      }
+      if ((this.actionCount || 0) > this.idleThreshold * 10) {
+        this.actionCount = 0;
+        this.targetX = Math.random() * this.boundsWidth;
+        this.targetY = Math.random() * this.boundsHeight;
+        this.runTowards(this.targetX, this.targetY);
+      } else {
+        this.runTowards(this.targetX, this.targetY);
+      }
+    }
+
+    paceAroundScreen() {
+      // Original checks if neko has stopped moving (m_nDX == 0 && m_nDY == 0)
+      // We track this via lastMoveDX/DY
+      if (this.lastMoveDX === 0 && this.lastMoveDY === 0) {
+        this.cornerIndex = ((this.cornerIndex || 0) + 1) % 4;
+      }
+
+      // Corners offset by sprite size (matching original)
+      // Target positions that result in neko stopping at the corners
+      const corners = [
+        [SPRITE_SIZE + SPRITE_SIZE / 2, SPRITE_SIZE + SPRITE_SIZE - 1],
+        [
+          SPRITE_SIZE + SPRITE_SIZE / 2,
+          this.boundsHeight - SPRITE_SIZE + SPRITE_SIZE - 1,
+        ],
+        [
+          this.boundsWidth - SPRITE_SIZE + SPRITE_SIZE / 2,
+          this.boundsHeight - SPRITE_SIZE + SPRITE_SIZE - 1,
+        ],
+        [
+          this.boundsWidth - SPRITE_SIZE + SPRITE_SIZE / 2,
+          SPRITE_SIZE + SPRITE_SIZE - 1,
+        ],
+      ];
+
+      const target = corners[this.cornerIndex || 0];
+      this.runTowards(target[0], target[1]);
+    }
+
+    runAround() {
+      // Original ball physics with repelling from edges
+      const dwBoundingBox = this.speed * 8;
+
+      // Initialize ball if needed (matching original constructor)
+      if (this.ballX === 0 && this.ballY === 0) {
+        this.ballX = Math.random() * (this.boundsWidth - dwBoundingBox);
+        this.ballY = Math.random() * (this.boundsHeight - dwBoundingBox);
+        this.ballVX = (Math.random() < 0.5 ? 1 : -1) * (this.speed / 2) + 1;
+        this.ballVY = (Math.random() < 0.5 ? 1 : -1) * (this.speed / 2) + 1;
+      }
+
+      // Move invisible ball
+      this.ballX += this.ballVX;
+      this.ballY += this.ballVY;
+
+      // Repel from edges (original logic)
+      if (this.ballX < dwBoundingBox) {
+        if (this.ballX > 0) this.ballVX++;
+        else this.ballVX = -this.ballVX;
+      } else if (this.ballX > this.boundsWidth - dwBoundingBox) {
+        if (this.ballX < this.boundsWidth) this.ballVX--;
+        else this.ballVX = -this.ballVX;
+      }
+
+      if (this.ballY < dwBoundingBox) {
+        if (this.ballY > 0) this.ballVY++;
+        else this.ballVY = -this.ballVY;
+      } else if (this.ballY > this.boundsHeight - dwBoundingBox) {
+        if (this.ballY < this.boundsHeight) this.ballVY--;
+        else this.ballVY = -this.ballVY;
+      }
+
+      this.runTowards(this.ballX, this.ballY);
+    }
+
+    setState(newState) {
+      // Reset counters on state change (like original SetState)
+      this.tickCount = 0;
+      this.stateCount = 0;
+      this.state = newState;
+    }
+
+    runTowards(targetX, targetY) {
+      // Store old target for MoveStart check
+      this.oldTargetX = this.targetX;
+      this.oldTargetY = this.targetY;
+      this.targetX = targetX;
+      this.targetY = targetY;
+
+      // Calculate distance to target (using logic position, not display position)
+      const dx = targetX - this.logicX - SPRITE_SIZE / 2; // Stop in middle of cursor
+      const dy = targetY - this.logicY - SPRITE_SIZE + 1; // Just above cursor
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      // Calculate movement delta (like original m_nDX, m_nDY)
+      // Store as instance variables so they persist across ticks
+      // IMPORTANT: Use integers like original to prevent direction flickering
+      // which causes state resets and prevents wall clawing
+      if (distance !== 0) {
+        if (distance <= this.speed) {
+          // Less than top speed - jump the gap
+          this.moveDX = Math.trunc(dx);
+          this.moveDY = Math.trunc(dy);
+        } else {
+          // More than top speed - run at top speed
+          this.moveDX = Math.trunc((this.speed * dx) / distance);
+          this.moveDY = Math.trunc((this.speed * dy) / distance);
+        }
+      } else {
+        this.moveDX = 0;
+        this.moveDY = 0;
+      }
+
+      // Store for paceAroundScreen check
+      this.lastMoveDX = this.moveDX;
+      this.lastMoveDY = this.moveDY;
+
+      // Check if target moved (MoveStart equivalent)
+      const moveStart = !(
+        this.oldTargetX >= this.targetX - this.idleThreshold &&
+        this.oldTargetX <= this.targetX + this.idleThreshold &&
+        this.oldTargetY >= this.targetY - this.idleThreshold &&
+        this.oldTargetY <= this.targetY + this.idleThreshold
+      );
+
+      // State machine (matching original RunTowards switch)
+      switch (this.state) {
+        case NekoState.STOP:
+          if (moveStart) {
+            this.setState(NekoState.AWAKE);
+          } else if (this.stateCount >= STOP_TIME) {
+            // Check for wall scratching using preserved moveDX/moveDY
+            if (this.moveDX < 0 && this.logicX <= 0) {
+              this.setState(NekoState.L_CLAW);
+            } else if (this.moveDX > 0 && this.logicX >= this.boundsWidth) {
+              this.setState(NekoState.R_CLAW);
+            } else if (this.moveDY < 0 && this.logicY <= 0) {
+              this.setState(NekoState.U_CLAW);
+            } else if (this.moveDY > 0 && this.logicY >= this.boundsHeight) {
+              this.setState(NekoState.D_CLAW);
+            } else {
+              this.setState(NekoState.WASH);
+            }
+          }
+          break;
+
+        case NekoState.WASH:
+          if (moveStart) {
+            this.setState(NekoState.AWAKE);
+          } else if (this.stateCount >= WASH_TIME) {
+            this.setState(NekoState.SCRATCH);
+          }
+          break;
+
+        case NekoState.SCRATCH:
+          if (moveStart) {
+            this.setState(NekoState.AWAKE);
+          } else if (this.stateCount >= SCRATCH_TIME) {
+            this.setState(NekoState.YAWN);
+          }
+          break;
+
+        case NekoState.YAWN:
+          if (moveStart) {
+            this.setState(NekoState.AWAKE);
+          } else if (this.stateCount >= YAWN_TIME) {
+            this.setState(NekoState.SLEEP);
+          }
+          break;
+
+        case NekoState.SLEEP:
+          if (moveStart) {
+            this.setState(NekoState.AWAKE);
+          }
+          break;
+
+        case NekoState.AWAKE:
+          if (this.stateCount >= AWAKE_TIME + Math.floor(Math.random() * 20)) {
+            this.calcDirection(this.moveDX, this.moveDY);
+          }
+          break;
+
+        case NekoState.U_MOVE:
+        case NekoState.D_MOVE:
+        case NekoState.L_MOVE:
+        case NekoState.R_MOVE:
+        case NekoState.UL_MOVE:
+        case NekoState.UR_MOVE:
+        case NekoState.DL_MOVE:
+        case NekoState.DR_MOVE:
+          // Calculate new position using preserved moveDX/moveDY
+          let newX = this.logicX + this.moveDX;
+          let newY = this.logicY + this.moveDY;
+          const wasOutside =
+            newX <= 0 ||
+            newX >= this.boundsWidth ||
+            newY <= 0 ||
+            newY >= this.boundsHeight;
+
+          // Update direction
+          this.calcDirection(this.moveDX, this.moveDY);
+
+          // Clamp position
+          newX = Math.max(0, Math.min(this.boundsWidth, newX));
+          newY = Math.max(0, Math.min(this.boundsHeight, newY));
+          const notMoved = newX === this.logicX && newY === this.logicY;
+
+          // Stop if we can't go further
+          if (wasOutside && notMoved) {
+            this.setState(NekoState.STOP);
+          } else {
+            this.logicX = newX;
+            this.logicY = newY;
+          }
+          break;
+
+        case NekoState.U_CLAW:
+        case NekoState.D_CLAW:
+        case NekoState.L_CLAW:
+        case NekoState.R_CLAW:
+          if (moveStart) {
+            this.setState(NekoState.AWAKE);
+          } else if (this.stateCount >= CLAW_TIME) {
+            this.setState(NekoState.SCRATCH);
+          }
+          break;
+
+        default:
+          this.setState(NekoState.STOP);
+          break;
+      }
+    }
+
+    calcDirection(dx, dy) {
+      // Calculate direction based on movement delta (like original CalcDirection)
+      let newState;
+
+      if (dx === 0 && dy === 0) {
+        newState = NekoState.STOP;
+      } else {
+        const largeX = dx;
+        const largeY = -dy; // Y is inverted
+        const length = Math.sqrt(largeX * largeX + largeY * largeY);
+        const sinTheta = largeY / length;
+
+        const sinPiPer8 = 0.3826834323651;
+        const sinPiPer8Times3 = 0.9238795325113;
+
+        if (dx > 0) {
+          if (sinTheta > sinPiPer8Times3) {
+            newState = NekoState.U_MOVE;
+          } else if (sinTheta > sinPiPer8) {
+            newState = NekoState.UR_MOVE;
+          } else if (sinTheta > -sinPiPer8) {
+            newState = NekoState.R_MOVE;
+          } else if (sinTheta > -sinPiPer8Times3) {
+            newState = NekoState.DR_MOVE;
+          } else {
+            newState = NekoState.D_MOVE;
+          }
+        } else {
+          if (sinTheta > sinPiPer8Times3) {
+            newState = NekoState.U_MOVE;
+          } else if (sinTheta > sinPiPer8) {
+            newState = NekoState.UL_MOVE;
+          } else if (sinTheta > -sinPiPer8) {
+            newState = NekoState.L_MOVE;
+          } else if (sinTheta > -sinPiPer8Times3) {
+            newState = NekoState.DL_MOVE;
+          } else {
+            newState = NekoState.D_MOVE;
+          }
+        }
+      }
+
+      if (this.state !== newState) {
+        this.setState(newState);
+      }
+    }
+
+    isIdle() {
+      return (
+        this.state === NekoState.STOP ||
+        this.state === NekoState.WASH ||
+        this.state === NekoState.SCRATCH ||
+        this.state === NekoState.YAWN ||
+        this.state === NekoState.SLEEP ||
+        this.state === NekoState.AWAKE
+      );
+    }
+
+    cycleBehavior() {
+      // Cycle through behaviors: Chase -> Run Away -> Random -> Pace -> Run Around -> back to Chase
+      const behaviors = [
+        BehaviorMode.CHASE_MOUSE,
+        BehaviorMode.RUN_AWAY_FROM_MOUSE,
+        BehaviorMode.RUN_AROUND_RANDOMLY,
+        BehaviorMode.PACE_AROUND_SCREEN,
+        BehaviorMode.RUN_AROUND,
+      ];
+      const currentIndex = behaviors.indexOf(this.behaviorMode);
+      const nextIndex = (currentIndex + 1) % behaviors.length;
+      this.behaviorMode = behaviors[nextIndex];
+
+      // Reset state to wake the cat up if sleeping
+      if (this.state === NekoState.SLEEP) {
+        this.setState(NekoState.AWAKE);
+      }
+
+      // Show behavior name (optional - can be removed if you don't want this)
+      const behaviorNames = [
+        "Chase Mouse",
+        "Run Away From Mouse",
+        "Run Around Randomly",
+        "Pace Around Screen",
+        "Run Around",
+      ];
+      console.log(`Neko behavior: ${behaviorNames[nextIndex]}`);
+    }
+
+    destroy() {
+      if (this.element && this.element.parentNode) {
+        this.element.parentNode.removeChild(this.element);
+      }
+    }
+  }
+
+  // Export to global scope
+  window.Neko = Neko;
+  window.NekoState = NekoState;
+  window.BehaviorMode = BehaviorMode;
+
+    // Auto-initialize function
+    window.createNeko = function(options) {
+        const neko = new Neko(options);
+        neko.setSprites(NEKO_SPRITES);
+        neko.start();
+        return neko;
+    };
+
+    // Auto-start if script has data-autostart attribute
+    if (document.currentScript && document.currentScript.hasAttribute("data-autostart")) {
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", function() {
+                window.neko = createNeko();
+            });
+        } else {
+            window.neko = createNeko();
+        }
+    }
+})();
+
+    window.addEventListener('load', function() {
+      if (typeof createNeko !== 'undefined') {
+        try {
+          const neko = createNeko({
+            speed: 24,
+            fps: 120,
+            behaviorMode: 0,
+            idleThreshold: 6,
+            allowBehaviorChange: false,
+            startX: 30,
+            startY: window.innerHeight - 80
+          });
+          neko.start();
+        } catch(e) {
+          console.warn('Neko init error:', e);
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
