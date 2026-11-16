@@ -812,6 +812,158 @@
       align-items: center;
     }
 
+
+    /* ==========================================================================
+       LIQUID GLASS (THỦY TINH LỎNG) & BUTTON SYSTEM - CODEX ENGINE
+       ========================================================================== */
+    .glass-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 0.86rem;
+      letter-spacing: 0.01em;
+      text-decoration: none !important;
+      cursor: pointer;
+      user-select: none;
+      overflow: hidden;
+      transform: translateZ(0);
+      will-change: transform, box-shadow;
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.03) 100%);
+      border-radius: 14px 14px 0 0;
+      pointer-events: none;
+    }
+    .glass-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 14px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+      pointer-events: none;
+    }
+    .glass-btn:hover::after {
+      transform: translateX(100%);
+    }
+    .glass-btn:active {
+      transform: scale(0.97) translateY(1px);
+    }
+
+    /* Primary Liquid Blue */
+    .glass-btn-primary {
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.85), rgba(56, 189, 248, 0.95));
+      border: 1px solid rgba(186, 230, 253, 0.55);
+      color: #030712 !important;
+      box-shadow: 0 4px 20px -2px rgba(2, 132, 199, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(12px);
+    }
+    .glass-btn-primary:hover {
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.95), rgba(125, 211, 252, 1));
+      box-shadow: 0 6px 28px rgba(56, 189, 248, 0.65), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+      transform: translateY(-2px);
+    }
+
+    /* TikTok Neon Red-Pink Liquid */
+    .glass-btn-tiktok {
+      background: linear-gradient(135deg, rgba(225, 29, 72, 0.9), rgba(244, 63, 94, 0.95));
+      border: 1px solid rgba(254, 205, 211, 0.55);
+      color: #ffffff !important;
+      box-shadow: 0 4px 20px -2px rgba(225, 29, 72, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(12px);
+    }
+    .glass-btn-tiktok:hover {
+      background: linear-gradient(135deg, rgba(244, 63, 94, 1), rgba(251, 113, 133, 1));
+      box-shadow: 0 6px 28px rgba(244, 63, 94, 0.65), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+      transform: translateY(-2px);
+    }
+
+    /* Purple Cyber Liquid (Threads) */
+    .glass-btn-purple {
+      background: linear-gradient(135deg, rgba(147, 51, 234, 0.9), rgba(168, 85, 247, 0.95));
+      border: 1px solid rgba(233, 213, 255, 0.55);
+      color: #ffffff !important;
+      box-shadow: 0 4px 20px -2px rgba(147, 51, 234, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(12px);
+    }
+    .glass-btn-purple:hover {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 1), rgba(192, 132, 252, 1));
+      box-shadow: 0 6px 28px rgba(168, 85, 247, 0.65), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+      transform: translateY(-2px);
+    }
+
+    /* Secondary Frosted Glass (Nút Tính Năng / Chi Tiết) */
+    .glass-btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: var(--foreground) !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(14px);
+    }
+    .glass-btn-secondary:hover {
+      background: rgba(56, 189, 248, 0.14);
+      border-color: rgba(56, 189, 248, 0.45);
+      color: #38bdf8 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(56, 189, 248, 0.25);
+    }
+
+    /* Cyber Tool Badges & Liquid Cards */
+    .cyber-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 800;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      padding: 3px 8px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      backdrop-filter: blur(8px);
+    }
+
+    /* App & Tool Liquid Icon Avatar Containers */
+    .liquid-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.45);
+      transition: all 0.3s ease;
+    }
+    .liquid-icon-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, transparent 100%);
+      pointer-events: none;
+    }
+    .apk-card:hover .liquid-icon-box,
+    .tool-card:hover .liquid-icon-box {
+      transform: scale(1.08) rotate(2deg);
+    }
+
 </style>
 </head>
 <body class="overflow-x-hidden relative">
@@ -1173,27 +1325,32 @@
               <div class="apk-card cursor-pointer" onclick="openFeatureModal('locket')">
                 <div>
                   <div class="card-top-content">
-                    <img src="https://i.postimg.cc/mD3qPjG8/locket-gold-icon.png" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/4/46/Gold_Star_Solid.svg'" alt="Locket Gold" class="app-icon-img bg-amber-500/10 p-1 border border-amber-500/30">
+                    <div class="liquid-icon-box bg-gradient-to-br from-amber-400 to-amber-600 border border-amber-300/50 p-1">
+                      <img src="https://play-lh.googleusercontent.com/MQtmse1-bW3IeWEuE-O8_Wy7W88TX06chguC34wE6R9HL1ft5l2zJ0YB8gRX0z-w_Bka1OObCwO4UuNVbPMvKg=s128-rw" alt="Locket Official Icon" class="w-full h-full object-cover rounded-xl">
+                    </div>
                     <div class="card-info">
                       <div class="card-header-row">
-                        <h3 class="card-title-text">Locket Gold APK</h3>
-                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 flex-shrink-0">MOD VIP</span>
+                        <h3 class="card-title-text flex items-center gap-1.5">
+                          <span>Locket Gold APK</span>
+                          <i class="ri-vip-crown-fill text-amber-400 text-sm"></i>
+                        </h3>
+                        <span class="cyber-badge bg-amber-500/20 text-amber-300 border border-amber-500/40">MOD GOLD</span>
                       </div>
-                      <p class="card-desc-text">Full tính năng huy hiệu vàng, gửi ảnh/video HD không nén, mở khóa camera và icon độc quyền.</p>
+                      <p class="card-desc-text">Mở full huy hiệu vàng, gửi ảnh/video HD không viền, mở khóa camera độc quyền không nén.</p>
                     </div>
                   </div>
                 </div>
                 <div class="card-bottom-bar">
                   <div class="card-meta-row">
-                    <span class="text-sky-400 font-medium flex items-center gap-1"><i class="ri-sparkling-fill"></i> Bấm xem tính năng VIP</span>
+                    <span class="text-sky-400 font-medium flex items-center gap-1"><i class="ri-sparkling-fill"></i> Xem bảng tính năng VIP</span>
                     <span class="text-emerald-400 font-semibold flex items-center gap-1"><i class="ri-download-cloud-line"></i> MediaFire Tải Ngay</span>
                   </div>
                   <div class="card-actions-row">
-                    <button type="button" onclick="event.stopPropagation(); openFeatureModal('locket')" class="px-3.5 py-2 rounded-xl border border-sky-400/40 text-sky-400 text-xs font-bold hover:bg-sky-400/10 transition">
-                      <i class="ri-information-line"></i> Tính năng
+                    <button type="button" onclick="event.stopPropagation(); openFeatureModal('locket')" class="glass-btn glass-btn-secondary">
+                      <i class="ri-eye-line text-sm"></i> Tính năng
                     </button>
-                    <a href="https://www.mediafire.com/file/kb0exvxbbno624e/Locket_Gold_v1.222.3-gocmod.com.apk/file" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="btn-download-glow flex-1">
-                      <i class="ri-arrow-down-circle-fill text-lg"></i>
+                    <a href="https://www.mediafire.com/file/kb0exvxbbno624e/Locket_Gold_v1.222.3-gocmod.com.apk/file" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="glass-btn glass-btn-primary flex-1">
+                      <i class="ri-download-2-line text-base"></i>
                       <span>Tải Trực Tiếp MediaFire</span>
                     </a>
                   </div>
@@ -1204,93 +1361,104 @@
               <div class="apk-card cursor-pointer" onclick="openFeatureModal('tiktok')">
                 <div>
                   <div class="card-top-content">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok Mod" class="app-icon-img bg-slate-900 p-2 border border-rose-500/30">
+                    <div class="liquid-icon-box bg-slate-950 border border-rose-500/40 p-1">
+                      <img src="https://play-lh.googleusercontent.com/2o7iuqPe-0msP3DvNhzoOgNo4eZ6GkL_RtGVeKyBn5UBQAW5cw-GW5V3wDOHB1yTQuqWzrFLFOv2u4_5ea1uhg=s128-rw" alt="TikTok Official Icon" class="w-full h-full object-cover rounded-xl">
+                    </div>
                     <div class="card-info">
                       <div class="card-header-row">
-                        <h3 class="card-title-text">TikTok Mod VIP Pro</h3>
-                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30 flex-shrink-0">NO LOGO</span>
+                        <h3 class="card-title-text flex items-center gap-1.5">
+                          <span>TikTok Mod VIP Pro</span>
+                          <i class="ri-fire-fill text-rose-500 text-sm"></i>
+                        </h3>
+                        <span class="cyber-badge bg-rose-500/20 text-rose-300 border border-rose-500/40">NO LOGO</span>
                       </div>
-                      <p class="card-desc-text">Tải video không logo watermark, tự do đổi vùng US/UK/Nhật, chặn 100% quảng cáo và livestream rác.</p>
+                      <p class="card-desc-text">Tải video không logo watermark, tự do đổi vùng US/UK/Nhật, chặn sạch quảng cáo &amp; live rác.</p>
                     </div>
                   </div>
                 </div>
                 <div class="card-bottom-bar">
                   <div class="card-meta-row">
-                    <span class="text-rose-400 font-medium flex items-center gap-1"><i class="ri-sparkling-fill"></i> Bấm xem tính năng VIP</span>
+                    <span class="text-rose-400 font-medium flex items-center gap-1"><i class="ri-sparkling-fill"></i> Xem bảng tính năng VIP</span>
                     <span class="text-emerald-400 font-semibold flex items-center gap-1"><i class="ri-download-cloud-line"></i> MediaFire Tải Ngay</span>
                   </div>
                   <div class="card-actions-row">
-                    <button type="button" onclick="event.stopPropagation(); openFeatureModal('tiktok')" class="px-3.5 py-2 rounded-xl border border-rose-400/40 text-rose-400 text-xs font-bold hover:bg-rose-400/10 transition">
-                      <i class="ri-information-line"></i> Tính năng
+                    <button type="button" onclick="event.stopPropagation(); openFeatureModal('tiktok')" class="glass-btn glass-btn-secondary">
+                      <i class="ri-eye-line text-sm"></i> Tính năng
                     </button>
-                    <a href="https://www.mediafire.com/file/vrislfposkhow0t/TikTok_You-5.0%252847.4.3%2529.apk/file" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="btn-download-glow btn-download-tiktok flex-1">
-                      <i class="ri-arrow-down-circle-fill text-lg"></i>
+                    <a href="https://www.mediafire.com/file/vrislfposkhow0t/TikTok_You-5.0%252847.4.3%2529.apk/file" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="glass-btn glass-btn-tiktok flex-1">
+                      <i class="ri-download-2-line text-base"></i>
                       <span>Tải Trực Tiếp MediaFire</span>
                     </a>
                   </div>
                 </div>
               </div>
 
-              <!-- Item 3: Tool Làm Video Threads MMO -->
+              <!-- Item 3: Tool Làm Video Threads MMO (Cyber Cine Engine) -->
               <div class="tool-card cursor-pointer" onclick="openFeatureModal('threads')">
                 <div>
                   <div class="card-top-content">
-                    <div class="app-icon-img bg-purple-600/20 border border-purple-500/40 flex items-center justify-center text-purple-400 text-2xl flex-shrink-0">
-                      <i class="ri-movie-2-fill"></i>
+                    <div class="liquid-icon-box bg-gradient-to-br from-purple-900 via-indigo-900 to-slate-950 border border-purple-400/50 text-purple-300 text-2xl shadow-purple-500/30">
+                      <i class="ri-movie-2-fill animate-pulse"></i>
                     </div>
                     <div class="card-info">
                       <div class="card-header-row">
-                        <h3 class="card-title-text">Tool Làm Video Threads</h3>
-                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 flex-shrink-0">199K VĨNH VIỄN</span>
+                        <h3 class="card-title-text flex items-center gap-1.5">
+                          <span>Tool Video Threads AI</span>
+                          <i class="ri-robot-2-fill text-purple-400 text-sm"></i>
+                        </h3>
+                        <span class="cyber-badge bg-purple-500/20 text-purple-300 border border-purple-500/40">199K VĨNH VIỄN</span>
                       </div>
-                      <p class="card-desc-text">Tự động cào tâm sự viral trên Threads, ghép giọng đọc AI cảm xúc + video nền triệu view xuất 50-100 video/ngày.</p>
+                      <p class="card-desc-text">Cào bài viral Threads 1 chạm, ghép giọng đọc AI cảm xúc + video nền triệu view xuất 50-100 video/ngày.</p>
                     </div>
                   </div>
                 </div>
                 <div class="card-bottom-bar">
                   <div class="card-meta-row">
-                    <span class="text-purple-400 font-medium flex items-center gap-1"><i class="ri-sparkling-fill"></i> Bấm xem chi tiết tool</span>
+                    <span class="text-purple-400 font-medium flex items-center gap-1"><i class="ri-cpu-line"></i> Tự Động Hóa 100%</span>
                     <span class="text-emerald-400 font-semibold flex items-center gap-1"><i class="ri-infinity-line"></i> Bản Quyền Trọn Đời</span>
                   </div>
                   <div class="card-actions-row">
-                    <button type="button" onclick="event.stopPropagation(); openFeatureModal('threads')" class="px-3.5 py-2 rounded-xl border border-purple-400/40 text-purple-400 text-xs font-bold hover:bg-purple-400/10 transition">
-                      <i class="ri-information-line"></i> Chi tiết
+                    <button type="button" onclick="event.stopPropagation(); openFeatureModal('threads')" class="glass-btn glass-btn-secondary">
+                      <i class="ri-terminal-box-line text-sm"></i> Chi tiết
                     </button>
-                    <a href="https://zalo.me/0976976627?text=Chào%20Admin%20BR-34,%20mình%20muốn%20mua%20Tool%20Làm%20Video%20Threads%20giá%20199k%20vĩnh%20viễn" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="btn-download-glow flex-1" style="background: linear-gradient(90deg, #9333ea, #a855f7); color: #fff;">
-                      <i class="ri-shopping-cart-fill text-lg"></i>
+                    <a href="https://zalo.me/0976976627?text=Chào%20Admin%20BR-34,%20mình%20muốn%20mua%20Tool%20Làm%20Video%20Threads%20giá%20199k%20vĩnh%20viễn" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="glass-btn glass-btn-purple flex-1">
+                      <i class="ri-flashlight-fill text-base"></i>
                       <span>Mua Key 199k Vĩnh Viễn</span>
                     </a>
                   </div>
                 </div>
               </div>
 
-              <!-- Item 4: Tool OnLuyen Trắc Nghiệm -->
+              <!-- Item 4: Tool OnLuyen Trắc Nghiệm (Quantum Solver Bot) -->
               <div class="tool-card cursor-pointer" onclick="openFeatureModal('onluyen')">
                 <div>
                   <div class="card-top-content">
-                    <div class="app-icon-img bg-sky-500/20 border border-sky-400/40 flex items-center justify-center text-sky-400 text-2xl flex-shrink-0">
-                      <i class="ri-book-read-fill"></i>
+                    <div class="liquid-icon-box bg-gradient-to-br from-cyan-900 via-sky-900 to-slate-950 border border-sky-400/50 text-sky-300 text-2xl shadow-sky-500/30">
+                      <i class="ri-brain-fill animate-pulse"></i>
                     </div>
                     <div class="card-info">
                       <div class="card-header-row">
-                        <h3 class="card-title-text">Tool OnLuyen Trắc Nghiệm</h3>
-                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-500/30 flex-shrink-0">50K / THÁNG</span>
+                        <h3 class="card-title-text flex items-center gap-1.5">
+                          <span>Tool OnLuyen Auto Bot</span>
+                          <i class="ri-shield-check-fill text-emerald-400 text-sm"></i>
+                        </h3>
+                        <span class="cyber-badge bg-sky-500/20 text-sky-300 border border-sky-500/40">50K / THÁNG</span>
                       </div>
-                      <p class="card-desc-text">Tự động quét đề thi, gợi ý đáp án trắc nghiệm chính xác 99%, chạy ngầm an toàn tuyệt đối mọi nền tảng.</p>
+                      <p class="card-desc-text">Quét đề thi thông minh, gợi ý đáp án trắc nghiệm chuẩn 99%, chạy ngầm tàng hình an toàn 100%.</p>
                     </div>
                   </div>
                 </div>
                 <div class="card-bottom-bar">
                   <div class="card-meta-row">
-                    <span class="text-sky-400 font-medium flex items-center gap-1"><i class="ri-sparkling-fill"></i> Bấm xem chi tiết tool</span>
-                    <span class="text-emerald-400 font-semibold flex items-center gap-1"><i class="ri-shield-check-line"></i> An Toàn &amp; Ẩn Danh</span>
+                    <span class="text-sky-400 font-medium flex items-center gap-1"><i class="ri-radar-line"></i> Radar Giải Đề 99%</span>
+                    <span class="text-emerald-400 font-semibold flex items-center gap-1"><i class="ri-spy-line"></i> Chạy Ngầm Tàng Hình</span>
                   </div>
                   <div class="card-actions-row">
-                    <button type="button" onclick="event.stopPropagation(); openFeatureModal('onluyen')" class="px-3.5 py-2 rounded-xl border border-sky-400/40 text-sky-400 text-xs font-bold hover:bg-sky-400/10 transition">
-                      <i class="ri-information-line"></i> Chi tiết
+                    <button type="button" onclick="event.stopPropagation(); openFeatureModal('onluyen')" class="glass-btn glass-btn-secondary">
+                      <i class="ri-terminal-box-line text-sm"></i> Chi tiết
                     </button>
-                    <a href="https://zalo.me/0976976627?text=Chào%20Admin%20BR-34,%20mình%20muốn%20thuê%20Key%20Tool%20OnLuyen%20giá%2050k/tháng" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="btn-download-glow flex-1">
-                      <i class="ri-key-fill text-lg"></i>
+                    <a href="https://zalo.me/0976976627?text=Chào%20Admin%20BR-34,%20mình%20muốn%20thuê%20Key%20Tool%20OnLuyen%20giá%2050k/tháng" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="glass-btn glass-btn-primary flex-1">
+                      <i class="ri-key-fill text-base"></i>
                       <span>Thuê Key 50k / Tháng</span>
                     </a>
                   </div>
@@ -3480,14 +3648,14 @@
       const footer = document.getElementById('modalFooter');
       if (data.downloadUrl) {
         footer.innerHTML = `
-          <a href="${data.downloadUrl}" target="_blank" rel="noopener" class="${data.btnClass}">
+          <a href="${data.downloadUrl}" target="_blank" rel="noopener" class="glass-btn glass-btn-primary w-full text-center">
             <i class="ri-download-cloud-fill text-lg"></i>
             <span>${data.btnText}</span>
           </a>
         `;
       } else if (data.zaloUrl) {
         footer.innerHTML = `
-          <a href="${data.zaloUrl}" target="_blank" rel="noopener" class="${data.btnClass}">
+          <a href="${data.zaloUrl}" target="_blank" rel="noopener" class="glass-btn glass-btn-primary w-full text-center">
             <i class="ri-chat-smile-2-fill text-lg"></i>
             <span>${data.btnText}</span>
           </a>
