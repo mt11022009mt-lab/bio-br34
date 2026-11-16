@@ -756,6 +756,65 @@
       color: #000000;
     }
 
+
+    /* Feature Modal & Tool MMO Cards */
+    .feature-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 99999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .feature-modal-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+    .feature-modal-box {
+      background: hsl(var(--primary-foreground));
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 20px;
+      padding: 22px 24px;
+      max-width: 460px;
+      width: 100%;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 189, 248, 0.15);
+      animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes modalSlideUp {
+      from { transform: translateY(20px) scale(0.96); opacity: 0; }
+      to { transform: translateY(0) scale(1); opacity: 1; }
+    }
+    .tool-card {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 16px;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      background: linear-gradient(145deg, hsl(var(--primary-foreground)), rgba(15, 23, 42, 0.7));
+      padding: 18px 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+    .tool-card:hover {
+      border-color: #38bdf8;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px -5px rgba(2, 132, 199, 0.35);
+    }
+    .badge-price {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+    }
+
 </style>
 </head>
 <body class="overflow-x-hidden relative">
@@ -859,7 +918,7 @@
                                         <li>
                       <a href="#apkmod" class="spa-link hover:bg-muted text-foreground flex items-center justify-between" data-page="apkmod">
                         <span class="flex items-center gap-2">
-                          <i class="ri-apps-2-line text-sky-400"></i> Kho APK Mod VIP
+                          <i class="ri-apps-2-line text-sky-400"></i> Apps &amp; Tools VIP
                         </span>
                         <span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">HOT</span>
                       </a>
@@ -1110,56 +1169,61 @@
           </div>
         </section>
 
-        <!-- Kho Ứng Dụng Mod & Free Tut (Yeumoney Vượt Link Tải) -->
+                <!-- Kho Ứng Dụng Mod & Tool Độc Quyền BR-34 -->
         <section class="animate flex flex-col gap-y-5 md:flex-row md:gap-y-0 show">
           <div class="text-xl font-semibold md:min-w-36">
             <h2 class="flex items-center gap-1.5 text-sky-400">
-              <i class="ri-apps-2-line"></i> APK Mod
+              <i class="ri-apps-2-line"></i> Apps &amp; Tools
             </h2>
           </div>
           <div class="flex flex-1 flex-col gap-y-4">
             <div class="flex items-center justify-between">
-              <span class="text-xs text-muted-foreground">Kho App Mod VIP &amp; Free Tut độc quyền • Vượt link 30s để tải trực tiếp</span>
+              <span class="text-xs text-muted-foreground">Kho APK Mod &amp; Tool MMO độc quyền • Tải trực tiếp MediaFire không cần vượt</span>
               <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Link Tải Tự Động
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Tải Siêu Tốc MediaFire
               </span>
             </div>
 
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <!-- Card 1: Locket Gold Mod -->
-              <div class="apk-card">
+              <!-- Item 1: Locket Gold Mod -->
+              <div class="apk-card cursor-pointer" onclick="openFeatureModal('locket')">
                 <div class="flex items-start gap-3.5 mb-3">
                   <div class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl flex-shrink-0 shadow-inner">
                     <i class="ri-vip-crown-fill"></i>
                   </div>
-                  <div>
-                    <div class="flex items-center gap-2">
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between">
                       <h3 class="font-bold text-base text-foreground">Locket Gold APK</h3>
                       <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">MOD VIP</span>
                     </div>
-                    <p class="text-xs text-muted-foreground mt-1">Full tính năng huy hiệu vàng, gửi ảnh/video HD không nén, mở khóa camera độc quyền.</p>
+                    <p class="text-xs text-muted-foreground mt-1">Full tính năng huy hiệu vàng, gửi ảnh/video HD không nén, camera độc quyền.</p>
                   </div>
                 </div>
                 <div class="pt-2 border-t border-border/50 flex flex-col gap-2">
                   <div class="flex items-center justify-between text-[11px] text-muted-foreground">
-                    <span><i class="ri-shield-check-line text-emerald-400"></i> Quét sạch mã độc</span>
-                    <span><i class="ri-download-cloud-line text-sky-400"></i> MediaFire High-Speed</span>
+                    <span class="text-sky-400 font-medium flex items-center gap-1"><i class="ri-sparkling-fill"></i> Bấm để xem tính năng VIP</span>
+                    <span class="text-emerald-400 font-bold"><i class="ri-download-cloud-line"></i> MediaFire Trực Tiếp</span>
                   </div>
-                  <a href="https://yeumoney.com/aE0qoj" target="_blank" rel="noopener" class="btn-download-glow">
-                    <i class="ri-arrow-down-circle-fill text-lg"></i>
-                    <span>Vượt Link Tải Locket Gold APK</span>
-                  </a>
+                  <div class="flex gap-2">
+                    <button type="button" onclick="event.stopPropagation(); openFeatureModal('locket')" class="px-3 py-2 rounded-xl border border-sky-400/40 text-sky-400 text-xs font-bold hover:bg-sky-400/10 transition">
+                      <i class="ri-information-line"></i> Tính năng
+                    </button>
+                    <a href="https://www.mediafire.com/file/kb0exvxbbno624e/Locket_Gold_v1.222.3-gocmod.com.apk/file" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="btn-download-glow flex-1">
+                      <i class="ri-arrow-down-circle-fill text-lg"></i>
+                      <span>Tải Trực Tiếp MediaFire</span>
+                    </a>
+                  </div>
                 </div>
               </div>
 
-              <!-- Card 2: TikTok Mod No Watermark -->
-              <div class="apk-card">
+              <!-- Item 2: TikTok Mod No Watermark -->
+              <div class="apk-card cursor-pointer" onclick="openFeatureModal('tiktok')">
                 <div class="flex items-start gap-3.5 mb-3">
                   <div class="w-12 h-12 rounded-2xl bg-rose-500/15 border border-rose-500/30 flex items-center justify-center text-rose-400 text-2xl flex-shrink-0 shadow-inner">
                     <i class="ri-tiktok-fill"></i>
                   </div>
-                  <div>
-                    <div class="flex items-center gap-2">
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between">
                       <h3 class="font-bold text-base text-foreground">TikTok Mod VIP APK</h3>
                       <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30">MOD PRO</span>
                     </div>
@@ -1168,25 +1232,92 @@
                 </div>
                 <div class="pt-2 border-t border-border/50 flex flex-col gap-2">
                   <div class="flex items-center justify-between text-[11px] text-muted-foreground">
-                    <span><i class="ri-shield-check-line text-emerald-400"></i> Bản mới nhất 2026</span>
-                    <span><i class="ri-speed-up-line text-rose-400"></i> Chạy siêu mượt</span>
+                    <span class="text-sky-400 font-medium flex items-center gap-1"><i class="ri-sparkling-fill"></i> Bấm để xem tính năng VIP</span>
+                    <span class="text-emerald-400 font-bold"><i class="ri-download-cloud-line"></i> MediaFire Trực Tiếp</span>
                   </div>
-                  <a href="https://yeumoney.com/qvwnQGZ" target="_blank" rel="noopener" class="btn-download-glow btn-download-tiktok">
-                    <i class="ri-arrow-down-circle-fill text-lg"></i>
-                    <span>Vượt Link Tải TikTok Mod APK</span>
-                  </a>
+                  <div class="flex gap-2">
+                    <button type="button" onclick="event.stopPropagation(); openFeatureModal('tiktok')" class="px-3 py-2 rounded-xl border border-rose-400/40 text-rose-400 text-xs font-bold hover:bg-rose-400/10 transition">
+                      <i class="ri-information-line"></i> Tính năng
+                    </button>
+                    <a href="https://www.mediafire.com/file/vrislfposkhow0t/TikTok_You-5.0%252847.4.3%2529.apk/file" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="btn-download-glow btn-download-tiktok flex-1">
+                      <i class="ri-arrow-down-circle-fill text-lg"></i>
+                      <span>Tải Trực Tiếp MediaFire</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 3: Tool Làm Video Threads MMO -->
+              <div class="tool-card cursor-pointer" onclick="openFeatureModal('threads')">
+                <div class="flex items-start gap-3.5 mb-3">
+                  <div class="w-12 h-12 rounded-2xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center text-purple-400 text-2xl flex-shrink-0 shadow-inner">
+                    <i class="ri-movie-2-fill"></i>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between">
+                      <h3 class="font-bold text-base text-foreground">Tool Làm Video Threads</h3>
+                      <span class="badge-price bg-purple-500/20 text-purple-300 border border-purple-500/30">199K VĨNH VIỄN</span>
+                    </div>
+                    <p class="text-xs text-muted-foreground mt-1">Tự động cào bài viết tâm sự viral trên Threads, ghép giọng đọc AI + video nền triệu view.</p>
+                  </div>
+                </div>
+                <div class="pt-2 border-t border-border/50 flex flex-col gap-2">
+                  <div class="flex items-center justify-between text-[11px] text-muted-foreground">
+                    <span class="text-purple-400 font-medium flex items-center gap-1"><i class="ri-sparkling-fill"></i> Bấm để xem chi tiết tool</span>
+                    <span class="text-emerald-400 font-bold"><i class="ri-infinity-line"></i> Bản Quyền Trọn Đời</span>
+                  </div>
+                  <div class="flex gap-2">
+                    <button type="button" onclick="event.stopPropagation(); openFeatureModal('threads')" class="px-3 py-2 rounded-xl border border-purple-400/40 text-purple-400 text-xs font-bold hover:bg-purple-400/10 transition">
+                      <i class="ri-information-line"></i> Chi tiết
+                    </button>
+                    <a href="https://zalo.me/0976976627?text=Chào%20Admin%20BR-34,%20mình%20muốn%20mua%20Tool%20Làm%20Video%20Threads%20giá%20199k%20vĩnh%20viễn" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="btn-download-glow flex-1" style="background: linear-gradient(90deg, #9333ea, #a855f7); color: #fff;">
+                      <i class="ri-shopping-cart-fill text-lg"></i>
+                      <span>Mua Key 199k Vĩnh Viễn</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 4: Tool OnLuyen Trắc Nghiệm -->
+              <div class="tool-card cursor-pointer" onclick="openFeatureModal('onluyen')">
+                <div class="flex items-start gap-3.5 mb-3">
+                  <div class="w-12 h-12 rounded-2xl bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400 text-2xl flex-shrink-0 shadow-inner">
+                    <i class="ri-book-read-fill"></i>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between">
+                      <h3 class="font-bold text-base text-foreground">Tool OnLuyen Trắc Nghiệm</h3>
+                      <span class="badge-price bg-sky-500/20 text-sky-300 border border-sky-500/30">50K / THÁNG</span>
+                    </div>
+                    <p class="text-xs text-muted-foreground mt-1">Tự động quét câu hỏi, gợi ý đáp án trắc nghiệm chính xác 99%, an toàn tuyệt đối.</p>
+                  </div>
+                </div>
+                <div class="pt-2 border-t border-border/50 flex flex-col gap-2">
+                  <div class="flex items-center justify-between text-[11px] text-muted-foreground">
+                    <span class="text-sky-400 font-medium flex items-center gap-1"><i class="ri-sparkling-fill"></i> Bấm để xem chi tiết tool</span>
+                    <span class="text-emerald-400 font-bold"><i class="ri-shield-check-line"></i> An Toàn &amp; Ẩn Danh</span>
+                  </div>
+                  <div class="flex gap-2">
+                    <button type="button" onclick="event.stopPropagation(); openFeatureModal('onluyen')" class="px-3 py-2 rounded-xl border border-sky-400/40 text-sky-400 text-xs font-bold hover:bg-sky-400/10 transition">
+                      <i class="ri-information-line"></i> Chi tiết
+                    </button>
+                    <a href="https://zalo.me/0976976627?text=Chào%20Admin%20BR-34,%20mình%20muốn%20thuê%20Key%20Tool%20OnLuyen%20giá%2050k/tháng" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="btn-download-glow flex-1">
+                      <i class="ri-key-fill text-lg"></i>
+                      <span>Thuê Key 50k / Tháng</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <!-- Hint box hướng dẫn vượt link -->
+            <!-- Hint box liên hệ tư vấn tool -->
             <div class="rounded-xl border border-sky-500/25 bg-sky-500/5 px-3.5 py-2.5 flex items-center justify-between text-xs text-muted-foreground">
               <div class="flex items-center gap-2">
-                <i class="ri-information-fill text-sky-400 text-base"></i>
-                <span>Hướng dẫn: Bấm nút tải &rarr; Hoàn thành bước lấy mã 30s &rarr; Tự động chuyển tới link MediaFire gốc.</span>
+                <i class="ri-customer-service-2-fill text-sky-400 text-base"></i>
+                <span>Cần tư vấn setup tool, mua key sỉ hoặc hỗ trợ cài đặt qua Ultraview?</span>
               </div>
-              <a href="https://zalo.me/g/xbjdfehhdqn51h01menl" target="_blank" rel="noopener" class="text-sky-400 font-semibold hover:underline flex-shrink-0 ml-2">
-                Hỏi đáp Zalo &rarr;
+              <a href="https://zalo.me/0976976627" target="_blank" rel="noopener" class="text-sky-400 font-semibold hover:underline flex-shrink-0 ml-2">
+                Chat Zalo Admin &rarr;
               </a>
             </div>
           </div>
@@ -1384,82 +1515,154 @@
           <div class="flex items-center justify-between border-b border-border pb-3">
             <div>
               <h2 class="text-xl font-bold text-sky-400 flex items-center gap-2">
-                <i class="ri-apps-2-fill"></i> Kho Ứng Dụng Mod &amp; Tài Nguyên Miễn Phí
+                <i class="ri-apps-2-fill"></i> Kho Ứng Dụng Mod &amp; Tool MMO Độc Quyền
               </h2>
-              <p class="text-xs text-muted-foreground mt-1">Vượt link an toàn 30s để tải file APK gốc MediaFire không giới hạn tốc độ</p>
+              <p class="text-xs text-muted-foreground mt-1">Bấm vào từng card để xem bảng tính năng đặc biệt • Tải file APK trực tiếp không cần vượt</p>
             </div>
             <a href="#home" data-page="home" class="spa-link text-xs px-3 py-1.5 rounded-lg border border-border bg-primary-foreground hover:border-sky-400">← Trang chủ</a>
           </div>
 
-          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <!-- Card 1: Locket Gold Mod -->
-            <div class="apk-card">
-              <div class="flex items-start gap-3.5 mb-3">
-                <div class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl flex-shrink-0 shadow-inner">
-                  <i class="ri-vip-crown-fill"></i>
-                </div>
-                <div>
-                  <div class="flex items-center gap-2">
-                    <h3 class="font-bold text-base text-foreground">Locket Gold APK</h3>
-                    <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">MOD VIP</span>
+
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <!-- Item 1: Locket Gold Mod -->
+              <div class="apk-card cursor-pointer" onclick="openFeatureModal('locket')">
+                <div class="flex items-start gap-3.5 mb-3">
+                  <div class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl flex-shrink-0 shadow-inner">
+                    <i class="ri-vip-crown-fill"></i>
                   </div>
-                  <p class="text-xs text-muted-foreground mt-1">Full tính năng huy hiệu vàng, gửi ảnh/video HD không nén, mở khóa camera độc quyền.</p>
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between">
+                      <h3 class="font-bold text-base text-foreground">Locket Gold APK</h3>
+                      <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">MOD VIP</span>
+                    </div>
+                    <p class="text-xs text-muted-foreground mt-1">Full tính năng huy hiệu vàng, gửi ảnh/video HD không nén, camera độc quyền.</p>
+                  </div>
+                </div>
+                <div class="pt-2 border-t border-border/50 flex flex-col gap-2">
+                  <div class="flex items-center justify-between text-[11px] text-muted-foreground">
+                    <span class="text-sky-400 font-medium flex items-center gap-1"><i class="ri-sparkling-fill"></i> Bấm để xem tính năng VIP</span>
+                    <span class="text-emerald-400 font-bold"><i class="ri-download-cloud-line"></i> MediaFire Trực Tiếp</span>
+                  </div>
+                  <div class="flex gap-2">
+                    <button type="button" onclick="event.stopPropagation(); openFeatureModal('locket')" class="px-3 py-2 rounded-xl border border-sky-400/40 text-sky-400 text-xs font-bold hover:bg-sky-400/10 transition">
+                      <i class="ri-information-line"></i> Tính năng
+                    </button>
+                    <a href="https://www.mediafire.com/file/kb0exvxbbno624e/Locket_Gold_v1.222.3-gocmod.com.apk/file" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="btn-download-glow flex-1">
+                      <i class="ri-arrow-down-circle-fill text-lg"></i>
+                      <span>Tải Trực Tiếp MediaFire</span>
+                    </a>
+                  </div>
                 </div>
               </div>
-              <div class="pt-2 border-t border-border/50 flex flex-col gap-2">
-                <div class="flex items-center justify-between text-[11px] text-muted-foreground">
-                  <span><i class="ri-shield-check-line text-emerald-400"></i> Quét sạch mã độc</span>
-                  <span><i class="ri-download-cloud-line text-sky-400"></i> MediaFire High-Speed</span>
+
+              <!-- Item 2: TikTok Mod No Watermark -->
+              <div class="apk-card cursor-pointer" onclick="openFeatureModal('tiktok')">
+                <div class="flex items-start gap-3.5 mb-3">
+                  <div class="w-12 h-12 rounded-2xl bg-rose-500/15 border border-rose-500/30 flex items-center justify-center text-rose-400 text-2xl flex-shrink-0 shadow-inner">
+                    <i class="ri-tiktok-fill"></i>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between">
+                      <h3 class="font-bold text-base text-foreground">TikTok Mod VIP APK</h3>
+                      <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30">MOD PRO</span>
+                    </div>
+                    <p class="text-xs text-muted-foreground mt-1">Tải video không logo watermark, đổi vùng quốc gia (US/UK/JP), chặn hoàn toàn quảng cáo.</p>
+                  </div>
                 </div>
-                <a href="https://yeumoney.com/aE0qoj" target="_blank" rel="noopener" class="btn-download-glow">
-                  <i class="ri-arrow-down-circle-fill text-lg"></i>
-                  <span>Vượt Link Tải Locket Gold APK</span>
-                </a>
+                <div class="pt-2 border-t border-border/50 flex flex-col gap-2">
+                  <div class="flex items-center justify-between text-[11px] text-muted-foreground">
+                    <span class="text-sky-400 font-medium flex items-center gap-1"><i class="ri-sparkling-fill"></i> Bấm để xem tính năng VIP</span>
+                    <span class="text-emerald-400 font-bold"><i class="ri-download-cloud-line"></i> MediaFire Trực Tiếp</span>
+                  </div>
+                  <div class="flex gap-2">
+                    <button type="button" onclick="event.stopPropagation(); openFeatureModal('tiktok')" class="px-3 py-2 rounded-xl border border-rose-400/40 text-rose-400 text-xs font-bold hover:bg-rose-400/10 transition">
+                      <i class="ri-information-line"></i> Tính năng
+                    </button>
+                    <a href="https://www.mediafire.com/file/vrislfposkhow0t/TikTok_You-5.0%252847.4.3%2529.apk/file" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="btn-download-glow btn-download-tiktok flex-1">
+                      <i class="ri-arrow-down-circle-fill text-lg"></i>
+                      <span>Tải Trực Tiếp MediaFire</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 3: Tool Làm Video Threads MMO -->
+              <div class="tool-card cursor-pointer" onclick="openFeatureModal('threads')">
+                <div class="flex items-start gap-3.5 mb-3">
+                  <div class="w-12 h-12 rounded-2xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center text-purple-400 text-2xl flex-shrink-0 shadow-inner">
+                    <i class="ri-movie-2-fill"></i>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between">
+                      <h3 class="font-bold text-base text-foreground">Tool Làm Video Threads</h3>
+                      <span class="badge-price bg-purple-500/20 text-purple-300 border border-purple-500/30">199K VĨNH VIỄN</span>
+                    </div>
+                    <p class="text-xs text-muted-foreground mt-1">Tự động cào bài viết tâm sự viral trên Threads, ghép giọng đọc AI + video nền triệu view.</p>
+                  </div>
+                </div>
+                <div class="pt-2 border-t border-border/50 flex flex-col gap-2">
+                  <div class="flex items-center justify-between text-[11px] text-muted-foreground">
+                    <span class="text-purple-400 font-medium flex items-center gap-1"><i class="ri-sparkling-fill"></i> Bấm để xem chi tiết tool</span>
+                    <span class="text-emerald-400 font-bold"><i class="ri-infinity-line"></i> Bản Quyền Trọn Đời</span>
+                  </div>
+                  <div class="flex gap-2">
+                    <button type="button" onclick="event.stopPropagation(); openFeatureModal('threads')" class="px-3 py-2 rounded-xl border border-purple-400/40 text-purple-400 text-xs font-bold hover:bg-purple-400/10 transition">
+                      <i class="ri-information-line"></i> Chi tiết
+                    </button>
+                    <a href="https://zalo.me/0976976627?text=Chào%20Admin%20BR-34,%20mình%20muốn%20mua%20Tool%20Làm%20Video%20Threads%20giá%20199k%20vĩnh%20viễn" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="btn-download-glow flex-1" style="background: linear-gradient(90deg, #9333ea, #a855f7); color: #fff;">
+                      <i class="ri-shopping-cart-fill text-lg"></i>
+                      <span>Mua Key 199k Vĩnh Viễn</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 4: Tool OnLuyen Trắc Nghiệm -->
+              <div class="tool-card cursor-pointer" onclick="openFeatureModal('onluyen')">
+                <div class="flex items-start gap-3.5 mb-3">
+                  <div class="w-12 h-12 rounded-2xl bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400 text-2xl flex-shrink-0 shadow-inner">
+                    <i class="ri-book-read-fill"></i>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between">
+                      <h3 class="font-bold text-base text-foreground">Tool OnLuyen Trắc Nghiệm</h3>
+                      <span class="badge-price bg-sky-500/20 text-sky-300 border border-sky-500/30">50K / THÁNG</span>
+                    </div>
+                    <p class="text-xs text-muted-foreground mt-1">Tự động quét câu hỏi, gợi ý đáp án trắc nghiệm chính xác 99%, an toàn tuyệt đối.</p>
+                  </div>
+                </div>
+                <div class="pt-2 border-t border-border/50 flex flex-col gap-2">
+                  <div class="flex items-center justify-between text-[11px] text-muted-foreground">
+                    <span class="text-sky-400 font-medium flex items-center gap-1"><i class="ri-sparkling-fill"></i> Bấm để xem chi tiết tool</span>
+                    <span class="text-emerald-400 font-bold"><i class="ri-shield-check-line"></i> An Toàn &amp; Ẩn Danh</span>
+                  </div>
+                  <div class="flex gap-2">
+                    <button type="button" onclick="event.stopPropagation(); openFeatureModal('onluyen')" class="px-3 py-2 rounded-xl border border-sky-400/40 text-sky-400 text-xs font-bold hover:bg-sky-400/10 transition">
+                      <i class="ri-information-line"></i> Chi tiết
+                    </button>
+                    <a href="https://zalo.me/0976976627?text=Chào%20Admin%20BR-34,%20mình%20muốn%20thuê%20Key%20Tool%20OnLuyen%20giá%2050k/tháng" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="btn-download-glow flex-1">
+                      <i class="ri-key-fill text-lg"></i>
+                      <span>Thuê Key 50k / Tháng</span>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <!-- Card 2: TikTok Mod No Watermark -->
-            <div class="apk-card">
-              <div class="flex items-start gap-3.5 mb-3">
-                <div class="w-12 h-12 rounded-2xl bg-rose-500/15 border border-rose-500/30 flex items-center justify-center text-rose-400 text-2xl flex-shrink-0 shadow-inner">
-                  <i class="ri-tiktok-fill"></i>
-                </div>
-                <div>
-                  <div class="flex items-center gap-2">
-                    <h3 class="font-bold text-base text-foreground">TikTok Mod VIP APK</h3>
-                    <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30">MOD PRO</span>
-                  </div>
-                  <p class="text-xs text-muted-foreground mt-1">Tải video không logo watermark, đổi vùng quốc gia (US/UK/JP), chặn hoàn toàn quảng cáo.</p>
-                </div>
-              </div>
-              <div class="pt-2 border-t border-border/50 flex flex-col gap-2">
-                <div class="flex items-center justify-between text-[11px] text-muted-foreground">
-                  <span><i class="ri-shield-check-line text-emerald-400"></i> Bản mới nhất 2026</span>
-                  <span><i class="ri-speed-up-line text-rose-400"></i> Chạy siêu mượt</span>
-                </div>
-                <a href="https://yeumoney.com/qvwnQGZ" target="_blank" rel="noopener" class="btn-download-glow btn-download-tiktok">
-                  <i class="ri-arrow-down-circle-fill text-lg"></i>
-                  <span>Vượt Link Tải TikTok Mod APK</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Guide box -->
+          <!-- Support box -->
           <div class="rounded-2xl border border-border bg-primary-foreground/50 p-4 flex flex-col gap-3">
             <h4 class="font-bold text-sm text-sky-400 flex items-center gap-2">
-              <i class="ri-guide-fill"></i> Các bước vượt link 30s để lấy link tải gốc:
+              <i class="ri-shield-check-fill"></i> Cam kết chất lượng từ BR-34:
             </h4>
-            <ol class="list-decimal list-inside text-xs text-muted-foreground space-y-1.5 leading-relaxed">
-              <li>Bấm vào nút <strong>"Vượt Link Tải..."</strong> ở ứng dụng sếp muốn cài đặt.</li>
-              <li>Làm theo hướng dẫn trên màn hình Yeumoney (chỉ mất tầm 20-30 giây).</li>
-              <li>Bấm <strong>"Tiếp tục / Get Link"</strong> &rarr; Trình duyệt tự động mở link tải <strong>MediaFire</strong> trực tiếp.</li>
-              <li>Tải file APK về máy và bấm cài đặt (cho phép cài ứng dụng từ nguồn không xác định nếu máy hỏi).</li>
-            </ol>
+            <ul class="text-xs text-muted-foreground space-y-1.5 leading-relaxed">
+              <li>• <strong>File sạch 100%:</strong> Toàn bộ APK đều được quét virus kỹ lưỡng trước khi tải lên MediaFire.</li>
+              <li>• <strong>Bảo hành key tool:</strong> Hỗ trợ kích hoạt, hướng dẫn cài đặt và bảo hành 1 đổi 1 trong suốt thời gian sử dụng.</li>
+              <li>• <strong>Cập nhật liên tục:</strong> Khi Locket hoặc TikTok ra bản cập nhật mới, BR-34 sẽ update link tải ngay trong nhóm Zalo/Tele.</li>
+            </ul>
             <div class="pt-2 border-t border-border flex items-center justify-between text-xs">
-              <span class="text-muted-foreground">Cần hỗ trợ cài đặt hoặc file lỗi?</span>
-              <a href="https://zalo.me/g/xbjdfehhdqn51h01menl" target="_blank" rel="noopener" class="text-sky-400 font-semibold hover:underline">
-                Vào nhóm Zalo Share Tut &rarr;
+              <span class="text-muted-foreground">Gặp sự cố khi cài đặt hoặc muốn test tool?</span>
+              <a href="https://zalo.me/0976976627" target="_blank" rel="noopener" class="text-sky-400 font-semibold hover:underline">
+                Liên hệ Zalo Admin: 0976.976.627 &rarr;
               </a>
             </div>
           </div>
@@ -3177,6 +3380,141 @@
         }
       }
     });
+  </script>
+
+
+  <!-- FEATURE POPUP MODAL (Bảng Tính Năng Đặc Biệt) -->
+  <div id="featureModalOverlay" class="feature-modal-overlay" onclick="closeFeatureModal()">
+    <div class="feature-modal-box" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between border-b border-border/60 pb-3 mb-3.5">
+        <div class="flex items-center gap-2.5">
+          <div id="modalIcon" class="w-9 h-9 rounded-xl flex items-center justify-center text-xl"></div>
+          <div>
+            <h3 id="modalTitle" class="font-bold text-base text-foreground"></h3>
+            <span id="modalBadge" class="text-[10px] font-bold px-2 py-0.5 rounded"></span>
+          </div>
+        </div>
+        <button onclick="closeFeatureModal()" class="text-muted-foreground hover:text-foreground p-1 rounded-lg hover:bg-muted text-lg">
+          <i class="ri-close-line"></i>
+        </button>
+      </div>
+
+      <div class="mb-4">
+        <h4 class="text-xs font-bold text-sky-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+          <i class="ri-sparkling-fill"></i> Tính Năng Đặc Biệt Độc Quyền:
+        </h4>
+        <ul id="modalFeatureList" class="space-y-2 text-xs text-muted-foreground leading-relaxed">
+        </ul>
+      </div>
+
+      <div id="modalFooter" class="pt-3 border-t border-border/60 flex items-center justify-between gap-2">
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    const APP_FEATURE_DATA = {
+      locket: {
+        title: "Locket Gold Mod VIP",
+        badge: "MOD FULL GOLD",
+        badgeClass: "bg-amber-500/20 text-amber-300 border border-amber-500/30",
+        iconHtml: '<div class="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl"><i class="ri-vip-crown-fill"></i></div>',
+        features: [
+          "👑 <strong>Mở khóa huy hiệu Vàng (Locket Gold)</strong> vĩnh viễn trên trang cá nhân.",
+          "📸 <strong>Tải lên ảnh/video từ thư viện</strong> mà không bị viền trắng hay dính chữ thông báo tải lên.",
+          "⚡ <strong>Gửi video dài không giới hạn</strong>, hỗ trợ chất lượng Full HD không bị nén mờ.",
+          "🔓 <strong>Mở khóa full biểu tượng cảm xúc độc quyền</strong> chỉ dành riêng cho tài khoản trả phí Gold.",
+          "🛡️ <strong>Chống thu hồi ảnh/video</strong>, xem lại toàn bộ khoảnh khắc cũ mượt mà."
+        ],
+        downloadUrl: "https://www.mediafire.com/file/kb0exvxbbno624e/Locket_Gold_v1.222.3-gocmod.com.apk/file",
+        btnText: "Tải Trực Tiếp MediaFire (Không Cần Vượt)",
+        btnClass: "btn-download-glow w-full"
+      },
+      tiktok: {
+        title: "TikTok Mod VIP Pro",
+        badge: "NO WATERMARK • ĐỔI VÙNG",
+        badgeClass: "bg-rose-500/20 text-rose-300 border border-rose-500/30",
+        iconHtml: '<div class="w-9 h-9 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-xl"><i class="ri-tiktok-fill"></i></div>',
+        features: [
+          "🎬 <strong>Tải video TikTok không logo (No Watermark)</strong> với độ phân giải gốc cao nhất.",
+          "🌍 <strong>Tự do chuyển vùng quốc gia</strong> (Mỹ, Anh, Nhật, Hàn...) xem video xu hướng quốc tế.",
+          "🚫 <strong>Chặn 100% quảng cáo tài trợ</strong> và video livestream rác chen ngang khi lướt feed.",
+          "🎧 <strong>Tải nhạc nền / audio trực tiếp</strong> về máy không bị dính bản quyền.",
+          "⚡ <strong>Tua nhanh/chậm video tùy ý</strong>, hỗ trợ tải cả những video chủ kênh khóa quyền tải."
+        ],
+        downloadUrl: "https://www.mediafire.com/file/vrislfposkhow0t/TikTok_You-5.0%252847.4.3%2529.apk/file",
+        btnText: "Tải Trực Tiếp MediaFire (Không Cần Vượt)",
+        btnClass: "btn-download-glow btn-download-tiktok w-full"
+      },
+      threads: {
+        title: "Tool Tự Động Làm Video Threads MMO",
+        badge: "GIÁ: 199.000đ • VĨNH VIỄN",
+        badgeClass: "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30",
+        iconHtml: '<div class="w-9 h-9 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl"><i class="ri-movie-2-fill"></i></div>',
+        features: [
+          "🤖 <strong>Tự động cào (crawl) bài viết/tâm sự viral</strong> trên Threads về máy 1 chạm.",
+          "🎙️ <strong>Chuyển chữ thành giọng đọc AI (TTS)</strong> cảm xúc cực tự nhiên, không phèn.",
+          "🎬 <strong>Ghép video nền triệu view</strong> (nền nấu ăn, lái xe, ASMR...) hoàn toàn tự động.",
+          "⚡ <strong>Tạo hàng loạt 50 - 100 video/ngày</strong> chuẩn kích thước 9:16 cho Reels, TikTok, Shorts.",
+          "♾️ <strong>Sở hữu trọn đời (Vĩnh viễn)</strong>: Chỉ 199.000đ, không phát sinh chi phí duy trì hàng tháng."
+        ],
+        zaloUrl: "https://zalo.me/0976976627?text=" + encodeURIComponent("Chào Admin BR-34, mình muốn mua Tool Làm Video Threads giá 199k vĩnh viễn"),
+        btnText: "Nhắn Zalo Mua Key 199k (Vĩnh Viễn)",
+        btnClass: "btn-download-glow w-full"
+      },
+      onluyen: {
+        title: "Tool Hỗ Trợ Ôn Luyện Trắc Nghiệm Tự Động",
+        badge: "GIÁ: 50.000đ / THÁNG",
+        badgeClass: "bg-sky-500/20 text-sky-300 border border-sky-500/30",
+        iconHtml: '<div class="w-9 h-9 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-xl"><i class="ri-book-read-fill"></i></div>',
+        features: [
+          "🎯 <strong>Tự động quét & nhận diện câu hỏi</strong> trên nền tảng Ôn Luyện / Khảo Thí trực tuyến.",
+          "⚡ <strong>Gợi ý đáp án chính xác 99%</strong> siêu tốc, tiết kiệm 90% thời gian làm bài.",
+          "🛡️ <strong>Chạy ngầm tàng hình</strong>, tuyệt đối an toàn không bị hệ thống giám sát phát hiện.",
+          "📊 <strong>Hỗ trợ full các môn thi</strong> trắc nghiệm phổ biến, cập nhật đề mới liên tục.",
+          "🔑 <strong>Chi phí sinh viên</strong>: Chỉ 50.000đ / Key 1 tháng, hỗ trợ cài đặt 1-1 qua Ultraview/Zalo."
+        ],
+        zaloUrl: "https://zalo.me/0976976627?text=" + encodeURIComponent("Chào Admin BR-34, mình muốn thuê Key Tool OnLuyen giá 50k/tháng"),
+        btnText: "Nhắn Zalo Kích Hoạt Key 50k/Tháng",
+        btnClass: "btn-download-glow w-full"
+      }
+    };
+
+    function openFeatureModal(key) {
+      const data = APP_FEATURE_DATA[key];
+      if (!data) return;
+      document.getElementById('modalTitle').textContent = data.title;
+      document.getElementById('modalBadge').textContent = data.badge;
+      document.getElementById('modalBadge').className = "text-[10px] font-bold px-2 py-0.5 rounded " + data.badgeClass;
+      document.getElementById('modalIcon').innerHTML = data.iconHtml;
+      
+      const list = document.getElementById('modalFeatureList');
+      list.innerHTML = data.features.map(f => `<li class="flex items-start gap-2 bg-muted/30 p-2 rounded-lg border border-border/40">${f}</li>`).join('');
+
+      const footer = document.getElementById('modalFooter');
+      if (data.downloadUrl) {
+        footer.innerHTML = `
+          <a href="${data.downloadUrl}" target="_blank" rel="noopener" class="${data.btnClass}">
+            <i class="ri-download-cloud-fill text-lg"></i>
+            <span>${data.btnText}</span>
+          </a>
+        `;
+      } else if (data.zaloUrl) {
+        footer.innerHTML = `
+          <a href="${data.zaloUrl}" target="_blank" rel="noopener" class="${data.btnClass}">
+            <i class="ri-chat-smile-2-fill text-lg"></i>
+            <span>${data.btnText}</span>
+          </a>
+        `;
+      }
+
+      document.getElementById('featureModalOverlay').classList.add('active');
+    }
+
+    function closeFeatureModal() {
+      document.getElementById('featureModalOverlay').classList.remove('active');
+    }
   </script>
 
 </body>
