@@ -898,38 +898,25 @@
                   </div>
                   <ul>
                     <li>
-                      <a href="#home" class="spa-link hover:bg-muted text-foreground" data-page="home">
-                        <i class="ri-home-4-line text-sky-400"></i> Trang chủ
+                      <a href="#home" class="hover:bg-muted text-foreground flex items-center gap-2" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                        <i class="ri-home-4-line text-sky-400"></i> Về đầu trang
                       </a>
                     </li>
                     <li>
-                      <a href="#info" class="spa-link hover:bg-muted text-foreground" data-page="info">
-                        <i class="ri-information-line text-sky-400"></i> Thông tin & MXH
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#donate" class="spa-link hover:bg-muted text-foreground" data-page="donate">
-                        <i class="ri-customer-service-2-line text-sky-400"></i> Hotline & Hỗ trợ
-                      </a>
-                    </li>
-                                        <li>
-                      <a href="#apkmod" class="spa-link hover:bg-muted text-foreground flex items-center justify-between" data-page="apkmod">
+                      <a href="#apps-tools-section" class="hover:bg-muted text-foreground flex items-center justify-between" onclick="document.getElementById('apps-tools-section')?.scrollIntoView({behavior: 'smooth'})">
                         <span class="flex items-center gap-2">
-                          <i class="ri-apps-2-line text-sky-400"></i> Apps &amp; Tools VIP
+                          <i class="ri-apps-2-line text-sky-400"></i> Kho Apps &amp; Tools
                         </span>
                         <span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">HOT</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#locketlam" class="spa-link hover:bg-muted text-foreground flex items-center justify-between" data-page="locketlam">
-                        <span class="flex items-center gap-2">
-                          <i class="ri-shield-flash-line text-sky-400"></i> Máy chủ BR-34
-                        </span>
-                        <span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-sky-500/20 text-sky-400 border border-sky-500/30">24/7</span>
+                      <a href="#contact-section" class="hover:bg-muted text-foreground flex items-center gap-2" onclick="document.getElementById('contact-section')?.scrollIntoView({behavior: 'smooth'})">
+                        <i class="ri-customer-service-2-line text-sky-400"></i> Hotline Zalo &amp; Tele
                       </a>
                     </li>
                     <li>
-                      <a href="https://shopbybrays.vercel.app/" target="_blank" rel="noopener" class="hover:bg-muted text-foreground">
+                      <a href="https://shopbybrays.vercel.app/" target="_blank" rel="noopener" class="hover:bg-muted text-foreground flex items-center gap-2">
                         <i class="ri-shopping-bag-3-line text-sky-400"></i> BR-34 Official Shop
                       </a>
                     </li>
@@ -1109,17 +1096,7 @@
               </div>
             </div>
 
-            <div class="flex flex-col sm:flex-row justify-between gap-3 w-full pt-2">
-              <a class="spa-link group inline-flex items-center gap-x-2 rounded-xl bg-primary-foreground border border-border px-3 py-2 text-sm text-muted-foreground transition-all hover:bg-input hover:text-foreground no-underline w-fit" href="#info" data-page="info">
-                <i class="ri-arrow-left-line transition-transform group-hover:-translate-x-1"></i>
-                <span>Mạng xã hội &amp; Hỗ trợ</span>
-              </a>
-              <a class="spa-link group inline-flex items-center gap-x-2 rounded-xl bg-primary-foreground border border-border px-3 py-2 text-sm text-muted-foreground transition-all hover:bg-input hover:text-foreground no-underline w-fit self-end sm:self-auto" href="#donate" data-page="donate">
-                <span>Hotline &amp; Bảng Giá Sỉ</span>
-                <i class="ri-arrow-right-line transition-transform group-hover:translate-x-1"></i>
-              </a>
             </div>
-          </div>
         </section>
 
                 <section class="animate flex flex-col gap-y-5 md:flex-row md:gap-y-0 show">
@@ -1175,8 +1152,168 @@
         </section>
 
 
-        <!-- Contact / Hotline Section (Chuẩn cấu trúc Payment của LAMDev + GitHub Snake) -->
-        <section class="animate flex flex-col gap-y-5 md:flex-row md:gap-y-0 show">
+        
+        <!-- Kho Ứng Dụng Mod & Tool Độc Quyền BR-34 -->
+        <section id="apps-tools-section" class="animate flex flex-col gap-y-5 md:flex-row md:gap-y-0 show">
+          <div class="text-xl font-semibold md:min-w-36">
+            <h2 class="flex items-center gap-1.5 text-sky-400">
+              <i class="ri-apps-2-line"></i> Apps &amp; Tools
+            </h2>
+          </div>
+          <div class="flex flex-1 flex-col gap-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-muted-foreground">Kho APK Mod &amp; Tool MMO độc quyền • Tải trực tiếp MediaFire không cần vượt</span>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> MediaFire High-Speed
+              </span>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <!-- Item 1: Locket Gold Mod -->
+              <div class="apk-card cursor-pointer" onclick="openFeatureModal('locket')">
+                <div>
+                  <div class="card-top-content">
+                    <img src="https://i.postimg.cc/mD3qPjG8/locket-gold-icon.png" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/4/46/Gold_Star_Solid.svg'" alt="Locket Gold" class="app-icon-img bg-amber-500/10 p-1 border border-amber-500/30">
+                    <div class="card-info">
+                      <div class="card-header-row">
+                        <h3 class="card-title-text">Locket Gold APK</h3>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 flex-shrink-0">MOD VIP</span>
+                      </div>
+                      <p class="card-desc-text">Full tính năng huy hiệu vàng, gửi ảnh/video HD không nén, mở khóa camera và icon độc quyền.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-bottom-bar">
+                  <div class="card-meta-row">
+                    <span class="text-sky-400 font-medium flex items-center gap-1"><i class="ri-sparkling-fill"></i> Bấm xem tính năng VIP</span>
+                    <span class="text-emerald-400 font-semibold flex items-center gap-1"><i class="ri-download-cloud-line"></i> MediaFire Tải Ngay</span>
+                  </div>
+                  <div class="card-actions-row">
+                    <button type="button" onclick="event.stopPropagation(); openFeatureModal('locket')" class="px-3.5 py-2 rounded-xl border border-sky-400/40 text-sky-400 text-xs font-bold hover:bg-sky-400/10 transition">
+                      <i class="ri-information-line"></i> Tính năng
+                    </button>
+                    <a href="https://www.mediafire.com/file/kb0exvxbbno624e/Locket_Gold_v1.222.3-gocmod.com.apk/file" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="btn-download-glow flex-1">
+                      <i class="ri-arrow-down-circle-fill text-lg"></i>
+                      <span>Tải Trực Tiếp MediaFire</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 2: TikTok Mod No Watermark -->
+              <div class="apk-card cursor-pointer" onclick="openFeatureModal('tiktok')">
+                <div>
+                  <div class="card-top-content">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok Mod" class="app-icon-img bg-slate-900 p-2 border border-rose-500/30">
+                    <div class="card-info">
+                      <div class="card-header-row">
+                        <h3 class="card-title-text">TikTok Mod VIP Pro</h3>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30 flex-shrink-0">NO LOGO</span>
+                      </div>
+                      <p class="card-desc-text">Tải video không logo watermark, tự do đổi vùng US/UK/Nhật, chặn 100% quảng cáo và livestream rác.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-bottom-bar">
+                  <div class="card-meta-row">
+                    <span class="text-rose-400 font-medium flex items-center gap-1"><i class="ri-sparkling-fill"></i> Bấm xem tính năng VIP</span>
+                    <span class="text-emerald-400 font-semibold flex items-center gap-1"><i class="ri-download-cloud-line"></i> MediaFire Tải Ngay</span>
+                  </div>
+                  <div class="card-actions-row">
+                    <button type="button" onclick="event.stopPropagation(); openFeatureModal('tiktok')" class="px-3.5 py-2 rounded-xl border border-rose-400/40 text-rose-400 text-xs font-bold hover:bg-rose-400/10 transition">
+                      <i class="ri-information-line"></i> Tính năng
+                    </button>
+                    <a href="https://www.mediafire.com/file/vrislfposkhow0t/TikTok_You-5.0%252847.4.3%2529.apk/file" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="btn-download-glow btn-download-tiktok flex-1">
+                      <i class="ri-arrow-down-circle-fill text-lg"></i>
+                      <span>Tải Trực Tiếp MediaFire</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 3: Tool Làm Video Threads MMO -->
+              <div class="tool-card cursor-pointer" onclick="openFeatureModal('threads')">
+                <div>
+                  <div class="card-top-content">
+                    <div class="app-icon-img bg-purple-600/20 border border-purple-500/40 flex items-center justify-center text-purple-400 text-2xl flex-shrink-0">
+                      <i class="ri-movie-2-fill"></i>
+                    </div>
+                    <div class="card-info">
+                      <div class="card-header-row">
+                        <h3 class="card-title-text">Tool Làm Video Threads</h3>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 flex-shrink-0">199K VĨNH VIỄN</span>
+                      </div>
+                      <p class="card-desc-text">Tự động cào tâm sự viral trên Threads, ghép giọng đọc AI cảm xúc + video nền triệu view xuất 50-100 video/ngày.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-bottom-bar">
+                  <div class="card-meta-row">
+                    <span class="text-purple-400 font-medium flex items-center gap-1"><i class="ri-sparkling-fill"></i> Bấm xem chi tiết tool</span>
+                    <span class="text-emerald-400 font-semibold flex items-center gap-1"><i class="ri-infinity-line"></i> Bản Quyền Trọn Đời</span>
+                  </div>
+                  <div class="card-actions-row">
+                    <button type="button" onclick="event.stopPropagation(); openFeatureModal('threads')" class="px-3.5 py-2 rounded-xl border border-purple-400/40 text-purple-400 text-xs font-bold hover:bg-purple-400/10 transition">
+                      <i class="ri-information-line"></i> Chi tiết
+                    </button>
+                    <a href="https://zalo.me/0976976627?text=Chào%20Admin%20BR-34,%20mình%20muốn%20mua%20Tool%20Làm%20Video%20Threads%20giá%20199k%20vĩnh%20viễn" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="btn-download-glow flex-1" style="background: linear-gradient(90deg, #9333ea, #a855f7); color: #fff;">
+                      <i class="ri-shopping-cart-fill text-lg"></i>
+                      <span>Mua Key 199k Vĩnh Viễn</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 4: Tool OnLuyen Trắc Nghiệm -->
+              <div class="tool-card cursor-pointer" onclick="openFeatureModal('onluyen')">
+                <div>
+                  <div class="card-top-content">
+                    <div class="app-icon-img bg-sky-500/20 border border-sky-400/40 flex items-center justify-center text-sky-400 text-2xl flex-shrink-0">
+                      <i class="ri-book-read-fill"></i>
+                    </div>
+                    <div class="card-info">
+                      <div class="card-header-row">
+                        <h3 class="card-title-text">Tool OnLuyen Trắc Nghiệm</h3>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-500/30 flex-shrink-0">50K / THÁNG</span>
+                      </div>
+                      <p class="card-desc-text">Tự động quét đề thi, gợi ý đáp án trắc nghiệm chính xác 99%, chạy ngầm an toàn tuyệt đối mọi nền tảng.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-bottom-bar">
+                  <div class="card-meta-row">
+                    <span class="text-sky-400 font-medium flex items-center gap-1"><i class="ri-sparkling-fill"></i> Bấm xem chi tiết tool</span>
+                    <span class="text-emerald-400 font-semibold flex items-center gap-1"><i class="ri-shield-check-line"></i> An Toàn &amp; Ẩn Danh</span>
+                  </div>
+                  <div class="card-actions-row">
+                    <button type="button" onclick="event.stopPropagation(); openFeatureModal('onluyen')" class="px-3.5 py-2 rounded-xl border border-sky-400/40 text-sky-400 text-xs font-bold hover:bg-sky-400/10 transition">
+                      <i class="ri-information-line"></i> Chi tiết
+                    </button>
+                    <a href="https://zalo.me/0976976627?text=Chào%20Admin%20BR-34,%20mình%20muốn%20thuê%20Key%20Tool%20OnLuyen%20giá%2050k/tháng" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="btn-download-glow flex-1">
+                      <i class="ri-key-fill text-lg"></i>
+                      <span>Thuê Key 50k / Tháng</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hint box liên hệ tư vấn tool -->
+            <div class="rounded-xl border border-sky-500/25 bg-sky-500/5 px-3.5 py-2.5 flex items-center justify-between text-xs text-muted-foreground">
+              <div class="flex items-center gap-2">
+                <i class="ri-customer-service-2-fill text-sky-400 text-base"></i>
+                <span>Cần tư vấn setup tool, mua key sỉ hoặc hỗ trợ cài đặt qua Ultraview?</span>
+              </div>
+              <a href="https://zalo.me/0976976627" target="_blank" rel="noopener" class="text-sky-400 font-semibold hover:underline flex-shrink-0 ml-2">
+                Chat Zalo Admin &rarr;
+              </a>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- Contact / Hotline Section -->
+        <section id="contact-section" class="animate flex flex-col gap-y-5 md:flex-row md:gap-y-0 show">
           <div class="text-xl font-semibold md:min-w-36">
             <h2>Contact</h2>
           </div>
@@ -1544,6 +1681,13 @@
 
     // Inject initial home template immediately
     document.getElementById('page-content').innerHTML = BR34_PAGES.home;
+
+    // Gộp 1 trang duy nhất: Tất cả tab đều load chung 1 trang đầy đủ
+    BR34_PAGES.info = BR34_PAGES.home;
+    BR34_PAGES.donate = BR34_PAGES.home;
+    BR34_PAGES.apkmod = BR34_PAGES.home;
+    BR34_PAGES.locketlam = BR34_PAGES.home;
+
 
     // Lightweight FuiToast implementation matching LAMDev's calls
     window.FuiToast = {
