@@ -786,11 +786,6 @@
       font-size: 0.82rem;
       line-height: 1.5;
       color: var(--muted-foreground);
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      min-height: 2.45rem;
     }
     .card-bottom-bar {
       padding-top: 12px;
@@ -964,7 +959,82 @@
       transform: scale(1.08) rotate(2deg);
     }
 
-</style>
+
+    /* ==========================================================================
+       LIQUID GLASS MODAL (POPUP BẢNG TÍNH NĂNG ĐẶC BIỆT)
+       ========================================================================== */
+    .feature-modal-overlay {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      z-index: 999999 !important;
+      background: rgba(3, 7, 18, 0.85) !important;
+      backdrop-filter: blur(18px) !important;
+      -webkit-backdrop-filter: blur(18px) !important;
+      display: none !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 16px !important;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .feature-modal-overlay.active {
+      display: flex !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+    }
+    .feature-modal-box {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.98)) !important;
+      border: 1px solid rgba(56, 189, 248, 0.35) !important;
+      border-radius: 24px !important;
+      max-width: 540px !important;
+      width: 100% !important;
+      max-height: 88vh !important;
+      overflow-y: auto !important;
+      padding: 24px !important;
+      box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.95), 0 0 35px rgba(56, 189, 248, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.25) !important;
+      transform: scale(0.92) translateY(14px);
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .feature-modal-overlay.active .feature-modal-box {
+      transform: scale(1) translateY(0);
+    }
+    .feature-modal-box::-webkit-scrollbar {
+      width: 6px;
+    }
+    .feature-modal-box::-webkit-scrollbar-thumb {
+      background: rgba(56, 189, 248, 0.3);
+      border-radius: 4px;
+    }
+
+    /* Enhanced Card Features List (No text truncated) */
+    .card-features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin: 12px 0 16px 0;
+      font-size: 0.81rem;
+      color: #cbd5e1;
+      line-height: 1.45;
+    }
+    .card-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .card-feature-item i {
+      font-size: 0.95rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    
+  </style>
 </head>
 <body class="overflow-x-hidden relative">
   <div class="fixed top-0 left-0 w-full h-full bg-background -z-10 pointer-events-none"></div>
@@ -1313,7 +1383,7 @@
             </h2>
           </div>
           <div class="flex flex-1 flex-col gap-y-4">
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-between flex-wrap gap-2">
               <span class="text-xs text-muted-foreground">Kho APK Mod &amp; Tool MMO độc quyền • Tải trực tiếp MediaFire không cần vượt</span>
               <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> MediaFire High-Speed
@@ -1336,13 +1406,34 @@
                         </h3>
                         <span class="cyber-badge bg-amber-500/20 text-amber-300 border border-amber-500/40">MOD GOLD</span>
                       </div>
-                      <p class="card-desc-text">Mở full huy hiệu vàng, gửi ảnh/video HD không viền, mở khóa camera độc quyền không nén.</p>
+                      <span class="text-[11px] text-amber-400/90 font-medium">Phiên bản v1.222.3 • Đầy đủ đặc quyền Gold</span>
+                    </div>
+                  </div>
+
+                  <!-- Highlights List (Không bị mất chữ) -->
+                  <div class="card-features-list">
+                    <div class="card-feature-item">
+                      <i class="ri-vip-crown-2-fill text-amber-400"></i>
+                      <span>Mở khóa huy hiệu Vàng Locket Gold vĩnh viễn trên profile</span>
+                    </div>
+                    <div class="card-feature-item">
+                      <i class="ri-image-add-fill text-sky-400"></i>
+                      <span>Đăng ảnh/video từ thư viện không viền trắng &amp; watermark</span>
+                    </div>
+                    <div class="card-feature-item">
+                      <i class="ri-movie-fill text-indigo-400"></i>
+                      <span>Gửi video dài không giới hạn với chất lượng Full HD gốc</span>
+                    </div>
+                    <div class="card-feature-item">
+                      <i class="ri-shield-check-fill text-emerald-400"></i>
+                      <span>Chống thu hồi ảnh/video, mở full icon cảm xúc độc quyền</span>
                     </div>
                   </div>
                 </div>
+
                 <div class="card-bottom-bar">
                   <div class="card-meta-row">
-                    <span class="text-sky-400 font-medium flex items-center gap-1"><i class="ri-sparkling-fill"></i> Xem bảng tính năng VIP</span>
+                    <span class="text-sky-400 font-medium flex items-center gap-1"><i class="ri-sparkling-fill"></i> Xem chi tiết VIP</span>
                     <span class="text-emerald-400 font-semibold flex items-center gap-1"><i class="ri-download-cloud-line"></i> MediaFire Tải Ngay</span>
                   </div>
                   <div class="card-actions-row">
@@ -1351,7 +1442,7 @@
                     </button>
                     <a href="https://www.mediafire.com/file/kb0exvxbbno624e/Locket_Gold_v1.222.3-gocmod.com.apk/file" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="glass-btn glass-btn-primary flex-1">
                       <i class="ri-download-2-line text-base"></i>
-                      <span>Tải Trực Tiếp MediaFire</span>
+                      <span>Tải MediaFire</span>
                     </a>
                   </div>
                 </div>
@@ -1372,13 +1463,34 @@
                         </h3>
                         <span class="cyber-badge bg-rose-500/20 text-rose-300 border border-rose-500/40">NO LOGO</span>
                       </div>
-                      <p class="card-desc-text">Tải video không logo watermark, tự do đổi vùng US/UK/Nhật, chặn sạch quảng cáo &amp; live rác.</p>
+                      <span class="text-[11px] text-rose-400/90 font-medium">Phiên bản v5.0 • Đổi vùng &amp; Chặn quảng cáo</span>
+                    </div>
+                  </div>
+
+                  <!-- Highlights List (Không bị mất chữ) -->
+                  <div class="card-features-list">
+                    <div class="card-feature-item">
+                      <i class="ri-video-download-fill text-rose-400"></i>
+                      <span>Tải video không logo watermark với chất lượng gốc HD</span>
+                    </div>
+                    <div class="card-feature-item">
+                      <i class="ri-global-fill text-sky-400"></i>
+                      <span>Tự do đổi vùng quốc gia (US, UK, Nhật, Hàn, Thái...)</span>
+                    </div>
+                    <div class="card-feature-item">
+                      <i class="ri-shield-flash-fill text-emerald-400"></i>
+                      <span>Chặn sạch 100% quảng cáo tài trợ &amp; livestream chen ngang</span>
+                    </div>
+                    <div class="card-feature-item">
+                      <i class="ri-headphone-fill text-amber-400"></i>
+                      <span>Nghe nhạc nền khi tắt màn hình, tải nhạc bản quyền về máy</span>
                     </div>
                   </div>
                 </div>
+
                 <div class="card-bottom-bar">
                   <div class="card-meta-row">
-                    <span class="text-rose-400 font-medium flex items-center gap-1"><i class="ri-sparkling-fill"></i> Xem bảng tính năng VIP</span>
+                    <span class="text-rose-400 font-medium flex items-center gap-1"><i class="ri-sparkling-fill"></i> Xem chi tiết VIP</span>
                     <span class="text-emerald-400 font-semibold flex items-center gap-1"><i class="ri-download-cloud-line"></i> MediaFire Tải Ngay</span>
                   </div>
                   <div class="card-actions-row">
@@ -1387,7 +1499,7 @@
                     </button>
                     <a href="https://www.mediafire.com/file/vrislfposkhow0t/TikTok_You-5.0%252847.4.3%2529.apk/file" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="glass-btn glass-btn-tiktok flex-1">
                       <i class="ri-download-2-line text-base"></i>
-                      <span>Tải Trực Tiếp MediaFire</span>
+                      <span>Tải MediaFire</span>
                     </a>
                   </div>
                 </div>
@@ -1406,16 +1518,41 @@
                           <span>Tool Video Threads AI</span>
                           <i class="ri-robot-2-fill text-purple-400 text-sm"></i>
                         </h3>
-                        <span class="cyber-badge bg-purple-500/20 text-purple-300 border border-purple-500/40">199K VĨNH VIỄN</span>
+                        <span class="cyber-badge bg-purple-500/25 text-purple-200 border border-purple-400/60 shadow-[0_0_12px_rgba(168,85,247,0.4)]">199K VĨNH VIỄN</span>
                       </div>
-                      <p class="card-desc-text">Cào bài viral Threads 1 chạm, ghép giọng đọc AI cảm xúc + video nền triệu view xuất 50-100 video/ngày.</p>
+                      <span class="text-[11px] text-purple-300/90 font-medium">Auto Crawl • AI Voice TTS • Ghép Nền Triệu View</span>
+                    </div>
+                  </div>
+
+                  <!-- Highlights List Đặc Biệt Của Tool Threads (Không Bị Cắt Chữ) -->
+                  <div class="card-features-list">
+                    <div class="card-feature-item">
+                      <i class="ri-flashlight-fill text-yellow-400"></i>
+                      <span><strong>Tự động cào tâm sự viral:</strong> Quét bài viết hot trên Threads về máy 1 chạm</span>
+                    </div>
+                    <div class="card-feature-item">
+                      <i class="ri-mic-fill text-pink-400"></i>
+                      <span><strong>Giọng đọc AI cảm xúc:</strong> Tích hợp voice đọc tự nhiên chuẩn kịch bản triệu view</span>
+                    </div>
+                    <div class="card-feature-item">
+                      <i class="ri-film-fill text-purple-400"></i>
+                      <span><strong>Ghép video nền triệu view:</strong> Tự động chèn video ASMR, lái xe, nấu ăn, chill</span>
+                    </div>
+                    <div class="card-feature-item">
+                      <i class="ri-speed-up-fill text-cyan-400"></i>
+                      <span><strong>Năng suất khủng 50-100 video/ngày:</strong> Xuất chuẩn 9:16 cho Reels, TikTok, Shorts</span>
+                    </div>
+                    <div class="card-feature-item">
+                      <i class="ri-infinity-fill text-emerald-400"></i>
+                      <span><strong>Bản quyền vĩnh viễn 199k:</strong> Mua 1 lần dùng mãi mãi, update miễn phí trọn đời</span>
                     </div>
                   </div>
                 </div>
+
                 <div class="card-bottom-bar">
                   <div class="card-meta-row">
-                    <span class="text-purple-400 font-medium flex items-center gap-1"><i class="ri-cpu-line"></i> Tự Động Hóa 100%</span>
-                    <span class="text-emerald-400 font-semibold flex items-center gap-1"><i class="ri-infinity-line"></i> Bản Quyền Trọn Đời</span>
+                    <span class="text-purple-400 font-medium flex items-center gap-1"><i class="ri-cpu-line"></i> Auto 100% Không Cần Edit</span>
+                    <span class="text-emerald-400 font-semibold flex items-center gap-1"><i class="ri-shield-check-line"></i> Uy Tín Admin BR-34</span>
                   </div>
                   <div class="card-actions-row">
                     <button type="button" onclick="event.stopPropagation(); openFeatureModal('threads')" class="glass-btn glass-btn-secondary">
@@ -1442,16 +1579,41 @@
                           <span>Tool OnLuyen Auto Bot</span>
                           <i class="ri-shield-check-fill text-emerald-400 text-sm"></i>
                         </h3>
-                        <span class="cyber-badge bg-sky-500/20 text-sky-300 border border-sky-500/40">50K / THÁNG</span>
+                        <span class="cyber-badge bg-sky-500/25 text-sky-200 border border-sky-400/60 shadow-[0_0_12px_rgba(56,189,248,0.4)]">50K / THÁNG</span>
                       </div>
-                      <p class="card-desc-text">Quét đề thi thông minh, gợi ý đáp án trắc nghiệm chuẩn 99%, chạy ngầm tàng hình an toàn 100%.</p>
+                      <span class="text-[11px] text-sky-300/90 font-medium">Radar Giải Đề 99% • Chạy Ngầm Tàng Hình</span>
+                    </div>
+                  </div>
+
+                  <!-- Highlights List Đặc Biệt Của Tool OnLuyen (Không Bị Cắt Chữ) -->
+                  <div class="card-features-list">
+                    <div class="card-feature-item">
+                      <i class="ri-radar-fill text-cyan-400"></i>
+                      <span><strong>Quét câu hỏi siêu tốc:</strong> Nhận diện câu hỏi thi &amp; gợi ý đáp án chuẩn xác 99%</span>
+                    </div>
+                    <div class="card-feature-item">
+                      <i class="ri-spy-fill text-emerald-400"></i>
+                      <span><strong>Tàng hình chống phát hiện:</strong> Chạy ngầm 100% an toàn, qua mặt hệ thống giám sát</span>
+                    </div>
+                    <div class="card-feature-item">
+                      <i class="ri-timer-flash-fill text-yellow-400"></i>
+                      <span><strong>Auto Next &amp; Nộp bài:</strong> Tự động làm bài theo độ trễ ngẫu nhiên giống người thật</span>
+                    </div>
+                    <div class="card-feature-item">
+                      <i class="ri-smartphone-line text-indigo-400"></i>
+                      <span><strong>Đa nền tảng linh hoạt:</strong> Hoạt động trên Chrome, Cốc Cốc cả Máy Tính và Điện Thoại</span>
+                    </div>
+                    <div class="card-feature-item">
+                      <i class="ri-customer-service-fill text-sky-400"></i>
+                      <span><strong>Giá học sinh sinh viên:</strong> Chỉ 50k/tháng, hỗ trợ cài đặt Ultraview 1-1 nhiệt tình</span>
                     </div>
                   </div>
                 </div>
+
                 <div class="card-bottom-bar">
                   <div class="card-meta-row">
-                    <span class="text-sky-400 font-medium flex items-center gap-1"><i class="ri-radar-line"></i> Radar Giải Đề 99%</span>
-                    <span class="text-emerald-400 font-semibold flex items-center gap-1"><i class="ri-spy-line"></i> Chạy Ngầm Tàng Hình</span>
+                    <span class="text-sky-400 font-medium flex items-center gap-1"><i class="ri-radar-line"></i> Tỉ Lệ Đúng 99% Siêu Tốc</span>
+                    <span class="text-emerald-400 font-semibold flex items-center gap-1"><i class="ri-lock-2-line"></i> Kích Hoạt 1 Phút Qua Zalo</span>
                   </div>
                   <div class="card-actions-row">
                     <button type="button" onclick="event.stopPropagation(); openFeatureModal('onluyen')" class="glass-btn glass-btn-secondary">
@@ -1467,13 +1629,18 @@
             </div>
 
             <!-- Hint box liên hệ tư vấn tool -->
-            <div class="rounded-xl border border-sky-500/25 bg-sky-500/5 px-3.5 py-2.5 flex items-center justify-between text-xs text-muted-foreground">
-              <div class="flex items-center gap-2">
-                <i class="ri-customer-service-2-fill text-sky-400 text-base"></i>
-                <span>Cần tư vấn setup tool, mua key sỉ hoặc hỗ trợ cài đặt qua Ultraview?</span>
+            <div class="rounded-2xl border border-sky-500/30 bg-gradient-to-r from-sky-950/40 via-indigo-950/30 to-purple-950/40 p-4 flex items-center justify-between flex-wrap gap-3 text-xs text-muted-foreground shadow-lg backdrop-blur-md">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-xl flex-shrink-0 border border-sky-500/30">
+                  <i class="ri-customer-service-2-fill"></i>
+                </div>
+                <div>
+                  <div class="font-bold text-slate-200 text-sm">Cần tư vấn setup tool, mua key sỉ hoặc hỗ trợ cài đặt?</div>
+                  <div class="text-slate-400 text-xs">Admin hỗ trợ trực tiếp 24/7 qua Ultraview / Zalo / Telegram</div>
+                </div>
               </div>
-              <a href="https://zalo.me/0976976627" target="_blank" rel="noopener" class="text-sky-400 font-semibold hover:underline flex-shrink-0 ml-2">
-                Chat Zalo Admin &rarr;
+              <a href="https://zalo.me/0976976627" target="_blank" rel="noopener" class="glass-btn glass-btn-primary py-2 px-4 text-xs">
+                <i class="ri-chat-smile-2-fill"></i> Chat Zalo Admin Ngay
               </a>
             </div>
           </div>
@@ -3536,27 +3703,27 @@
   </script>
 
 
-  <!-- FEATURE POPUP MODAL (Bảng Tính Năng Đặc Biệt) -->
+    <!-- FEATURE POPUP MODAL (Bảng Tính Năng Đặc Biệt) -->
   <div id="featureModalOverlay" class="feature-modal-overlay" onclick="closeFeatureModal()">
     <div class="feature-modal-box" onclick="event.stopPropagation()">
-      <div class="flex items-center justify-between border-b border-border/60 pb-3 mb-3.5">
-        <div class="flex items-center gap-2.5">
-          <div id="modalIcon" class="w-9 h-9 rounded-xl flex items-center justify-center text-xl"></div>
+      <div class="flex items-center justify-between border-b border-border/60 pb-3 mb-4">
+        <div class="flex items-center gap-3">
+          <div id="modalIcon" class="w-11 h-11 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0"></div>
           <div>
-            <h3 id="modalTitle" class="font-bold text-base text-foreground"></h3>
-            <span id="modalBadge" class="text-[10px] font-bold px-2 py-0.5 rounded"></span>
+            <h3 id="modalTitle" class="font-bold text-lg text-foreground"></h3>
+            <span id="modalBadge" class="text-xs font-bold px-2.5 py-0.5 rounded-full inline-block mt-0.5"></span>
           </div>
         </div>
-        <button onclick="closeFeatureModal()" class="text-muted-foreground hover:text-foreground p-1 rounded-lg hover:bg-muted text-lg">
+        <button onclick="closeFeatureModal()" aria-label="Đóng" class="text-muted-foreground hover:text-foreground w-8 h-8 rounded-full flex items-center justify-center hover:bg-muted/80 text-xl transition">
           <i class="ri-close-line"></i>
         </button>
       </div>
 
-      <div class="mb-4">
-        <h4 class="text-xs font-bold text-sky-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-          <i class="ri-sparkling-fill"></i> Tính Năng Đặc Biệt Độc Quyền:
+      <div class="mb-5">
+        <h4 class="text-xs font-bold text-sky-400 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+          <i class="ri-sparkling-fill"></i> TÍNH NĂNG ĐẶC BIỆT ĐỘC QUYỀN:
         </h4>
-        <ul id="modalFeatureList" class="space-y-2 text-xs text-muted-foreground leading-relaxed">
+        <ul id="modalFeatureList" class="space-y-2.5 text-xs text-slate-300 leading-relaxed">
         </ul>
       </div>
 
@@ -3664,6 +3831,12 @@
 
       document.getElementById('featureModalOverlay').classList.add('active');
     }
+
+        document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeFeatureModal();
+      }
+    });
 
     function closeFeatureModal() {
       document.getElementById('featureModalOverlay').classList.remove('active');
